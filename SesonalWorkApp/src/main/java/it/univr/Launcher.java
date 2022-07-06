@@ -44,7 +44,7 @@ public class Launcher {
         .setPrettyPrinting()
                 .create();
 
-        l.gsonWriter("/home/alessio/Scrivania/prova.json", gsonBuilder, l);
+        l.gsonWriter(System.getenv("HOME") + "/prova.json", gsonBuilder, l);
 
         /*GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
