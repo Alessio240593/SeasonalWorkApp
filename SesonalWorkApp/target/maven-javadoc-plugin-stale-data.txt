@@ -1,0 +1,56 @@
+@options
+@argfile
+--class-path
+'/home/alessio/.m2/repository/org/openjfx/javafx-controls/17.0.1/javafx-controls-17.0.1.jar:/home/alessio/.m2/repository/org/openjfx/javafx-graphics/17.0.1/javafx-graphics-17.0.1.jar:/home/alessio/.m2/repository/org/openjfx/javafx-base/17.0.1/javafx-base-17.0.1.jar:/home/alessio/.m2/repository/2/12/0.0.1-SNAPSHOT/12-0.0.1-SNAPSHOT.jar:/home/alessio/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/alessio/.m2/repository/2/12/0.0.1-SNAPSHOT/12-0.0.1-SNAPSHOT.jar'
+--module-path
+'/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/SesonalWork.jar:/home/alessio/.m2/repository/org/openjfx/javafx-graphics/17.0.1/javafx-graphics-17.0.1-linux.jar:/home/alessio/.m2/repository/org/openjfx/javafx-controls/17.0.1/javafx-controls-17.0.1-linux.jar:/home/alessio/.m2/repository/org/openjfx/javafx-base/17.0.1/javafx-base-17.0.1-linux.jar'
+--patch-module
+Main='/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/src/main/java:/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/generated-sources/annotations'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+--module-source-path
+'/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/src'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'SesonalWork 1.0 API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' '/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'SesonalWork 1.0 API'
+'/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/src/main/java/module-info.java'
+'/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/src/main/java/it/univr/Main.java'
+'/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/src/main/java/it/univr/Launcher.java'
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/constant-values.html = 1657091348692
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/module-search-index.js = 1657091348712
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/allclasses-index.html = 1657091348720
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/allpackages-index.html = 1657091348720
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/script.js = 1657091348728
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/type-search-index.js = 1657091348716
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/member-search-index.js = 1657091348716
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/package-search-index.zip = 1657091348712
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/search.js = 1657091348732
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/type-search-index.zip = 1657091348716
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/stylesheet.css = 1657091348728
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/allclasses.html = 1657091348724
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/help-doc.html = 1657091348728
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/member-search-index.zip = 1657091348716
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/package-search-index.js = 1657091348712
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/overview-tree.html = 1657091348704
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/module-search-index.zip = 1657091348712
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/index.html = 1657091348724
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/element-list = 1657091348676
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/index-all.html = 1657091348716
+/home/alessio/Scrivania/SesonalWorkDir/SesonalWorkApp/target/apidocs/deprecated-list.html = 1657091348724
