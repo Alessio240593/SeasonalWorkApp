@@ -39,15 +39,12 @@ public class Main extends Application {
         submit.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                if(username.getText().equals("") || password.getText().equals(""))
-                {
-                    return;
-                }
-                else{
-                    System.out.println("Username: " + username.getText() + "\nPassword: " + password.getText());
-                    username.setText("");
-                    password.setText("");
-                }
+                GridPane p =new GridPane();
+                p.getChildren().add(new Label("prova"));
+                Scene sc = new Scene(p, 900, 900);
+                sc.setRoot(p);
+                stage.setScene(sc);
+                stage.show();
             }
         });
 

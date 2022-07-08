@@ -1,0 +1,105 @@
+{
+  "main": {
+    "id": "804e335c24ac7188",
+    "type": "split",
+    "children": [
+      {
+        "id": "f1b56780aa623be7",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "0365fa2cc1a0c96a",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6ab14e261fb3680d",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b6e1e4bc027d19f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "db98e41243bafff7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "89d7a3587718c177",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "04f3fa7a6571e8a9",
+    "type": "split",
+    "children": [
+      {
+        "id": "3442d33cb7c48b18",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f07e43c9af6b4ff",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f1b56780aa623be7",
+  "lastOpenFiles": [
+    "README.md",
+    "icon.svg=100x20.md"
+  ]
+}

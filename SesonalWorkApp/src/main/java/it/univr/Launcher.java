@@ -1,12 +1,19 @@
 package it.univr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 import com.google.gson.annotations.SerializedName;
-import java.io.FileWriter;
-import java.io.IOException;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+
+import java.io.*;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Launcher {
     @SerializedName("age")
@@ -30,6 +37,46 @@ public class Launcher {
             e.printStackTrace();
         }
     }
+
+    public void gsonReader() {
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+
+        try (BufferedReader br = new BufferedReader(
+                new FileReader("/home/alessio/Scrivania/prova.json"))) {
+            //convert the json string back to object
+
+            Type listType = new TypeToken<ArrayList<Launcher>>(){}.getType();
+            List<Launcher> countryObj = new Gson().fromJson(br, listType);
+
+            System.out.println("Name Of Country: "+countryObj.get(0).name);
+
+            System.out.println("Population: "+countryObj.get(1).age);
+
+            Launcher l1 = new Launcher();
+            l1.age = 59;
+            l1.name = "fausto";
+
+            countryObj.add(l1);
+
+            gsonWriterList("/home/alessio/Scrivania/prova.json", gson, countryObj);
+
+        }
+        catch (IOException ex) {
+            System.out.println(ex.getCause());
+        }
+    }
+
+    public void gsonWriterList(String filePath, Gson gson, List<Launcher> l){
+        try(FileWriter writer = new FileWriter(filePath)) {
+            gson.toJson(l, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public static void main(String[] args) {
         Launcher l = new Launcher();
         l.setAge(13);
@@ -39,13 +86,29 @@ public class Launcher {
         l.list.add("come");
         l.list.add("12");
         l.rep = new Launcher();
-        l.rep = l;
+        l.rep.name = "ciao";
+        l.rep.age = 90;
         Gson gsonBuilder = new GsonBuilder()
-        .setPrettyPrinting()
+                .setPrettyPrinting()
                 .create();
 
-        l.gsonWriter(System.getenv("HOME") + "/prova.json", gsonBuilder, l);
+        ArrayList<Launcher> allItems = new ArrayList<>();
+        allItems.add(l);
+        allItems.add(new Launcher());
+        allItems.add(new Launcher());
 
+        System.out.println(gsonBuilder.toJson(allItems));
+
+        try(FileWriter writer = new FileWriter("/home/alessio/Scrivania/prova.json")) {
+            gsonBuilder.toJson(allItems, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        //l.gsonWriter("/home/alessio/Scrivania/prova.json", gsonBuilder, l);
+        //l.gsonReader();
         /*GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
         String empJson = gsonBuilder.setPrettyPrinting()
@@ -59,3 +122,10 @@ public class Launcher {
         //Main.main(args);
     }
 }
+
+
+
+
+
+
+

@@ -1,4 +1,5 @@
 it/univr/Launcher.class
-module-info.class
 it/univr/Main.class
+module-info.class
 it/univr/Main$1.class
+it/univr/Launcher$1.class
