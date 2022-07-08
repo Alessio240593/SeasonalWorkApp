@@ -1,6 +1,6 @@
 # SesonalWorkApp
 
-![img](icon2.svg)
+![img](./icon/icon2.svg)
 
 ---
 
