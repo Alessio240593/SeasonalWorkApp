@@ -1,11 +1,10 @@
 # SesonalWorkApp
 
-![img](./icon/icon2.svg)
+![img](./icon/icon.png)
 
 ---
 
 ## TODO
-- Activity diagram
 - Class diagram
 - Architectural pattern
 - Design pattern
@@ -14,4 +13,5 @@
 ## TOCHECK
 - Use case diagram
 - Sequence diagram
+-  Activity diagram
 
