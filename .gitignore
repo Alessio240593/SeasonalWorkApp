@@ -7,7 +7,7 @@
 # Compiled class file
 *.class
 
-.obsidian
+./.obsidian
 
 # Log file
 *.log
