@@ -69,8 +69,6 @@ public class Main extends Application {
         //pane.add(submit, 0, 4);
 
         Scene scene = new Scene(pane, 600, 600);
-
-        stage.setScene(scene);
         stage.setTitle("Exercise_2");
         stage.show();
     }

@@ -5,47 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2de49fa3-9964-43a3-9755-9c02254ca1e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/univr/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/univr/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/univr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/univr/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SesonalWork-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/SesonalWork-javadoc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SesonalWork.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/SesonalWork.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/Main/it/univr/Launcher.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/Main/it/univr/Launcher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/Main/it/univr/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/Main/it/univr/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/Main/it/univr/class-use/Launcher.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/Main/it/univr/class-use/Launcher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/Main/it/univr/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/Main/it/univr/class-use/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/Main/it/univr/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/Main/it/univr/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/Main/it/univr/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/Main/it/univr/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/Main/it/univr/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/Main/it/univr/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/Main/module-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/Main/module-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/index-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/member-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/module-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/module-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/package-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/univr/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/univr/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/univr/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/univr/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/univr/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/univr/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-javadoc-plugin-stale-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-javadoc-plugin-stale-data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/LauncherTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/LauncherTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-LauncherTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-LauncherTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/jpms.args" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/SesonalWorkApp.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/overleaf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/diagrams/sequence/Search/Search.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/diagrams/sequence/Search/Search.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/diagrams/sequence/Update-Record/Update-Record.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/diagrams/sequence/Update-Record/Update-Record.drawio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +88,8 @@
       <workItem from="1657125547886" duration="372000" />
       <workItem from="1657218652189" duration="4000" />
       <workItem from="1657265991190" duration="462000" />
+      <workItem from="1657273014824" duration="91000" />
+      <workItem from="1657371345598" duration="59000" />
     </task>
     <servers />
   </component>
