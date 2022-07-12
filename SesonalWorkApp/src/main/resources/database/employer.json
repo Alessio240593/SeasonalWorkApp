@@ -1,16 +1,13 @@
 [
 	{
-		"id" : 1234,
 		"username" : "Alessio",
 		"password" : "123rciao"
 	},
 	{
-		"id" : 1245,
 		"username" : "Davide",
 		"password" : "187eciao"
 	},
 	{
-		"id" : 6363,
 		"username" : "Michele",
 		"password" : "376sciao"
 	}

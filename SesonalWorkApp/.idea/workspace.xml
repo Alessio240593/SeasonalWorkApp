@@ -29,8 +29,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
         <option value="FxmlFile" />
       </list>
     </option>
@@ -62,15 +64,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/fxml" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/fxml" />
     </key>
@@ -82,7 +85,7 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher (1)">
+  <component name="RunManager" selected="Application.Home">
     <configuration name="Esercizio4_fxml (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.univr.Esercizio4_fxml" />
       <module name="SesonalWorkApp" />
@@ -109,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Esercizio4_fxml" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="esercizi.Esercizio4_fxml" />
+    <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Model.Home" />
       <module name="SesonalWorkApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="esercizi.*" />
+          <option name="PATTERN" value="Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,7 +146,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Esercizio4_fxml" />
+      <item itemvalue="Application.Home" />
       <item itemvalue="Application.Esercizio4_fxml (1)" />
       <item itemvalue="Application.Esercizio4_fxml (2)" />
       <item itemvalue="Application.Launcher" />
@@ -151,11 +154,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Home" />
+        <item itemvalue="Application.Esercizio4_fxml (2)" />
         <item itemvalue="Application.Launcher (1)" />
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.Esercizio4_fxml (2)" />
         <item itemvalue="Application.Esercizio4_fxml (1)" />
-        <item itemvalue="Application.Esercizio4_fxml" />
       </list>
     </recent_temporary>
   </component>
@@ -212,6 +215,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Model/Home.java</url>
+          <line>11</line>
+          <properties class="Model.Home" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Control/Esercizio4_fxml.java</url>

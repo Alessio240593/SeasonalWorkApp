@@ -6,4 +6,7 @@ module Main {
     requires com.google.gson;
 
     opens Control;
+    opens Model;
+    opens Launcher;
+
 }
