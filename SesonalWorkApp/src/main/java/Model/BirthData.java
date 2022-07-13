@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class BirthData {
     
@@ -36,5 +37,18 @@ public class BirthData {
 
     public void setBirthplace(String birthplace) {
         this.birthplace = birthplace;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BirthData birthData = (BirthData) o;
+        return Objects.equals(birthDate, birthData.birthDate) && Objects.equals(nationality, birthData.nationality) && Objects.equals(birthplace, birthData.birthplace);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(birthDate, nationality, birthplace);
     }
 }

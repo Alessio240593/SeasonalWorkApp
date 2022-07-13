@@ -35,7 +35,7 @@ public class LoginController {
                 Parent content2;
                 try {
                     FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("/view/prova.fxml"));
+                    loader.setLocation(getClass().getResource("/view/Home.fxml"));
                     content2 = loader.load();
 
                     Scene scene = new Scene(content2, 600, 600);

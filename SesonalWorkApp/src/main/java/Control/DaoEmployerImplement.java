@@ -54,7 +54,6 @@ public class DaoEmployerImplement implements DaoEmployer{
 
     @Override
     public void addRecord(Record record) {
-
     }
 
     @Override

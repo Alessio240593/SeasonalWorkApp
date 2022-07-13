@@ -12,7 +12,7 @@ public class Employer extends Person{
         this.birthInfo = birthInfo;
         this.account = account;
         // OCIO se non va lo mettiamo a mano
-        this.id = this.hashCode();
+        this.id = birthInfo.hashCode() ^ account.hashCode() ^ record.hashCode();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Employer extends Person{
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, birthInfo, account);
+        return Objects.hash(id, birthInfo, account, this.getRecord());
     }
 
     public int getId() {
