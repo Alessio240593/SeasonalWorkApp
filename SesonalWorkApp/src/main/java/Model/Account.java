@@ -5,6 +5,10 @@ public class Account {
     private String username;
     private String password;
 
+    public int hashCode(){
+        return this.password.hashCode() ^ this.username.hashCode();
+    }
+
     public String getUsername() {
         return username;
     }

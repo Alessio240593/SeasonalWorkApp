@@ -1,14 +1,19 @@
 package Model;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 public class Home extends Application {
-
     public static void main(String[] args){
         Application.launch(args);
     }
@@ -20,11 +25,11 @@ public class Home extends Application {
             loader.setLocation(getClass().getResource("/view/Login.fxml"));
             content = loader.load();
 
-            Scene scene = new Scene(content);
+            Scene scene = new Scene(content, 600, 600);
 
-            //scene.getStylesheets().add( getClass().getResource( "css/Prova.css" ).toExternalForm() );
+            stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/icon/icon.png"))));
             stage.setResizable(false);
-            stage.initStyle(StageStyle.UTILITY);
+            stage.setTitle("SeasonalWorkApp");
             stage.setScene(scene);
             stage.show();
 
@@ -32,8 +37,6 @@ public class Home extends Application {
             e.printStackTrace();
         }
 
-        //Button but = (Button) content.lookup("#but");
-
-
     }
+
 }

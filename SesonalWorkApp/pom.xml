@@ -17,15 +17,6 @@
     </properties>
 
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.fxml</include>
-                </includes>
-            </resource>
-        </resources>
-
         <plugins>
             <plugin>
                 <groupId>org.openjfx</groupId>
@@ -33,6 +24,26 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>Laucher</mainClass>
+                        <options>
+                            <option>--add-opens</option>
+                            <option>javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix</option>
+                            <option>--add-opens</option>
+                            <option>javafx.controls/com.sun.javafx.scene.control=com.jfoenix</option>
+                            <option>--add-opens</option>
+                            <option>javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix</option>
+                            <option>--add-opens</option>
+                            <option>javafx.controls/com.sun.javafx.scene.control=com.jfoenix</option>
+                            <option>--add-exports</option>
+                            <option>javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix</option>
+                            <option>--add-exports</option>
+                            <option>javafx.controls/com.sun.javafx.scene.control=com.jfoenix</option>
+                            <option>--add-exports</option>
+                            <option>javafx.base/com.sun.javafx.binding=com.jfoenix</option>
+                            <option>--add-exports</option>
+                            <option>javafx.graphics/com.sun.javafx.stage=com.jfoenix</option>
+                            <option>--add-exports</option>
+                            <option>javafx.base/com.sun.javafx.event=com.jfoenix</option>
+                        </options>
                 </configuration>
             </plugin>
             <plugin>
@@ -68,7 +79,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
                 <configuration>
-                    <mainClass>it.univr.Main</mainClass>
+                    <mainClass>Launcher.Launcher</mainClass>
                     <arguments>
                         <argument></argument>
                     </arguments>
@@ -121,6 +132,11 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>17.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>9.0.9</version>
         </dependency>
     </dependencies>
 </project>

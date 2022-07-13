@@ -16,34 +16,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DaoEmployerImplement implements DaoEmployer{
+    private static DaoEmployerImplement dao = new DaoEmployerImplement();
 
-    Employer employes;
+    private DaoEmployerImplement() {}
+
+    public static DaoEmployerImplement getDao(){
+        return dao;
+    }
 
     public List<Account> gsonReader(String path) {
-        Gson gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .create();
-
+        //Gson gson = new GsonBuilder()
+                //.setPrettyPrinting()
+                //.create();
         List<Account> result = null;
+        System.out.println(System.getenv("PWD"));
 
-        try (BufferedReader br = new BufferedReader(
-                new FileReader(path))) {
-            //convert the json string back to object
-
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             Type listType = new TypeToken<ArrayList<Account>>(){}.getType();
             result = new Gson().fromJson(br, listType);
-
         }
         catch (IOException ex) {
-            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
         }
 
         return result;
-    }
-
-    @Override
-    public Employer getEmployer() {
-        return null;
     }
 
     @Override
@@ -64,7 +60,7 @@ public class DaoEmployerImplement implements DaoEmployer{
     @Override
     public boolean login(String username, String password) {
 
-        List<Account> accounts = gsonReader("./database/employer.json");
+        List<Account> accounts = gsonReader(System.getenv("PWD") + "/src/resources/database/employer.json");
 
         for(Account account : accounts) {
             if(account.getUsername().equals(username) && account.getPassword().equals(password))

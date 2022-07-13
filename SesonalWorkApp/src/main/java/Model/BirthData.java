@@ -8,6 +8,12 @@ public class BirthData {
     private String nationality;
     private String birthplace;
 
+    public BirthData(Date birthDate, String nationality, String birthplace) {
+        this.birthDate = birthDate;
+        this.nationality = nationality;
+        this.birthplace = birthplace;
+    }
+
     public Date getBirthDate() {
         return birthDate;
     }

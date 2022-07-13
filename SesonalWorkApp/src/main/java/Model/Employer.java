@@ -1,15 +1,31 @@
 package Model;
 
+import java.util.Objects;
+
 public class Employer extends Person{
-    private int id;
-    private BirthData birthInfo;
+    private final int id;
+    private final BirthData birthInfo;
     private Account account;
 
-    public Employer(int id, BirthData birthInfo, Account account, Record record) {
+    public Employer(BirthData birthInfo, Account account, Record record) {
         super(record);
-        this.id = id;
         this.birthInfo = birthInfo;
         this.account = account;
+        // OCIO se non va lo mettiamo a mano
+        this.id = this.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employer employer = (Employer) o;
+        return id == employer.id && Objects.equals(birthInfo, employer.birthInfo) && Objects.equals(account, employer.account);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, birthInfo, account);
     }
 
     public int getId() {
@@ -22,14 +38,6 @@ public class Employer extends Person{
 
     public Account getAccount() {
         return account;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setBirthInfo(BirthData birthInfo) {
-        this.birthInfo = birthInfo;
     }
 
     public void setAccount(Account account) {

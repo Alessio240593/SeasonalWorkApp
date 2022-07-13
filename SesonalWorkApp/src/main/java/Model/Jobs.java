@@ -1,4 +1,15 @@
 package Model;
 
-public enum Jobs {
+public enum Jobs{
+    FARMER,
+    CHEF,
+    CONSTRUCTIONWORKER,
+    WAITER,
+    BUSDRIVER,
+    ELETRICIAN,
+    MAINTAINER,
+    LIFEGUARD,
+    OFFICEWORKER,
+    PIZZAMAKER,
+    SAILINGINSTRUCTOR
 }

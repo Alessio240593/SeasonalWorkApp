@@ -8,6 +8,16 @@ public class Job {
     private float grossDailySalary;
     private Jobs job;
 
+    public Job(Season period, String employerName, String task,
+               City area, float grossDailySalary, Jobs job) {
+        this.period = period;
+        this.employerName = employerName;
+        this.task = task;
+        this.area = area;
+        this.grossDailySalary = grossDailySalary;
+        this.job = job;
+    }
+
     public Season getPeriod() {
         return period;
     }
