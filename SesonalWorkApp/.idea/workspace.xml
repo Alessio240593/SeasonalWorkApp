@@ -10,13 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2de49fa3-9964-43a3-9755-9c02254ca1e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/resources/css/Home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/home/cartoon.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Control/Esercizio4_fxml.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Control/ExitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/AppController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/BirthData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/BirthData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Employer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/database/employer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/database/employer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Launcher/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Launcher/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Insert.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/prova.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/prova2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/prova.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +41,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="CSS File" />
         <option value="Class" />
-        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -61,20 +74,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/home" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/resources/home" />
       <recent name="$PROJECT_DIR$/src/resources/login" />
       <recent name="$PROJECT_DIR$/src/main/resources/icon" />
       <recent name="$PROJECT_DIR$/src/main/resources/login" />
@@ -88,7 +97,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Home">
+  <component name="RunManager" selected="Application.Launcher (1)">
     <configuration name="Employer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Model.Employer" />
       <module name="SesonalWorkApp" />
@@ -102,7 +111,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Esercizio4_fxml (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Esercizio4_fxml" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Control.Esercizio4_fxml" />
       <module name="SesonalWorkApp" />
       <extension name="coverage">
@@ -157,9 +166,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher (1)" />
         <item itemvalue="Application.Home" />
         <item itemvalue="Application.Employer" />
-        <item itemvalue="Application.Launcher (1)" />
         <item itemvalue="Application.Esercizio4_fxml (2)" />
         <item itemvalue="Application.Launcher" />
       </list>
@@ -213,20 +222,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Control/Esercizio4_fxml.java</url>
-          <line>20</line>
-          <properties class="Control.Esercizio4_fxml">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Control/Esercizio4_fxml.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

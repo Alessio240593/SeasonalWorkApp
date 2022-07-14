@@ -1,14 +1,10 @@
 package Control;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 public class LoginController {
@@ -20,38 +16,59 @@ public class LoginController {
     private TextField username;
     @FXML
     private TextField password;
+    @FXML
+    private TextField errorField;
 
 
-    public void setListener(ActionEvent actionEvent) {
+    public void signInHandler(ActionEvent actionEvent) {
+        DaoEmployerImplement tmp = DaoEmployerImplement.getDao();
+        if (tmp.login(username.getText(), password.getText())){
+            Stage stage = (Stage) username.getScene().getWindow();
+            Utility.changeScene("Home.fxml", stage);
+        }
+        else{
+            if(username.getText().equals("") && password.getText().equals("")) {
+                errorField.setVisible(true);
+                errorField.setText("Credenziali non inserite");
+                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px; -fx-font-weight: bolder; -fx-font-family: cursive;");
+            }
+            else if(password.getText().equals("")){
+                errorField.setVisible(true);
+                errorField.setText("Password non inserita");
+                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+            }
+            else if(username.getText().equals("")){
+                errorField.setVisible(true);
+                errorField.setText("Username non inserito");
+                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+            }
+            else{
+                errorField.setVisible(true);
+                errorField.setText("Le credenziali non sono corrette");
+                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+            }
+        }
+    }
+
+    public void resetHandler(ActionEvent actionEvent) {
         username.setText("");
         password.setText("");
     }
 
-    public void setListener2(ActionEvent actionEvent) {
-            DaoEmployerImplement tmp = DaoEmployerImplement.getDao();
-            if (tmp.login(username.getText(), password.getText())){
-                Stage stage = (Stage) username.getScene().getWindow();
-
-                Parent content2;
-                try {
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("/view/Home.fxml"));
-                    content2 = loader.load();
-
-                    Scene scene = new Scene(content2, 600, 600);
-
-                    stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/icon/icon.png"))));
-                    stage.setResizable(false);
-                    stage.setTitle("SeasonalWorkApp");
-                    stage.setScene(scene);
-                    stage.show();
-
-                } catch(Exception e) {
-                    e.printStackTrace();
-                }
+    @FXML
+    private void initialize() {
+        username.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                singIn.requestFocus();
+                signInHandler(null);
             }
-            else{
-                System.out.println("error");
+        });
+
+        password.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                singIn.requestFocus();
+                signInHandler(null);
             }
+        });
     }
 }

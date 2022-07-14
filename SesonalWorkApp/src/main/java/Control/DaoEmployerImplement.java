@@ -24,24 +24,6 @@ public class DaoEmployerImplement implements DaoEmployer{
         return dao;
     }
 
-    public List<Account> gsonReader(String path) {
-        //Gson gson = new GsonBuilder()
-                //.setPrettyPrinting()
-                //.create();
-        List<Account> result = null;
-        System.out.println(System.getenv("PWD"));
-
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            Type listType = new TypeToken<ArrayList<Account>>(){}.getType();
-            result = new Gson().fromJson(br, listType);
-        }
-        catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-        return result;
-    }
-
     @Override
     public List<Job> search(String... filter) {
         return null;
@@ -59,7 +41,7 @@ public class DaoEmployerImplement implements DaoEmployer{
     @Override
     public boolean login(String username, String password) {
 
-        List<Account> accounts = gsonReader(System.getenv("PWD") + "/src/resources/database/employer.json");
+        List<Account> accounts = Utility.gsonReader(System.getenv("PWD") + "/src/resources/database/employer.json");
 
         for(Account account : accounts) {
             if(account.getUsername().equals(username) && account.getPassword().equals(password))
