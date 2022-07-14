@@ -8,22 +8,22 @@ public abstract class Worker extends Person{
     private List<Job> pastExperience;
     private Date brithInfo;
     private List<Language> languages;
-    private List<License> liscense;
+    private List<License> license;
     private boolean withVehicle;
     private List<City> activityArea;
     private Season period;
     private Person emergencyContact;
 
     public Worker(String address, List<Job> pastExperience, Date brithInfo, List<Language> languages,
-                  List<License> liscense, boolean withVehicle, List<City> activityArea, Season period,
-                    Person emergencyContact, Record record) {
+                  List<License> license, boolean withVehicle, List<City> activityArea, Season period,
+                  Person emergencyContact, Record record) {
 
         super(record);
         this.address = address;
         this.pastExperience = pastExperience;
         this.brithInfo = brithInfo;
         this.languages = languages;
-        this.liscense = liscense;
+        this.license = license;
         this.withVehicle = withVehicle;
         this.activityArea = activityArea;
         this.period = period;
@@ -62,12 +62,12 @@ public abstract class Worker extends Person{
         this.languages = languages;
     }
 
-    public List<License> getLiscense() {
-        return liscense;
+    public List<License> getLicense() {
+        return license;
     }
 
-    public void setLiscense(List<License> liscense) {
-        this.liscense = liscense;
+    public void setLicense(List<License> license) {
+        this.license = license;
     }
 
     public boolean isWithVehicle() {

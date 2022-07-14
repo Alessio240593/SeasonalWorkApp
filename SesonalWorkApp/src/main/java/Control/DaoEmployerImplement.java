@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class DaoEmployerImplement implements DaoEmployer{
     private static DaoEmployerImplement dao = new DaoEmployerImplement();
@@ -35,7 +36,8 @@ public class DaoEmployerImplement implements DaoEmployer{
     }
 
     @Override
-    public void addRecord(Record record) {
+    public boolean addRecord(Record record) {
+
     }
 
     @Override
