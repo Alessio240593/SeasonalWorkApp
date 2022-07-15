@@ -1,9 +1,6 @@
 package Control;
 
-import Model.Account;
-import Model.Job;
-import Model.Record;
-import Model.Worker;
+import Model.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -29,11 +26,19 @@ public class DaoEmployerImplement implements DaoEmployer{
     }
 
     @Override
-    public void addRecord(Worker worker) {
+    public void addRecord(SeasonalWorker worker) {
         //write on json
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
+
+        String path = System.getenv("PWD") + "/src/resources/database/workers.json";
+        //controllare se crea file
+        List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
+        workers.add(worker);
+
+        Utility.gsonWriter(path, gson, workers);
+
         //Utility.gsonWriter();
     }
 

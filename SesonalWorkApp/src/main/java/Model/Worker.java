@@ -7,7 +7,7 @@ import java.util.Objects;
 public abstract class Worker extends Person{
     private String address;
     private List<Job> pastExperience;
-    private Date brithInfo;
+    private BirthData brithInfo;
     private List<Language> languages;
     private List<License> license;
     private boolean withVehicle;
@@ -15,7 +15,7 @@ public abstract class Worker extends Person{
     private List<Season> period;
     private Person emergencyContact;
 
-    public Worker(String address, List<Job> pastExperience, Date brithInfo, List<Language> languages,
+    public Worker(String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages,
                   List<License> license, boolean withVehicle, List<City> activityArea, List<Season> period,
                   Person emergencyContact, Record record) {
 
@@ -47,11 +47,11 @@ public abstract class Worker extends Person{
         this.pastExperience = pastExperience;
     }
 
-    public Date getBrithInfo() {
+    public BirthData getBrithInfo() {
         return brithInfo;
     }
 
-    public void setBrithInfo(Date brithInfo) {
+    public void setBrithInfo(BirthData brithInfo) {
         this.brithInfo = brithInfo;
     }
 

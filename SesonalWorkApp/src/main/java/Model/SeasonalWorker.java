@@ -1,20 +1,19 @@
 package Model;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
 public class SeasonalWorker extends Worker{
 
-    private final int seasonalWorkerId;
+    private final int id;
 
-    public SeasonalWorker(String address, List<Job> pastExperience, Date brithInfo, List<Language> languages, List<License> liscense, boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record, int seasonalWorkerId) {
+    public SeasonalWorker(String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
         super(address, pastExperience, brithInfo, languages, liscense, withVehicle, activityArea, period, emergencyContact, record);
-        this.seasonalWorkerId = seasonalWorkerId;
+        this.id = address.hashCode() ^ pastExperience.hashCode() ^ brithInfo.hashCode() ^ languages.hashCode() ^ liscense.hashCode() ^ activityArea.hashCode() ^ period.hashCode() ^ emergencyContact.hashCode() ^ record.hashCode();
     }
 
-    public int getSeasonalWorkerId() {
-        return seasonalWorkerId;
+    public int getId() {
+        return id;
     }
 
     @Override
@@ -23,11 +22,11 @@ public class SeasonalWorker extends Worker{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         SeasonalWorker that = (SeasonalWorker) o;
-        return seasonalWorkerId == that.seasonalWorkerId;
+        return id == that.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), seasonalWorkerId);
+        return Objects.hash(super.hashCode(), id);
     }
 }

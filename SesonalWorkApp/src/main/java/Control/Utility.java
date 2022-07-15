@@ -1,10 +1,7 @@
 package Control;
 
-import Model.Account;
-import Model.Job;
-import Model.Worker;
+import Model.*;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -35,9 +32,24 @@ public class Utility {
         return result;
     }
 
-    public static void gsonWriter(String filePath, Gson gson, Launcher l){
+    public static List<SeasonalWorker> gsonWorkerReader(String path) {
+        List<SeasonalWorker> result = null;
+        //System.out.println(System.getenv("PWD"));
+
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            Type listType = new TypeToken<ArrayList<SeasonalWorker>>(){}.getType();
+            result = new Gson().fromJson(br, listType);
+        }
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return result;
+    }
+
+    public static void gsonWriter(String filePath, Gson gson, List<SeasonalWorker> workers){
         try(FileWriter writer = new FileWriter(filePath)) {
-            gson.toJson(l, writer);
+            gson.toJson(workers, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }

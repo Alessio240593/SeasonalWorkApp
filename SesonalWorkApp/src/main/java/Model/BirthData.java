@@ -1,25 +1,26 @@
 package Model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
 public class BirthData {
     
-    private Date birthDate;
+    private LocalDate birthDate;
     private String nationality;
     private String birthplace;
 
-    public BirthData(Date birthDate, String nationality, String birthplace) {
+    public BirthData(LocalDate birthDate, String nationality, String birthplace) {
         this.birthDate = birthDate;
         this.nationality = nationality;
         this.birthplace = birthplace;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

@@ -1,0 +1,616 @@
+[
+  {
+    "id": 0,
+    "withVehicle": false
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 826911988,
+    "address": "via dosdegà 5",
+    "pastExperience": [
+      {
+        "period": "SUMMER",
+        "year": 1977,
+        "companyName": "Cazzoneso",
+        "task": "DIOBESTIA",
+        "area": "VICENZA",
+        "grossDailySalary": 788.0,
+        "job": "CONSTRUCTIONWORKER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1999,
+        "month": 7,
+        "day": 8
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "A1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "SPRING"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "3476556147",
+        "cellnum": "casasua@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "3423700979",
+      "cellnum": "casamia@gmail.com"
+    }
+  },
+  {
+    "id": 253904818,
+    "address": "jshhhd",
+    "pastExperience": [
+      {
+        "period": "FALL",
+        "year": 2000,
+        "companyName": "maria",
+        "task": "madonna",
+        "area": "VENEZIA",
+        "grossDailySalary": 65774.0,
+        "job": "WAITER"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1998,
+        "month": 8,
+        "day": 5
+      },
+      "nationality": "",
+      "birthplace": ""
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "FALL"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "mamma",
+        "surname": "mia",
+        "email": "9876765345",
+        "cellnum": "mammamia@gmai.com"
+      }
+    },
+    "record": {
+      "name": "Mario",
+      "surname": "giordano",
+      "email": "3423700979",
+      "cellnum": "bragantinidavide@gmail.com"
+    }
+  }
+]

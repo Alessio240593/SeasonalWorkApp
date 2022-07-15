@@ -72,6 +72,20 @@ public class AppController {
     public HBox city2;
     @FXML
     public ToggleButton veichle;
+    @FXML
+    public TextField nameAzienda;
+    @FXML
+    public TextField retribuzione;
+    @FXML
+    public TextField annoassunzione;
+    @FXML
+    public ChoiceBox citta;
+    @FXML
+    public ChoiceBox periodo;
+    @FXML
+    public ChoiceBox job;
+    @FXML
+    public TextArea mansioni;
 
     public void setError(TextField field)  {
         field.getStyleClass().remove("field");
@@ -107,7 +121,9 @@ public class AppController {
     }
 
     public void nextHandler(ActionEvent actionEvent) {
-        /*String nome = name.getText();
+
+
+        String nome = name.getText();
         String regex = "^[a-zA-Z]+";
         if (!Pattern.matches(regex, nome)) {
             System.err.println("nome è sbagliato");
@@ -143,7 +159,7 @@ public class AppController {
         }
 
         String indirizzo = address.getText();
-        regex = "^[a-zA-Z]+ .+,? (?:n.)?[0-9]+.*$";
+        /*regex = "^[a-zA-Z]+ .+,? (?:n.)?[0-9]+.*$";
         if (!Pattern.matches(regex, cellulare)) {
             System.out.println("indirizzo è sbagliato");
             setError(address);
@@ -151,7 +167,7 @@ public class AppController {
         else {
             unSetError(address);
         }
-
+        */
         LocalDate data = date.getValue();
 
         if (data == null) {
@@ -275,7 +291,6 @@ public class AppController {
                 emergency_email.getStyleClass().toString().contains("error") || data == null || date.getStyleClass().toString().contains("error")) {
             System.out.println("c'è qualche campo sbagliato");
         } else {
-            */
             Stage stage = (Stage) next.getScene().getWindow();
             Parent content2;
             try {
@@ -284,8 +299,12 @@ public class AppController {
                 content2 = loader.load();
                 Scene scene = new Scene(content2, 850, 900);
                 stage.getIcons().add(new Image(String.valueOf(Utility.class.getResource("/icon/icon.png"))));
-                stage.setUserData(Model.getModel().createWorker("SEASONAL", "via prova 3", new ArrayList<Job>(), null, null,
-                        null, true, null, null, null, null, 123));
+
+                //occhio a BirthData
+                stage.setUserData(Model.getModel().createWorker("SEASONAL", indirizzo, new ArrayList<Job>(),
+                        new BirthData(data, "", ""), langlist, licenselist, veicolo,
+                            citieslist, seasonlist, new Person(new Record(nome_emergenza, cognome_emergenza, cellulare_emergenza, postaelettronica_emergenza)),
+                                new Record(nome, cognome, cellulare, postaelettronica)));
                 stage.setTitle("SeasonalWorkApp");
                 stage.setScene(scene);
                 stage.show();
@@ -293,25 +312,105 @@ public class AppController {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        //}
+        }
+
     }
 
     public void submitHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) add.getScene().getWindow();
-        Worker worker = (SeasonalWorker) stage.getUserData();
+        SeasonalWorker worker = (SeasonalWorker) stage.getUserData();
         DaoEmployerImplement tmp = DaoEmployerImplement.getDao();
         tmp.addRecord(worker);
+        Utility.changeScene("Home.fxml", (Stage) submit.getScene().getWindow());
     }
 
     public void addHandler(ActionEvent actionEvent) {
-        Stage stage = (Stage) add.getScene().getWindow();
-        Worker worker = (SeasonalWorker) stage.getUserData();
 
-        //controllare i campi e ottenere i valori
+        //da sistemare tutte le regex che hanno scassato il cazzo
+        String nomeAzienda = nameAzienda.getText();
+        String regex = "[a-zA-z,.]+";
+        if (!Pattern.matches(regex, nomeAzienda)) {
+            System.err.println("nomeAzienda è sbagliato");
+            setError(nameAzienda);
+        } else {
+            unSetError(nameAzienda);
+        }
 
-        Job tmp = Model.getModel().createJob(Season.SUMMER, "Ale", "Operaio", City.ROVIGO, 13.444, Jobs.BUSDRIVER, 2017);
-        if (!Utility.checkPastExpDuplicate(worker, tmp))
-            worker.getPastExperience().add(tmp);
-        System.out.println(worker);
+        String retribution = retribuzione.getText();
+        regex = "^[+-]?([0-9]*[.])?[0-9]+$";
+        if (!Pattern.matches(regex, retribution)) {
+            System.err.println("retribuzione è sbagliato");
+            setError(retribuzione);
+        } else {
+            unSetError(retribuzione);
+        }
+
+        String annoAssunzione = annoassunzione.getText();
+        regex = "^[0-9]{4}$";
+        if (!Pattern.matches(regex, annoAssunzione) || Integer.parseInt(annoAssunzione) < 1900) {
+            System.err.println("annoAssunzione è sbagliato");
+            setError(annoassunzione);
+        } else {
+            unSetError(annoassunzione);
+        }
+
+        String city = (String) citta.getValue();
+        if(city == null) {
+            System.err.println("city è sbagliato");
+            //setError(citta);
+        }
+        else {
+            //unSetError(citta);
+        }
+
+        String period = (String) periodo.getValue();
+        if(period == null) {
+            System.err.println("period è sbagliato");
+            //setError(periodo);
+        }
+        else {
+            //unSetError(periodo);
+        }
+
+        String lavoro = (String) job.getValue();
+        if(lavoro == null) {
+            System.err.println("lavoro è sbagliato");
+            //setError(lavoro);
+        }
+        else {
+            //unSetError(lavoro);
+        }
+
+        String mansion = mansioni.getText();
+        regex="[a-zA-z,.0-9]+";
+        if(!Pattern.matches(regex, mansion)) {
+            System.err.println("mansion è sbagliato");
+            //setError(mansioni);
+        }
+        else {
+            //unSetError(mansioni);
+        }
+
+        /*
+        if(nameAzienda.getStyleClass().toString().contains("error") || retribuzione.getStyleClass().toString().contains("error") ||
+            annoassunzione.getStyleClass().toString().contains("error") || citta == null || periodo == null || job == null
+                || mansioni.getStyleClass().toString().contains("error")) {
+            System.out.println("c'è qualche campo sbagliato");
+        }
+        else {
+            */
+
+            Stage stage = (Stage) add.getScene().getWindow();
+            Worker worker = (SeasonalWorker) stage.getUserData();
+
+
+
+            Job tmp = Model.getModel().createJob(Season.valueOf(period), nomeAzienda, mansion, City.valueOf(city),
+                    Double.parseDouble(retribution), Jobs.valueOf(lavoro), Integer.parseInt(annoAssunzione));
+
+            if (!Utility.checkPastExpDuplicate(worker, tmp))
+                worker.getPastExperience().add(tmp);
+            System.out.println(worker);
+        //}
     }
 }
