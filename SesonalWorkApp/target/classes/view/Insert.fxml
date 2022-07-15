@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import java.net.URL?>
-<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -19,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane minHeight="800.0" minWidth="868.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AppController">
+<AnchorPane fx:id="pane" minHeight="800.0" minWidth="868.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AppController">
     <children>
         <BorderPane layoutY="9.0" prefHeight="27.0" prefWidth="671.0">
             <right>
@@ -48,7 +45,7 @@
       <Label layoutX="167.0" layoutY="82.0" styleClass="title" text="Insert worker data" />
       <HBox layoutX="159.0" layoutY="138.0" prefHeight="202.0" prefWidth="648.0">
          <children>
-              <VBox prefHeight="202.0" prefWidth="348.0">
+              <VBox fx:id="vbox" prefHeight="202.0" prefWidth="348.0">
                   <children>
                       <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
                           <children>
@@ -73,7 +70,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField prefHeight="29.0" prefWidth="171.0" styleClass="field">
+                        <TextField fx:id="surname" prefHeight="29.0" prefWidth="171.0" styleClass="field">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin></TextField>
@@ -86,7 +83,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField prefWidth="171.0" styleClass="field" translateX="68.0">
+                        <TextField fx:id="cellnum" prefWidth="171.0" styleClass="field" translateX="68.0">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin></TextField>
@@ -99,7 +96,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField prefWidth="171.0" styleClass="field" translateX="-3.0">
+                        <TextField fx:id="address" prefWidth="171.0" styleClass="field" translateX="-3.0">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin>
@@ -113,7 +110,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField prefHeight="29.0" prefWidth="202.0" styleClass="field" translateX="57.0">
+                        <TextField fx:id="email" prefHeight="29.0" prefWidth="202.0" styleClass="field" translateX="57.0">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin></TextField>
@@ -126,7 +123,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <DatePicker prefHeight="30.0" prefWidth="175.0" styleClass="field" />
+                        <DatePicker fx:id="date" prefHeight="30.0" prefWidth="175.0" styleClass="field" />
                      </children>
                   </HBox>
                   </children>
@@ -140,7 +137,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField prefHeight="29.0" prefWidth="171.0" styleClass="field">
+                        <TextField fx:id="emergency_name" prefHeight="29.0" prefWidth="171.0" styleClass="field">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin></TextField>
@@ -156,7 +153,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField prefHeight="29.0" prefWidth="169.0" styleClass="field">
+                        <TextField fx:id="emergency_surname" prefHeight="29.0" prefWidth="169.0" styleClass="field">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin></TextField>
@@ -169,7 +166,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField prefWidth="171.0" styleClass="field" translateX="68.0" />
+                        <TextField fx:id="emergency_cellnum" prefWidth="171.0" styleClass="field" translateX="68.0" />
                      </children>
                   </HBox>
                </children>
@@ -183,7 +180,7 @@
                                 <Insets left="10.0" />
                             </padding>
                         </Label>
-                        <TextField prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="57.0">
+                        <TextField fx:id="emergency_email" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="57.0">
                             <HBox.margin>
                                 <Insets bottom="5.0" top="5.0" />
                             </HBox.margin>
@@ -196,19 +193,19 @@
       <Label layoutX="519.0" layoutY="82.0" styleClass="title" text="Insert emergency contact" />
       <Line endX="596.0" layoutX="272.0" layoutY="343.0" startX="-123.0" />
       <Label layoutX="165.0" layoutY="356.0" styleClass="title" text="Insert worker profile data " />
-      <VBox layoutX="159.0" layoutY="408.0" prefHeight="587.0" prefWidth="793.0">
+      <VBox layoutX="162.0" layoutY="399.0" prefHeight="587.0" prefWidth="793.0">
          <children>
             <Label text="Select language">
                <padding>
                   <Insets bottom="15.0" />
                </padding>
             </Label>
-            <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="languages" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
                <children>
-                  <CheckBox mnemonicParsing="false" text="Italian" />
-                  <CheckBox mnemonicParsing="false" text="English" />
-                  <CheckBox mnemonicParsing="false" text="German" />
-                  <CheckBox mnemonicParsing="false" text="French" />
+                  <CheckBox fx:id="ita" mnemonicParsing="false" text="Italian" />
+                  <CheckBox fx:id="eng" mnemonicParsing="false" text="English" />
+                  <CheckBox fx:id="deu" mnemonicParsing="false" text="German" />
+                  <CheckBox fx:id="fra" mnemonicParsing="false" text="French" />
                </children>
                <opaqueInsets>
                   <Insets left="10.0" />
@@ -222,25 +219,25 @@
                   <Insets bottom="15.0" top="12.0" />
                </padding>
             </Label>
-            <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="license1" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
                <children>
-                  <CheckBox mnemonicParsing="false" text="AM" />
-                  <CheckBox mnemonicParsing="false" text="A1" />
-                  <CheckBox mnemonicParsing="false" text="A2" />
-                  <CheckBox mnemonicParsing="false" text="A" />
-                  <CheckBox mnemonicParsing="false" text="B1" />
+                  <CheckBox fx:id="AM" mnemonicParsing="false" text="AM" />
+                  <CheckBox fx:id="A1" mnemonicParsing="false" text="A1" />
+                  <CheckBox fx:id="A2" mnemonicParsing="false" text="A2" />
+                  <CheckBox fx:id="A" mnemonicParsing="false" text="A" />
+                  <CheckBox fx:id="B1" mnemonicParsing="false" text="B1" />
                </children>
                <opaqueInsets>
                   <Insets left="10.0" />
                </opaqueInsets>
             </HBox>
-            <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="license2" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
                <children>
-                  <CheckBox mnemonicParsing="false" text="B" />
-                  <CheckBox mnemonicParsing="false" text="C1" translateX="12.0" />
-                  <CheckBox mnemonicParsing="false" text="C" translateX="12.0" />
-                  <CheckBox mnemonicParsing="false" text="D" translateX="21.0" />
-                  <CheckBox mnemonicParsing="false" text="D1" translateX="20.0" />
+                  <CheckBox fx:id="B" mnemonicParsing="false" text="B" />
+                  <CheckBox fx:id="C1" mnemonicParsing="false" text="C1" translateX="12.0" />
+                  <CheckBox fx:id="C" mnemonicParsing="false" text="C" translateX="12.0" />
+                  <CheckBox fx:id="D" mnemonicParsing="false" text="D" translateX="21.0" />
+                  <CheckBox fx:id="D1" mnemonicParsing="false" text="D1" translateX="20.0" />
                </children>
                <opaqueInsets>
                   <Insets left="10.0" />
@@ -249,13 +246,13 @@
                   <Insets top="12.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="license3" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
                <children>
-                  <CheckBox mnemonicParsing="false" text="BE" />
-                  <CheckBox mnemonicParsing="false" text="C1E" translateX="3.0" />
-                  <CheckBox mnemonicParsing="false" text="CE" translateX="-3.0" />
-                  <CheckBox mnemonicParsing="false" text="D1E" translateX="-2.0" />
-                  <CheckBox mnemonicParsing="false" text="DE" translateX="-19.0" />
+                  <CheckBox fx:id="BE" mnemonicParsing="false" text="BE" />
+                  <CheckBox fx:id="C1E" mnemonicParsing="false" text="C1E" translateX="3.0" />
+                  <CheckBox fx:id="CE" mnemonicParsing="false" text="CE" translateX="-3.0" />
+                  <CheckBox fx:id="D1E" mnemonicParsing="false" text="D1E" translateX="-2.0" />
+                  <CheckBox fx:id="DE" mnemonicParsing="false" text="DE" translateX="-19.0" />
                </children>
                <opaqueInsets>
                   <Insets left="10.0" />
@@ -272,7 +269,7 @@
                   <Insets top="15.0" />
                </VBox.margin>
             </Label>
-            <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="city1" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
                <children>
                   <CheckBox mnemonicParsing="false" text="Verona" />
                   <CheckBox mnemonicParsing="false" text="Vicenza" translateX="-3.0">
@@ -293,7 +290,7 @@
                   <Insets top="-50.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="city2" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
                <children>
                   <CheckBox mnemonicParsing="false" text="Venezia" />
                   <CheckBox mnemonicParsing="false" text="Belluno" translateX="-8.0">
@@ -310,32 +307,52 @@
                   <Insets top="-45.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0" translateY="-35.0">
-               <opaqueInsets>
-                  <Insets left="10.0" />
-               </opaqueInsets>
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
+            <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Period">
+                  <VBox prefHeight="61.0" prefWidth="440.0">
+                     <children>
+                        <Label prefHeight="45.0" prefWidth="46.0" text="Period">
+                           <padding>
+                              <Insets bottom="15.0" top="12.0" />
+                           </padding>
+                        </Label>
+                        <HBox fx:id="season" prefHeight="43.0" prefWidth="488.0">
+                           <children>
+                              <CheckBox mnemonicParsing="false" text="Winter">
+                                 <padding>
+                                    <Insets right="30.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Fall">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Spring">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Summer" />
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="-20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
                      <padding>
-                        <Insets bottom="15.0" top="12.0" />
+                        <Insets top="-30.0" />
                      </padding>
-                  </Label>
-                  <ChoiceBox prefWidth="150.0" translateX="-50.0" translateY="10.0">
-                      <items>
-                          <FXCollections fx:factory="observableArrayList">
-                              <String fx:value="Winter" />
-                              <String fx:value="fall" />
-                              <String fx:value="spring" />
-                              <String fx:value="summer" />
-                          </FXCollections>
-                      </items>
-                  </ChoiceBox>
-
-                  <Label text="With veicle" translateX="-40.0" translateY="10.0" />
-                  <ToggleButton mnemonicParsing="false" text="yes" translateX="-100.0" translateY="10.0" />
+                  </VBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                                    <Label text="With vehicle" translateY="17.0" />
+                        <ToggleButton fx:id="veichle" mnemonicParsing="false" text="yes" translateX="10.0" translateY="10.0" />
+                     </children>
+                  </HBox>
                </children>
             </HBox>
             <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0" translateY="50.0">
@@ -343,11 +360,15 @@
                   <Insets left="10.0" />
                </opaqueInsets>
                <padding>
-                  <Insets top="-50.0" />
+                  <Insets top="-80.0" />
                </padding>
                <children>
-                  <Button onAction="#submitHandler" mnemonicParsing="false" text="Submit" />
+                  <Button fx:id="next" mnemonicParsing="false" onAction="#nextHandler" text="Next" translateY="40.0" />
+                  <TextField fx:id="errorField" disable="true" minWidth="100.0" prefHeight="26.0" prefWidth="365.0" translateX="50.0" translateY="40.0" />
                </children>
+               <VBox.margin>
+                  <Insets top="-32.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>

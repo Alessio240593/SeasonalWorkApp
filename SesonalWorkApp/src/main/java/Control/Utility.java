@@ -1,7 +1,10 @@
 package Control;
 
 import Model.Account;
+import Model.Job;
+import Model.Worker;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,7 +35,7 @@ public class Utility {
         return result;
     }
 
-    public void gsonWriter(String filePath, Gson gson, Launcher l){
+    public static void gsonWriter(String filePath, Gson gson, Launcher l){
         try(FileWriter writer = new FileWriter(filePath)) {
             gson.toJson(l, writer);
         } catch (IOException e) {
@@ -55,5 +58,13 @@ public class Utility {
         } catch(Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean checkPastExpDuplicate(Worker worker, Job job) {
+        for (Job pastExp : worker.getPastExperience()) {
+            if (pastExp.equals(job))
+                return true;
+        }
+        return false;
     }
 }

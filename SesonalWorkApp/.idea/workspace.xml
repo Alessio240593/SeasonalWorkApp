@@ -5,21 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5792985-788a-423b-bfae-5913cfe123e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/p1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/css/InsertExp.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/view/InsertExp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Control/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/BirthData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/BirthData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/FactoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/FactoryModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SeasonalWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SeasonalWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/css/Insert.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/css/Insert.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/database/employer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/database/employer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Insert.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/css/Insert.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/Insert.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/database/employer.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/employer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Insert.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -40,21 +64,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/main" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Launcher.Launcher" />
-      <module name="p1" />
+      <module name="SesonalWorkApp" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Launcher.*" />
@@ -80,10 +107,28 @@
       <option name="presentableId" value="Default" />
       <updated>1657816924652</updated>
       <workItem from="1657816925818" duration="5827000" />
+      <workItem from="1657865977429" duration="17349000" />
+      <workItem from="1657892909586" duration="57000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SesonalWorkApp$Esercizio4_fxml__1_.ic" NAME="Esercizio4_fxml (1) Coverage Results" MODIFIED="1657626349739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>it.univr.*</FILTER>
+    </SUITE>
   </component>
 </project>

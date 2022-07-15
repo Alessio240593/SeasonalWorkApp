@@ -15,19 +15,6 @@ public class Record {
         this.cellnum = cellnum;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Record record = (Record) o;
-        return Objects.equals(name, record.name) && Objects.equals(surname, record.surname) && Objects.equals(email, record.email) && Objects.equals(cellnum, record.cellnum);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, surname, email, cellnum);
-    }
-
     public String getName() {
         return name;
     }
@@ -58,5 +45,28 @@ public class Record {
 
     public void setCellnum(String cellnum) {
         this.cellnum = cellnum;
+    }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", cellnum='" + cellnum + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Record record = (Record) o;
+        return Objects.equals(name, record.name) && Objects.equals(surname, record.surname) && Objects.equals(email, record.email) && Objects.equals(cellnum, record.cellnum);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, email, cellnum);
     }
 }

@@ -23,3 +23,9 @@
     -fx-border-color: #A9A9A9;
     -fx-border-radius: 5;
 }
+
+.error{
+    -fx-border-width: 2;
+    -fx-border-color: red;
+    -fx-border-radius: 5;
+}

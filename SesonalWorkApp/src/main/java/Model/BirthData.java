@@ -51,4 +51,13 @@ public class BirthData {
     public int hashCode() {
         return Objects.hash(birthDate, nationality, birthplace);
     }
+
+    @Override
+    public String toString() {
+        return "BirthData{" +
+                "birthDate=" + birthDate +
+                ", nationality='" + nationality + '\'' +
+                ", birthplace='" + birthplace + '\'' +
+                '}';
+    }
 }

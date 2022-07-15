@@ -1,5 +1,6 @@
 package Model;
 
+import Control.Utility;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,24 +16,7 @@ public class Home extends Application {
     }
 
     public void start(Stage stage) throws Exception {
-        Parent content = null;
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/view/Login.fxml"));
-            content = loader.load();
-
-            Scene scene = new Scene(content, 850, 900);
-
-            stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/icon/icon.png"))));
-            stage.setResizable(false);
-            stage.setTitle("SeasonalWorkApp");
-            stage.setScene(scene);
-            stage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-
+        Utility.changeScene("Login.fxml", stage);
     }
 
 }

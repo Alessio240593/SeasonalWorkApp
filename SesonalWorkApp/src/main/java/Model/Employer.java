@@ -15,19 +15,6 @@ public class Employer extends Person{
         this.id = birthInfo.hashCode() ^ account.hashCode() ^ record.hashCode();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employer employer = (Employer) o;
-        return id == employer.id && Objects.equals(birthInfo, employer.birthInfo) && Objects.equals(account, employer.account);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, birthInfo, account, this.getRecord());
-    }
-
     public int getId() {
         return id;
     }
@@ -42,5 +29,27 @@ public class Employer extends Person{
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employer employer = (Employer) o;
+        return id == employer.id && Objects.equals(birthInfo, employer.birthInfo) && Objects.equals(account, employer.account);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, birthInfo, account, this.getRecord());
+    }
+
+    @Override
+    public String toString() {
+        return "Employer{" +
+                "id=" + id +
+                ", birthInfo=" + birthInfo +
+                ", account=" + account +
+                '}';
     }
 }

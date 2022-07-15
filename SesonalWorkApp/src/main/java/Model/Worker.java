@@ -2,6 +2,7 @@ package Model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Worker extends Person{
     private String address;
@@ -11,11 +12,11 @@ public abstract class Worker extends Person{
     private List<License> license;
     private boolean withVehicle;
     private List<City> activityArea;
-    private Season period;
+    private List<Season> period;
     private Person emergencyContact;
 
     public Worker(String address, List<Job> pastExperience, Date brithInfo, List<Language> languages,
-                  List<License> license, boolean withVehicle, List<City> activityArea, Season period,
+                  List<License> license, boolean withVehicle, List<City> activityArea, List<Season> period,
                   Person emergencyContact, Record record) {
 
         super(record);
@@ -86,11 +87,11 @@ public abstract class Worker extends Person{
         this.activityArea = activityArea;
     }
 
-    public Season getPeriod() {
+    public List<Season> getPeriod() {
         return period;
     }
 
-    public void setPeriod(Season period) {
+    public void setPeriod(List<Season> period) {
         this.period = period;
     }
 
@@ -100,5 +101,35 @@ public abstract class Worker extends Person{
 
     public void setEmergencyContact(Person emergencyContact) {
         this.emergencyContact = emergencyContact;
+    }
+
+    @Override
+    public String toString() {
+        return "Worker{" +
+                "address='" + address + '\'' +
+                ", pastExperience=" + pastExperience +
+                ", brithInfo=" + brithInfo +
+                ", languages=" + languages +
+                ", license=" + license +
+                ", withVehicle=" + withVehicle +
+                ", activityArea=" + activityArea +
+                ", period=" + period +
+                ", emergencyContact=" + emergencyContact +
+                ", Record=" + getRecord() +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Worker worker = (Worker) o;
+        return withVehicle == worker.withVehicle && Objects.equals(address, worker.address) && Objects.equals(pastExperience, worker.pastExperience) && Objects.equals(brithInfo, worker.brithInfo) && Objects.equals(languages, worker.languages) && Objects.equals(license, worker.license) && Objects.equals(activityArea, worker.activityArea) && Objects.equals(period, worker.period) && Objects.equals(emergencyContact, worker.emergencyContact);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), address, pastExperience, brithInfo, languages, license, withVehicle, activityArea, period, emergencyContact);
     }
 }

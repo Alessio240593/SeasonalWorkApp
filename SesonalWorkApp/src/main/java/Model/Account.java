@@ -3,7 +3,6 @@ package Model;
 import java.util.Objects;
 
 public class Account {
-
     private String username;
     private String password;
 
@@ -33,5 +32,13 @@ public class Account {
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
         return Objects.equals(username, account.username) && Objects.equals(password, account.password);
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

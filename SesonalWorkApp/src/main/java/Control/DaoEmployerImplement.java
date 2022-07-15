@@ -1,20 +1,13 @@
 package Control;
 
 import Model.Account;
-import Model.Employer;
 import Model.Job;
 import Model.Record;
+import Model.Worker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class DaoEmployerImplement implements DaoEmployer{
     private static DaoEmployerImplement dao = new DaoEmployerImplement();
@@ -36,8 +29,12 @@ public class DaoEmployerImplement implements DaoEmployer{
     }
 
     @Override
-    public boolean addRecord(Record record) {
-
+    public void addRecord(Worker worker) {
+        //write on json
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+        //Utility.gsonWriter();
     }
 
     @Override

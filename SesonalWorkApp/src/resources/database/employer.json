@@ -1,13 +1,25 @@
 [
 	{
+		"id" : 123,
+		"birthDate" : "24/05/1993",
+		"nationality" : "italian",
+		"birthPlace" : "Verona",
 		"username" : "Alessio",
 		"password" : "123rciao"
 	},
 	{
+		"id" : 234,
+		"birthDate" : "12/04/1990",
+		"nationality" : "italian",
+		"birthPlace" : "Verona",
 		"username" : "Davide",
 		"password" : "187eciao"
 	},
 	{
+		"id" : 654,
+		"birthDate" : "10/03/2000",
+		"nationality" : "italian",
+		"birthPlace" : "Verona",
 		"username" : "Michele",
 		"password" : "376sciao"
 	},
