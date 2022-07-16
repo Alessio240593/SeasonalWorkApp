@@ -4,6 +4,9 @@ import Model.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DaoEmployerImplement implements DaoEmployer{
@@ -28,6 +31,7 @@ public class DaoEmployerImplement implements DaoEmployer{
     @Override
     public void addRecord(SeasonalWorker worker) {
         //write on json
+        Boolean find = false;
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
@@ -35,11 +39,20 @@ public class DaoEmployerImplement implements DaoEmployer{
         String path = System.getenv("PWD") + "/src/resources/database/workers.json";
         //controllare se crea file
         List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
-        workers.add(worker);
+        if(workers == null) {
+            workers = new ArrayList<>();
+        }
+
+        for (Worker w: workers) {
+            if(w.equals(worker)) {
+                find = true;
+            }
+        }
+
+        if(!find)
+            workers.add(worker);
 
         Utility.gsonWriter(path, gson, workers);
-
-        //Utility.gsonWriter();
     }
 
     @Override

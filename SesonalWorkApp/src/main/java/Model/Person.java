@@ -5,6 +5,10 @@ import java.util.Objects;
 public class Person {
     private Record record;
 
+    public Person(){
+
+    }
+
     public Person(Record record) {
         this.record = record;
     }

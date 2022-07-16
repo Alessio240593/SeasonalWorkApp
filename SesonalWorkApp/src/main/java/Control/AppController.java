@@ -1,15 +1,24 @@
 package Control;
 
 import Model.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
@@ -86,19 +95,67 @@ public class AppController {
     public ChoiceBox job;
     @FXML
     public TextArea mansioni;
+    @FXML
+    public VBox menuBox;
+    @FXML
+    public HBox topBox;
+    @FXML
+    public TextField nazionalità;
+    @FXML
+    public TextField cittàNascita;
+    @FXML
+    public TextField errorEmergencyField;
+    @FXML
+    public TextField expErrorField;
+    @FXML
+    public VBox vbox;
+    @FXML
+    public Button updateRecord;
+    @FXML
+    public ChoiceBox<String> workerId;
+    @FXML
+    public TableView table;
+    @FXML
+    public Button nextUpdate;
 
-    public void setError(TextField field)  {
-        field.getStyleClass().remove("field");
-        field.getStyleClass().add("error");
-        errorField.setVisible(true);
-        errorField.setText("Dati inseriti nei campi rossi non validi");
-        errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+    @FXML
+    private void initialize() {
+        /*topBox.widthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                topBox.setMinWidth(topBox.getWidth() + t1.intValue() + 500);
+            }
+        });
+
+        menuBox.heightProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                menuBox.setMinHeight(menuBox.getHeight() + t1.intValue());
+            }
+        });*/
     }
 
-    public void unSetError(TextField field) {
-        field.getStyleClass().remove("error");
+    public void setError(Node field, TextField error)  {
+        field.getStyleClass().removeAll("field");
+        field.getStyleClass().add("error");
+        error.setVisible(true);
+        error.setText("Dati inseriti nei campi rossi non validi");
+        error.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+    }
+
+    public void setEmegengyError(TextField field)  {
+        field.getStyleClass().removeAll("field");
+        field.getStyleClass().add("error");
+        errorEmergencyField.setVisible(true);
+        errorEmergencyField.setText( "Contatto emergenza non valido");
+        errorEmergencyField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+    }
+
+    public void unSetError(Node field) {
+        field.getStyleClass().removeAll("error");
         field.getStyleClass().add("field");
     }
+
 
     public void homeHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) logOut.getScene().getWindow();
@@ -106,7 +163,6 @@ public class AppController {
     }
 
     public void insertHandler(ActionEvent actionEvent) {
-        Parent content2;
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         Utility.changeScene("Insert.fxml", stage);
     }
@@ -116,18 +172,50 @@ public class AppController {
         Utility.changeScene("Login.fxml", stage);
     }
 
+    public void updateHandler(ActionEvent actionEvent) {
+        Stage stage = (Stage) updateRecord.getScene().getWindow();
+        String path = System.getenv("PWD") + "/src/resources/database/workers.json";
+        Utility.changeScene("UpdateChoiche.fxml", stage);
+
+        List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
+        ChoiceBox<String> check = (ChoiceBox<String>) stage.getScene().lookup("#workerId");
+
+        check.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("ciao");
+            }
+        });
+
+        ObservableList<String> list = FXCollections.observableArrayList();
+
+        for (SeasonalWorker w : workers) {
+            list.add(String.valueOf(w.getId()));
+        }
+
+        check.setItems(list);
+
+        //int id = Integer.parseInt(check.getValue());
+
+        final ObservableList<String> data = FXCollections.observableArrayList(
+                new String("ciao"), new String("come")
+        );
+
+        TableView<String> table2 = (TableView<String>) stage.getScene().lookup("#table");
+        table2.setItems(data);
+    }
+
     public void exitHandler(ActionEvent actionEvent) {
         System.exit(0);
     }
 
-    public void nextHandler(ActionEvent actionEvent) {
-
+    public void nextInsertHandler(ActionEvent actionEvent) {
 
         String nome = name.getText();
         String regex = "^[a-zA-Z]+";
         if (!Pattern.matches(regex, nome)) {
             System.err.println("nome è sbagliato");
-            setError(name);
+            setError(name, errorField);
         } else {
             unSetError(name);
         }
@@ -135,7 +223,7 @@ public class AppController {
         String cognome = surname.getText();
         if (!Pattern.matches(regex, cognome)) {
             System.err.println("cognome è sbagliato");
-            setError(surname);
+            setError(surname, errorField);
         } else {
             unSetError(surname);
         }
@@ -144,7 +232,7 @@ public class AppController {
         regex = "^[0-9]{10}$";
         if (!Pattern.matches(regex, cellulare)) {
             System.err.println("cellulare è sbagliato");
-            setError(cellnum);
+            setError(cellnum, errorField);
         } else {
             unSetError(cellnum);
         }
@@ -153,74 +241,98 @@ public class AppController {
         regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
         if (!Pattern.matches(regex, postaelettronica)) {
             System.err.println("email è sbagliato");
-            setError(email);
+            setError(email, errorField);
         } else {
             unSetError(email);
         }
 
         String indirizzo = address.getText();
-        /*regex = "^[a-zA-Z]+ .+,? (?:n.)?[0-9]+.*$";
+        regex = "^[a-zA-Z]+ .+,? (?:n.)?[0-9]+.*$";
         if (!Pattern.matches(regex, cellulare)) {
             System.out.println("indirizzo è sbagliato");
-            setError(address);
+            setError(address, errorField);
         }
         else {
             unSetError(address);
         }
-        */
+
         LocalDate data = date.getValue();
 
         if (data == null) {
             System.out.println("data sbagliata");
-            date.getStyleClass().remove("field");
-            date.getStyleClass().add("error");
-            errorField.setVisible(true);
-            errorField.setText("Dati inseriti nei campi rossi non validi");
-            errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+            setError(date, errorField);
         } else if ((data.getYear() < 1900 || data.getYear() >= (Year.now().getValue() - 16))) {
-            System.out.println("data sbagliata");
-            date.getStyleClass().remove("field");
-            date.getStyleClass().add("error");
-            errorField.setVisible(true);
-            errorField.setText("Dati inseriti nei campi rossi non validi");
-            errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+            setError(date, errorField);
         } else {
-            date.getStyleClass().remove("error");
-            date.getStyleClass().add("field");
+            unSetError(date);
+        }
+
+        String nazionalita = nazionalità.getText();
+        regex = "^[a-zA-Z]+";
+        if (!Pattern.matches(regex, nazionalita)) {
+            System.err.println("nazionalità è sbagliato");
+            setError(nazionalità, errorField);
+        } else {
+            unSetError(nazionalità);
+        }
+
+        String luogoNascita = cittàNascita.getText();
+        regex = "^[a-zA-Z]+";
+        if (!Pattern.matches(regex, luogoNascita)) {
+            System.err.println("luogoNascita è sbagliato");
+            setError(cittàNascita, errorField);
+        } else {
+            unSetError(cittàNascita);
         }
 
         String nome_emergenza = emergency_name.getText();
         regex = "^[a-zA-Z]+";
-        if (!Pattern.matches(regex, nome_emergenza) || nome_emergenza.equals(nome)) {
+        if (!Pattern.matches(regex, nome_emergenza)) {
             System.err.println("nome_emergenza è sbagliato");
-            setError(emergency_name);
-        } else {
+            setError(emergency_name, errorField);
+        }
+        else if(nome_emergenza.equals(name.getText())){
+             setError(emergency_name, errorEmergencyField);
+        }
+        else {
             unSetError(emergency_name);
         }
 
         String cognome_emergenza = emergency_surname.getText();
-        if (!Pattern.matches(regex, cognome_emergenza) || cognome_emergenza.equals(cognome)) {
+        if (!Pattern.matches(regex, cognome_emergenza)) {
             System.err.println("cognome_emergenza è sbagliato");
-            setError(emergency_surname);
-        } else {
+            setError(emergency_surname, errorField);
+        }
+        else if(cognome_emergenza.equals(surname.getText())){
+            setError(emergency_surname, errorEmergencyField);
+        }
+        else {
             unSetError(emergency_surname);
         }
 
         String cellulare_emergenza = emergency_cellnum.getText();
         regex = "^[0-9]{10}$";
-        if (!Pattern.matches(regex, cellulare_emergenza) || cellulare_emergenza.equals(cellulare)) {
+        if (!Pattern.matches(regex, cellulare_emergenza)) {
             System.err.println("cellulare_emergenza è sbagliato");
-            setError(emergency_cellnum);
-        } else {
+            setError(emergency_cellnum, errorField);
+        }
+        else if(cellulare_emergenza.equals(cellulare)){
+            setError(emergency_cellnum, errorEmergencyField);
+        }
+        else {
             unSetError(emergency_cellnum);
         }
 
         String postaelettronica_emergenza = emergency_email.getText();
         regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-        if (!Pattern.matches(regex, postaelettronica_emergenza) || postaelettronica_emergenza.equals(postaelettronica)) {
+        if (!Pattern.matches(regex, postaelettronica_emergenza)) {
             System.err.println("email_emergenza è sbagliato");
-            setError(emergency_email);
-        } else {
+            setError(emergency_email, errorField);
+        }
+        else if(postaelettronica_emergenza.equals(email.getText())){
+            setError(emergency_email, errorEmergencyField);
+        }
+        else {
             unSetError(emergency_email);
         }
 
@@ -288,7 +400,8 @@ public class AppController {
         if (name.getStyleClass().toString().contains("error") || surname.getStyleClass().toString().contains("error") || cellnum.getStyleClass().toString().contains("error") ||
                 address.getStyleClass().toString().contains("error") || email.getStyleClass().toString().contains("error") || emergency_name.getStyleClass().toString().contains("error") ||
                 emergency_surname.getStyleClass().toString().contains("error") || emergency_cellnum.getStyleClass().toString().contains("error") ||
-                emergency_email.getStyleClass().toString().contains("error") || data == null || date.getStyleClass().toString().contains("error")) {
+                emergency_email.getStyleClass().toString().contains("error") || nazionalità.getStyleClass().toString().contains("error") || cittàNascita.getStyleClass().toString().contains("error") ||
+                data == null || date.getStyleClass().toString().contains("error")) {
             System.out.println("c'è qualche campo sbagliato");
         } else {
             Stage stage = (Stage) next.getScene().getWindow();
@@ -298,6 +411,8 @@ public class AppController {
                 loader.setLocation(Utility.class.getResource("/view/InsertExp.fxml"));
                 content2 = loader.load();
                 Scene scene = new Scene(content2, 850, 900);
+                stage.setMinWidth(900);
+                stage.setMinHeight(900);
                 stage.getIcons().add(new Image(String.valueOf(Utility.class.getResource("/icon/icon.png"))));
 
                 //occhio a BirthData
@@ -305,6 +420,7 @@ public class AppController {
                         new BirthData(data, "", ""), langlist, licenselist, veicolo,
                             citieslist, seasonlist, new Person(new Record(nome_emergenza, cognome_emergenza, cellulare_emergenza, postaelettronica_emergenza)),
                                 new Record(nome, cognome, cellulare, postaelettronica)));
+                //stage.setUserData(new SeasonalWorker(12));
                 stage.setTitle("SeasonalWorkApp");
                 stage.setScene(scene);
                 stage.show();
@@ -331,25 +447,28 @@ public class AppController {
         String regex = "[a-zA-z,.]+";
         if (!Pattern.matches(regex, nomeAzienda)) {
             System.err.println("nomeAzienda è sbagliato");
-            setError(nameAzienda);
+            setError(nameAzienda, expErrorField);
         } else {
             unSetError(nameAzienda);
         }
 
         String retribution = retribuzione.getText();
-        regex = "^[+-]?([0-9]*[.])?[0-9]+$";
-        if (!Pattern.matches(regex, retribution)) {
+        regex = "^[+]?([0-9]*[.])?[0-9]+$";
+        if (!Pattern.matches(regex, retribution) || Double.parseDouble(retribution) > 10000) {
             System.err.println("retribuzione è sbagliato");
-            setError(retribuzione);
+            setError(retribuzione, expErrorField);
         } else {
             unSetError(retribuzione);
         }
 
+        Stage stage = (Stage) add.getScene().getWindow();
         String annoAssunzione = annoassunzione.getText();
         regex = "^[0-9]{4}$";
-        if (!Pattern.matches(regex, annoAssunzione) || Integer.parseInt(annoAssunzione) < 1900) {
+        if (!Pattern.matches(regex, annoAssunzione) || Integer.parseInt(annoAssunzione) < 1900) //||
+                //Integer.parseInt(annoAssunzione) < (((SeasonalWorker) stage.getUserData()).getBrithInfo().getBirthDate().getYear() + 16))
+            {
             System.err.println("annoAssunzione è sbagliato");
-            setError(annoassunzione);
+            setError(annoassunzione, expErrorField);
         } else {
             unSetError(annoassunzione);
         }
@@ -357,60 +476,77 @@ public class AppController {
         String city = (String) citta.getValue();
         if(city == null) {
             System.err.println("city è sbagliato");
-            //setError(citta);
+            setError(citta, expErrorField);
         }
         else {
-            //unSetError(citta);
+            unSetError(citta);
         }
 
         String period = (String) periodo.getValue();
         if(period == null) {
             System.err.println("period è sbagliato");
-            //setError(periodo);
+            setError(periodo, expErrorField);
         }
         else {
-            //unSetError(periodo);
+            unSetError(periodo);
         }
 
         String lavoro = (String) job.getValue();
         if(lavoro == null) {
             System.err.println("lavoro è sbagliato");
-            //setError(lavoro);
+            setError(job, expErrorField);
         }
         else {
-            //unSetError(lavoro);
+            unSetError(job);
         }
 
         String mansion = mansioni.getText();
         regex="[a-zA-z,.0-9]+";
         if(!Pattern.matches(regex, mansion)) {
             System.err.println("mansion è sbagliato");
-            //setError(mansioni);
+            setError(mansioni, expErrorField);
         }
         else {
-            //unSetError(mansioni);
+            unSetError(mansioni);
         }
 
-        /*
         if(nameAzienda.getStyleClass().toString().contains("error") || retribuzione.getStyleClass().toString().contains("error") ||
             annoassunzione.getStyleClass().toString().contains("error") || citta == null || periodo == null || job == null
                 || mansioni.getStyleClass().toString().contains("error")) {
             System.out.println("c'è qualche campo sbagliato");
         }
         else {
-            */
-
-            Stage stage = (Stage) add.getScene().getWindow();
             Worker worker = (SeasonalWorker) stage.getUserData();
-
-
 
             Job tmp = Model.getModel().createJob(Season.valueOf(period), nomeAzienda, mansion, City.valueOf(city),
                     Double.parseDouble(retribution), Jobs.valueOf(lavoro), Integer.parseInt(annoAssunzione));
 
             if (!Utility.checkPastExpDuplicate(worker, tmp))
                 worker.getPastExperience().add(tmp);
+
+            nameAzienda.setText("");
+            retribuzione.setText("");
+            annoassunzione.clear();
+            citta.setValue(null);
+            periodo.setValue(null);
+            job.setValue(null);
+            mansioni.setText("");
             System.out.println(worker);
-        //}
+        }
+    }
+
+    public void nextUpdateHandler(ActionEvent actionEvent) {
+        Stage stage = (Stage) insertRecord.getScene().getWindow();
+        Utility.changeScene("Update.fxml", stage);
+    }
+
+    public void updateFieldHandler(ActionEvent actionEvent) {
+        Stage stage = (Stage) insertRecord.getScene().getWindow();
+        Utility.changeScene("UpdateExp.fxml", stage);
+    }
+
+    public void updateExpHandler(ActionEvent actionEvent) {
+        Stage stage = (Stage) insertRecord.getScene().getWindow();
+        Utility.changeScene("Home.fxml", stage);
     }
 }

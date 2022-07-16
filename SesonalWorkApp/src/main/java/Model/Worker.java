@@ -15,6 +15,10 @@ public abstract class Worker extends Person{
     private List<Season> period;
     private Person emergencyContact;
 
+    public Worker(){
+
+    }
+
     public Worker(String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages,
                   List<License> license, boolean withVehicle, List<City> activityArea, List<Season> period,
                   Person emergencyContact, Record record) {

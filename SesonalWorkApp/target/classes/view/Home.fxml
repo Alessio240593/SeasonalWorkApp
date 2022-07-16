@@ -16,7 +16,7 @@
    <children>
       <BorderPane layoutY="9.0">
          <right>
-            <HBox minWidth="696.0" prefHeight="75.0" prefWidth="849.0" spacing="20.0" style="-fx-background-color: lightGreen;" translateY="-9.0" BorderPane.alignment="CENTER">
+            <HBox fx:id="topBox" minHeight="75.0" minWidth="850.0" prefHeight="0.0" prefWidth="0.0" spacing="20.0" style="-fx-background-color: lightGreen;" translateY="-9.0" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="75.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -28,12 +28,12 @@
             </HBox>
          </right>
       </BorderPane>
-      <VBox layoutX="1.0" layoutY="74.0" minWidth="150.0" prefHeight="835.0" prefWidth="150.0" spacing="15.0" style="-fx-background-color: Aquamarine;">
+      <VBox fx:id="menuBox" layoutX="1.0" layoutY="74.0" minWidth="150.0" prefHeight="835.0" prefWidth="150.0" spacing="15.0" style="-fx-background-color: Aquamarine;">
          <children>
             <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="113.0" text="Home" translateY="25.0" />
             <Button minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="113.0" text="Search" translateY="70.0" />
             <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="Insert" translateY="70.0" />
-            <Button minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="Update" translateY="70.0" />
+            <Button fx:id="updateRecord" onAction="#updateHandler" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="Update" translateY="70.0" />
             <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="LogOut" translateY="143.0" />
             <Button fx:id="exit" minWidth="120.0" onAction="#exitHandler" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="Exit" translateY="140.0" />
          </children>

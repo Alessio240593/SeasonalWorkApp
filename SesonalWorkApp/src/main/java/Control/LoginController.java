@@ -1,13 +1,21 @@
 package Control;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class LoginController {
+    @FXML
+    private VBox leftSide;
+    @FXML
+    private VBox rightSide;
     @FXML
     private Button reset;
     @FXML
@@ -18,6 +26,8 @@ public class LoginController {
     private TextField password;
     @FXML
     private TextField errorField;
+    @FXML
+    private HBox box;
 
 
     public void signInHandler(ActionEvent actionEvent) {

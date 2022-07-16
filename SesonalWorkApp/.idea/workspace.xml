@@ -5,22 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5792985-788a-423b-bfae-5913cfe123e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/view/UpdateChoiche.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/view/UpdateExp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p1.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Control/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/BirthData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/BirthData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/FactoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/FactoryModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/SeasonalWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SeasonalWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/database/workers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Insert.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/view/InsertExp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/InsertExp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/database/workers.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/workers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Insert.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/InsertExp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/InsertExp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,13 +35,21 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,18 +67,9 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/davidebragantini/SesonalWorkApp/SesonalWorkApp/src/resources/database",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/resources/database" />
@@ -76,7 +79,7 @@
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Home">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Model.Home" />
       <module name="p1" />
@@ -118,8 +121,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Home" />
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.Home" />
       </list>
     </recent_temporary>
   </component>

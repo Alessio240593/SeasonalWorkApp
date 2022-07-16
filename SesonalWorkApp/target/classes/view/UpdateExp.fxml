@@ -44,21 +44,21 @@
             </children>
         </VBox>
         <Label layoutX="233.0" layoutY="115.0" prefHeight="65.0" prefWidth="472.0" styleClass="title" text="Insert past experience data">
-         <font>
-            <Font size="25.0" />
-         </font></Label>
+            <font>
+                <Font size="25.0" />
+            </font></Label>
         <HBox layoutX="161.0" layoutY="242.0" prefHeight="724.0" prefWidth="710.0">
             <children>
                 <VBox fx:id="vbox" prefHeight="415.0" prefWidth="564.0">
                     <children>
                         <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
                             <children>
-                                <Label text="Nome Azienda">
+                                <Label text="Company name">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="nameAzienda" prefHeight="29.0" prefWidth="172.0" styleClass="field" translateX="-30.0">
+                                <TextField fx:id="nameAzienda" prefHeight="28.0" prefWidth="185.0" promptText="Insert company name...." styleClass="field" translateX="-38.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" />
                                     </HBox.margin></TextField>
@@ -66,42 +66,42 @@
                             <opaqueInsets>
                                 <Insets left="10.0" />
                             </opaqueInsets>
-                     <padding>
-                        <Insets bottom="20.0" />
-                     </padding>
+                            <padding>
+                                <Insets bottom="20.0" />
+                            </padding>
                         </HBox>
                         <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0">
                             <children>
-                                <Label text="Retribuzione">
+                                <Label text="Retribution">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="retribuzione" prefWidth="171.0" styleClass="field" translateX="35.0">
+                                <TextField fx:id="retribuzione" prefHeight="28.0" prefWidth="192.0" promptText="Insert daily retribution..." styleClass="field" translateX="45.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" />
                                     </HBox.margin></TextField>
                             </children>
-                     <padding>
-                        <Insets bottom="20.0" />
-                     </padding>
+                            <padding>
+                                <Insets bottom="20.0" />
+                            </padding>
                         </HBox>
                         <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0">
                             <children>
-                                <Label text="anno assunzione">
+                                <Label text="Hiring year">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="annoassunzione" prefWidth="171.0" styleClass="field" translateX="-33.0">
+                                <TextField fx:id="annoassunzione" prefWidth="171.0" promptText="Insert hiring year..." styleClass="field" translateX="5.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" />
                                     </HBox.margin>
                                 </TextField>
                             </children>
-                     <padding>
-                        <Insets bottom="20.0" />
-                     </padding>
+                            <padding>
+                                <Insets bottom="20.0" />
+                            </padding>
                         </HBox>
                         <HBox prefHeight="32.0" prefWidth="550.0" spacing="50.0">
                             <children>
@@ -110,23 +110,23 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                        <ChoiceBox fx:id="citta" prefWidth="150.0" translateX="55.0" >
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="VERONA" />
-                                    <String fx:value="VICENZA" />
-                                    <String fx:value="VENEZIA" />
-                                    <String fx:value="ROVIGO" />
-                                    <String fx:value="TREVISO" />
-                                    <String fx:value="BELLUNO" />
-                                    <String fx:value="PADOVA" />
-                                </FXCollections>
-                            </items>
-                        </ChoiceBox>
+                                <ChoiceBox fx:id="citta" prefWidth="150.0" translateX="57.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="VERONA" />
+                                            <String fx:value="VICENZA" />
+                                            <String fx:value="VENEZIA" />
+                                            <String fx:value="ROVIGO" />
+                                            <String fx:value="TREVISO" />
+                                            <String fx:value="BELLUNO" />
+                                            <String fx:value="PADOVA" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
                             </children>
-                     <padding>
-                        <Insets bottom="20.0" />
-                     </padding>
+                            <padding>
+                                <Insets bottom="20.0" />
+                            </padding>
                         </HBox>
                         <HBox prefHeight="29.0" prefWidth="437.0" spacing="18.0">
                             <children>
@@ -135,74 +135,74 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                        <ChoiceBox fx:id="periodo" prefWidth="150.0" translateX="-5.0">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="WINTER" />
-                                    <String fx:value="SPRING" />
-                                    <String fx:value="FALL" />
-                                    <String fx:value="SUMMER" />
-                                </FXCollections>
-                            </items>
-                        </ChoiceBox>
+                                <ChoiceBox fx:id="periodo" prefWidth="150.0" translateX="-5.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="WINTER" />
+                                            <String fx:value="SPRING" />
+                                            <String fx:value="FALL" />
+                                            <String fx:value="SUMMER" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
                             </children>
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
                         </HBox>
                         <HBox prefHeight="16.0" prefWidth="550.0" spacing="18.0" />
-                  <HBox prefHeight="29.0" prefWidth="437.0" spacing="18.0">
-                     <children>
-                        <Label text="Lavoro">
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <ChoiceBox fx:id="job" prefHeight="24.0" prefWidth="209.0" translateX="75.0">
-                         <items>
-                             <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="FARMER" />
-                                 <String fx:value="CHEF" />
-                                 <String fx:value="CONSTRUCTIONWORKER" />
-                                 <String fx:value="WAITER" />
-                                 <String fx:value="BUSDRIVER" />
-                                 <String fx:value="ELETRICIAN" />
-                                 <String fx:value="MAINTAINTER" />
-                                 <String fx:value="LIFEGUARD" />
-                                 <String fx:value="OFFICEWORKER" />
-                                 <String fx:value="PIZZAMAKER" />
-                                 <String fx:value="SAILINGINSTRUCTOR" />
-                             </FXCollections>
-                         </items>
-                        </ChoiceBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox prefHeight="254.0" prefWidth="564.0" spacing="18.0">
-                     <children>
-                        <Label text="Mansioni">
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <TextArea fx:id="mansioni" prefHeight="149.0" prefWidth="205.0" styleClass="field" translateX="63.0" />
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox prefHeight="73.0" prefWidth="586.0" spacing="18.0" translateY="-10.0">
-                     <children>
-                        <Button fx:id="submit" mnemonicParsing="false" onAction="#submitHandler" prefHeight="32.0" prefWidth="124.0" text="Submit" />
-                        <Button fx:id="add" mnemonicParsing="false" onAction="#addHandler" prefHeight="32.0" prefWidth="100.0" text="add" translateX="30.0" />
-                        <TextField fx:id="expErrorField" disable="true" prefHeight="24.0" prefWidth="335.0" translateX="100.0" />
-                     </children>
-                     <VBox.margin>
-                        <Insets top="30.0" />
-                     </VBox.margin>
-                  </HBox>
+                        <HBox prefHeight="29.0" prefWidth="437.0" spacing="18.0">
+                            <children>
+                                <Label text="Lavoro">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <ChoiceBox fx:id="job" prefHeight="24.0" prefWidth="209.0" translateX="75.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="FARMER" />
+                                            <String fx:value="CHEF" />
+                                            <String fx:value="CONSTRUCTIONWORKER" />
+                                            <String fx:value="WAITER" />
+                                            <String fx:value="BUSDRIVER" />
+                                            <String fx:value="ELETRICIAN" />
+                                            <String fx:value="MAINTAINTER" />
+                                            <String fx:value="LIFEGUARD" />
+                                            <String fx:value="OFFICEWORKER" />
+                                            <String fx:value="PIZZAMAKER" />
+                                            <String fx:value="SAILINGINSTRUCTOR" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="254.0" prefWidth="564.0" spacing="18.0">
+                            <children>
+                                <Label text="Mansioni">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextArea fx:id="mansioni" prefHeight="149.0" prefWidth="205.0" promptText="Insert mansion and task perform in the company...." styleClass="field" translateX="63.0" />
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="73.0" prefWidth="586.0" spacing="18.0" translateY="-10.0">
+                            <children>
+                                <Button fx:id="updateExp" mnemonicParsing="false" onAction="#updateExpHandler" prefHeight="32.0" prefWidth="124.0" text="Update" />
+                                <Button fx:id="add" mnemonicParsing="false" onAction="#addHandler" prefHeight="32.0" prefWidth="100.0" text="add" translateX="30.0" />
+                                <TextField fx:id="expErrorField" disable="true" prefHeight="24.0" prefWidth="335.0" translateX="100.0" />
+                            </children>
+                            <VBox.margin>
+                                <Insets top="30.0" />
+                            </VBox.margin>
+                        </HBox>
                     </children>
                 </VBox>
             </children>
