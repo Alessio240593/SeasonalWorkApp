@@ -1,8 +1,6 @@
 package Control;
 
 import Model.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,18 +11,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.time.Year;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -80,7 +74,7 @@ public class AppController {
     @FXML
     public HBox city2;
     @FXML
-    public ToggleButton veichle;
+    public ToggleButton vehicle;
     @FXML
     public TextField nameAzienda;
     @FXML
@@ -117,6 +111,31 @@ public class AppController {
     public TableView table;
     @FXML
     public Button nextUpdate;
+    @FXML
+    public TextField updateCellnum;
+    @FXML
+    public TextField updateEmail;
+    @FXML
+    public TextField updateAddress;
+    @FXML
+    public ChoiceBox updateActivityArea;
+    @FXML
+    public ChoiceBox updateLicense;
+    @FXML
+    public ChoiceBox updateLanguages;
+    @FXML
+    public TextField updateEmergencyName;
+    @FXML
+    public TextField updateEmergencySurname;
+    @FXML
+    public TextField updateEmergencyEmail;
+    @FXML
+    public TextField updateEmergencyCellnum;
+    @FXML
+    public Button updateField;
+    @FXML
+    public ToggleButton updateVehicle;
+
 
     @FXML
     private void initialize() {
@@ -393,7 +412,7 @@ public class AppController {
             }
         }
 
-        Boolean veicolo = veichle.isSelected();
+        Boolean veicolo = vehicle.isSelected();
         System.out.println(veicolo);
 
 
@@ -417,7 +436,7 @@ public class AppController {
 
                 //occhio a BirthData
                 stage.setUserData(Model.getModel().createWorker("SEASONAL", indirizzo, new ArrayList<Job>(),
-                        new BirthData(data, "", ""), langlist, licenselist, veicolo,
+                        new BirthData(data, nazionalita, luogoNascita), langlist, licenselist, veicolo,
                             citieslist, seasonlist, new Person(new Record(nome_emergenza, cognome_emergenza, cellulare_emergenza, postaelettronica_emergenza)),
                                 new Record(nome, cognome, cellulare, postaelettronica)));
                 //stage.setUserData(new SeasonalWorker(12));
@@ -541,6 +560,140 @@ public class AppController {
     }
 
     public void updateFieldHandler(ActionEvent actionEvent) {
+        String regex;
+
+        String indirizzoAggiornato = updateAddress.getText();
+        if (!indirizzoAggiornato.isEmpty()) {
+            regex = "^[a-z]+ .+,? (?:n.)?[0-9]+.*$";
+            if (!Pattern.matches(regex, indirizzoAggiornato)) {
+                System.err.println("indirizzo aggiornato è sbagliato");
+                setError(updateAddress, errorField);
+            } else {
+                unSetError(updateAddress);
+            }
+        } else {
+            indirizzoAggiornato = null;
+        }
+
+        String emailAggiornata = updateEmail.getText();
+        if (!emailAggiornata.isEmpty()) {
+            regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            if (!Pattern.matches(regex, emailAggiornata)) {
+                System.err.println("email aggiornata è sbagliata");
+                setError(updateEmail, errorField);
+            } else {
+                unSetError(updateEmail);
+            }
+        } else {
+            emailAggiornata = null;
+        }
+
+        String cellulareAggiornato = updateCellnum.getText();
+        if (!cellulareAggiornato.isEmpty()) {
+            regex = "^[0-9]{10}$";
+            if (!Pattern.matches(regex, cellulareAggiornato)) {
+                System.err.println("cellulare aggiornato è sbagliato");
+                setError(updateCellnum, errorField);
+            } else {
+                unSetError(updateCellnum);
+            }
+        } else {
+            cellulareAggiornato = null;
+        }
+
+        // Ale per te <3
+        // TODO
+        // with vehicle
+
+        // TODO
+        // i campi nei menu a tendina
+
+        String nomeEmergenzaAggiornato = updateEmergencyName.getText();
+        if (!nomeEmergenzaAggiornato.isEmpty()) {
+            regex = "^[a-zA-Z]+";
+            if (!Pattern.matches(regex, nomeEmergenzaAggiornato)) {
+                System.err.println("nome emergenza aggiornato è sbagliato");
+                setError(updateEmergencyName, errorField);
+            } else {
+                unSetError(updateEmergencyName);
+            }
+        } else {
+            nomeEmergenzaAggiornato = null;
+        }
+
+        String cognomeEmergenzaAggiornato = updateEmergencySurname.getText();
+        if (!cognomeEmergenzaAggiornato.isEmpty()) {
+            regex = "^[a-zA-Z]+";
+            if (!Pattern.matches(regex, cognomeEmergenzaAggiornato)) {
+                System.err.println("cognome emergenza aggiornato è sbagliato");
+                setError(updateEmergencySurname, errorField);
+            } else {
+                unSetError(updateEmergencySurname);
+            }
+        } else {
+            cognomeEmergenzaAggiornato = null;
+        }
+
+        String emailEmergenzaAggiornato = updateEmergencyEmail.getText();
+        if (!emailEmergenzaAggiornato.isEmpty()) {
+            regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            if (!Pattern.matches(regex, emailEmergenzaAggiornato)) {
+                System.err.println("email emergenza aggiornata è sbagliata");
+                setError(updateEmergencyEmail, errorField);
+            } else {
+                unSetError(updateEmergencyEmail);
+            }
+        } else {
+            emailEmergenzaAggiornato = null;
+        }
+
+        String cellulareEmergenzaAggiornato = updateEmergencyCellnum.getText();
+        if (!cellulareEmergenzaAggiornato.isEmpty()) {
+            regex = "^[0-9]{10}$";
+            if (!Pattern.matches(regex, cellulareEmergenzaAggiornato)) {
+                System.err.println("cellulare emergenza aggiornato è sbagliato");
+                setError(updateEmergencyCellnum, errorField);
+            } else {
+                unSetError(updateEmergencyCellnum);
+            }
+        } else {
+            cellulareEmergenzaAggiornato = null;
+        }
+
+        // TODO
+        // aggiungere i controlli sui campi mancanti
+        if (indirizzoAggiornato != null || emailAggiornata != null || cellulareAggiornato != null ||
+            nomeEmergenzaAggiornato != null || cognomeEmergenzaAggiornato != null ||
+                emailEmergenzaAggiornato != null || cellulareEmergenzaAggiornato != null)
+        {
+
+            Stage stage = (Stage) next.getScene().getWindow();
+            Parent content3;
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(Utility.class.getResource("/view/UpdateExp.fxml"));
+                content3 = loader.load();
+                Scene scene = new Scene(content3, 850, 900);
+                stage.setMinWidth(900);
+                stage.setMinHeight(900);
+                stage.getIcons().add(new Image(String.valueOf(Utility.class.getResource("/icon/icon.png"))));
+
+                // occhio a lingue, patentie, città e veicoli
+                stage.setUserData(Model.getModel().createWorker("SEASONAL", indirizzoAggiornato, new ArrayList<Job>(),
+                        null,
+                        langlist, licenselist, veicolo,  citieslist, seasonlist,
+                        new Person(new Record(nomeEmergenzaAggiornato, cognomeEmergenzaAggiornato, cellulareEmergenzaAggiornato, emailEmergenzaAggiornato)),
+                        new Record(null, null, cellulareAggiornato, emailAggiornata)));
+                //stage.setUserData(new SeasonalWorker(12));
+                stage.setTitle("SeasonalWorkApp");
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         Utility.changeScene("UpdateExp.fxml", stage);
     }
@@ -548,5 +701,19 @@ public class AppController {
     public void updateExpHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         Utility.changeScene("Home.fxml", stage);
+    }
+
+    public void addActivityArea(ActionEvent actionEvent) {
+        Stage stage = (Stage) insertRecord.getScene().getWindow();
+
+        if (((SeasonalWorker) (stage.getUserData())) == null) {
+            stage.setUserData(new SeasonalWorker(12));
+        }
+
+        List<City> listaCitta = ((SeasonalWorker) (stage.getUserData())).getActivityArea();
+
+        listaCitta.add((City) updateActivityArea.getValue());
+
+
     }
 }

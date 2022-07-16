@@ -4,52 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5792985-788a-423b-bfae-5913cfe123e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/view/UpdateChoiche.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/view/UpdateExp.fxml" afterDir="false" />
+    <list default="true" id="64c86fc8-88b9-47b7-8376-2aff8acb61cb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Control/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Control/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SeasonalWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SeasonalWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/database/workers.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Insert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/InsertExp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/InsertExp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/workers.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/workers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Insert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/InsertExp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/InsertExp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/Update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Update.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="CSS File" />
-        <option value="FxmlFile" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,31 +30,29 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2BwV24WKzECWjcyupwBLDNUI0HU" />
+  <component name="ProjectId" id="2C1n5zBSqWDXzXSaLJh9dBwHjOb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/resources/database" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/main" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Launcher">
-    <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Model.Home" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Launcher.Launcher">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Control.Launcher" />
       <module name="p1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Model.*" />
+          <option name="PATTERN" value="Control.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,11 +60,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <configuration name="Launcher.Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Launcher.Launcher" />
-      <module name="SesonalWorkApp" />
+      <module name="p1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Launcher.*" />
@@ -108,58 +73,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher.Launcher" />
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.Home" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f5792985-788a-423b-bfae-5913cfe123e7" name="Changes" comment="" />
-      <created>1657816924652</created>
+      <changelist id="64c86fc8-88b9-47b7-8376-2aff8acb61cb" name="Changes" comment="" />
+      <created>1657978778948</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1657816924652</updated>
-      <workItem from="1657816925818" duration="5827000" />
-      <workItem from="1657865977429" duration="17349000" />
-      <workItem from="1657892909586" duration="57000" />
-      <workItem from="1657893357038" duration="69000" />
-      <workItem from="1657893439149" duration="1205000" />
-      <workItem from="1657895492130" duration="10567000" />
+      <updated>1657978778948</updated>
+      <workItem from="1657978780147" duration="4866000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SesonalWorkApp$Esercizio4_fxml__1_.ic" NAME="Esercizio4_fxml (1) Coverage Results" MODIFIED="1657626349739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>it.univr.*</FILTER>
-    </SUITE>
   </component>
 </project>

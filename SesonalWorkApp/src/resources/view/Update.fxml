@@ -59,7 +59,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="nameAzienda" prefHeight="29.0" prefWidth="172.0" promptText="Insert address..." styleClass="field" translateX="-30.0">
+                                <TextField fx:id="updateAddress" prefHeight="29.0" prefWidth="172.0" promptText="Insert address..." styleClass="field" translateX="-30.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" />
                                     </HBox.margin></TextField>
@@ -78,7 +78,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="nameAzienda1" prefHeight="29.0" prefWidth="172.0" promptText="Insert email..." styleClass="field" translateX="-15.0">
+                        <TextField fx:id="updateEmail" prefHeight="29.0" prefWidth="172.0" promptText="Insert email..." styleClass="field" translateX="-15.0">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin>
@@ -98,7 +98,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="nameAzienda2" prefHeight="29.0" prefWidth="172.0" promptText="Insert telephone..." styleClass="field" translateX="-4.0">
+                        <TextField fx:id="updateCellnum" prefHeight="29.0" prefWidth="172.0" promptText="Insert telephone..." styleClass="field" translateX="-4.0">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin>
@@ -113,12 +113,12 @@
                   </HBox>
                         <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0">
                             <children>
-                                <Label text="With veichle">
+                                <Label text="With vehicle">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                        <ToggleButton mnemonicParsing="false" text="yes" translateX="-2.0" />
+                        <ToggleButton fx:id="updateVehicle" mnemonicParsing="false" text="yes" translateX="-2.0" />
                             </children>
                             <padding>
                                 <Insets bottom="20.0" />
@@ -131,7 +131,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <ChoiceBox fx:id="citta" prefWidth="150.0" translateX="-40.0">
+                                <ChoiceBox fx:id="updateActivityArea" prefWidth="150.0" translateX="-40.0">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
                                             <String fx:value="VERONA" />
@@ -144,7 +144,7 @@
                                         </FXCollections>
                                     </items>
                                 </ChoiceBox>
-                        <Button mnemonicParsing="false" text="add" translateX="-100.0" translateY="-5.0">
+                        <Button mnemonicParsing="false" text="Add" onAction="#addActivityArea" translateX="-100.0" translateY="-5.0">
                            <HBox.margin>
                               <Insets left="70.0" />
                            </HBox.margin>
@@ -161,13 +161,24 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <ChoiceBox fx:id="periodo" prefWidth="150.0" translateX="23.0">
+                                <ChoiceBox fx:id="updateLicense" prefWidth="150.0" translateX="23.0">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="WINTER" />
-                                            <String fx:value="SPRING" />
-                                            <String fx:value="FALL" />
-                                            <String fx:value="SUMMER" />
+                                            <String fx:value="AM" />
+                                            <String fx:value="A1" />
+                                            <String fx:value="A2" />
+                                            <String fx:value="A" />
+                                            <String fx:value="B1" />
+                                            <String fx:value="B" />
+                                            <String fx:value="C1" />
+                                            <String fx:value="C" />
+                                            <String fx:value="D1" />
+                                            <String fx:value="D" />
+                                            <String fx:value="BE" />
+                                            <String fx:value="C1E" />
+                                            <String fx:value="CE" />
+                                            <String fx:value="D1E" />
+                                            <String fx:value="DE" />
                                         </FXCollections>
                                     </items>
                                 </ChoiceBox>
@@ -184,20 +195,13 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <ChoiceBox fx:id="job" prefHeight="24.0" prefWidth="209.0" translateX="1.0">
+                                <ChoiceBox fx:id="updateLanguages" prefHeight="24.0" prefWidth="209.0" translateX="1.0">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="FARMER" />
-                                            <String fx:value="CHEF" />
-                                            <String fx:value="CONSTRUCTIONWORKER" />
-                                            <String fx:value="WAITER" />
-                                            <String fx:value="BUSDRIVER" />
-                                            <String fx:value="ELETRICIAN" />
-                                            <String fx:value="MAINTAINTER" />
-                                            <String fx:value="LIFEGUARD" />
-                                            <String fx:value="OFFICEWORKER" />
-                                            <String fx:value="PIZZAMAKER" />
-                                            <String fx:value="SAILINGINSTRUCTOR" />
+                                            <String fx:value="ITALIAN" />
+                                            <String fx:value="ENGLISH" />
+                                            <String fx:value="GERMAN" />
+                                            <String fx:value="FRENCH" />
                                         </FXCollections>
                                     </items>
                                 </ChoiceBox>
@@ -239,7 +243,7 @@
                                     <Insets left="10.0" />
                                  </padding>
                               </Label>
-                              <TextField fx:id="nameAzienda3" prefHeight="29.0" prefWidth="172.0" promptText="Insert name..." styleClass="field" translateX="-20.0">
+                              <TextField fx:id="updateEmergencyName" prefHeight="29.0" prefWidth="172.0" promptText="Insert name..." styleClass="field" translateX="-20.0">
                                  <HBox.margin>
                                     <Insets bottom="5.0" />
                                  </HBox.margin>
@@ -259,7 +263,7 @@
                                     <Insets left="10.0" />
                                  </padding>
                               </Label>
-                              <TextField fx:id="nameAzienda31" prefHeight="29.0" prefWidth="172.0" promptText="Insert surname..." styleClass="field" translateX="-40.0">
+                              <TextField fx:id="updateEmergencySurname" prefHeight="29.0" prefWidth="172.0" promptText="Insert surname..." styleClass="field" translateX="-40.0">
                                  <HBox.margin>
                                     <Insets bottom="5.0" />
                                  </HBox.margin>
@@ -279,7 +283,7 @@
                                     <Insets left="10.0" />
                                  </padding>
                               </Label>
-                              <TextField fx:id="nameAzienda32" prefHeight="29.0" prefWidth="172.0" promptText="Insert email..." styleClass="field" translateX="-20.0">
+                              <TextField fx:id="updateEmergencyEmail" prefHeight="29.0" prefWidth="172.0" promptText="Insert email..." styleClass="field" translateX="-20.0">
                                  <HBox.margin>
                                     <Insets bottom="5.0" />
                                  </HBox.margin>
@@ -299,7 +303,7 @@
                                     <Insets left="10.0" />
                                  </padding>
                               </Label>
-                              <TextField fx:id="nameAzienda33" prefHeight="29.0" prefWidth="172.0" promptText="Insert telephone..." styleClass="field" translateX="-10.0">
+                              <TextField fx:id="updateEmergencyCellnum" prefHeight="29.0" prefWidth="172.0" promptText="Insert telephone..." styleClass="field" translateX="-10.0">
                                  <HBox.margin>
                                     <Insets bottom="5.0" />
                                  </HBox.margin>

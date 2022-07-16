@@ -384,7 +384,7 @@
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                                     <Label text="With vehicle" translateY="17.0" />
-                        <ToggleButton fx:id="veichle" mnemonicParsing="false" text="yes" translateX="10.0" translateY="10.0" />
+                        <ToggleButton fx:id="vehicle" mnemonicParsing="false" text="yes" translateX="10.0" translateY="10.0" />
                      </children>
                   </HBox>
                </children>
