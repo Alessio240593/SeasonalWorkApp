@@ -19,7 +19,15 @@ public class Model {
         return new Job(period, companyName, task, area, grossDailySalary, job, year);
     }
 
-    public Worker createWorker(String type, String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
+    public TableViewModel createRecord(String name, String surname, String email, String cell, String birthDate, String birthPlace) {
+        return new TableViewModel(name, surname, email, cell, birthDate, birthPlace);
+    }
+
+    public Worker createWorker(String type, String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, Boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
         return FactoryModel.getWorker(type, address, pastExperience, brithInfo, languages, liscense, withVehicle, activityArea, period, emergencyContact, record);
+    }
+
+    public Worker createWithOutIdWorker(String type, int id, String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, Boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
+        return FactoryModel.getWithoutIdWorker(type, id, address, pastExperience, brithInfo, languages, liscense, withVehicle, activityArea, period, emergencyContact, record);
     }
 }

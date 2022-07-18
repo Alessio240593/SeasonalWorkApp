@@ -11,147 +11,199 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" minHeight="980.0" minWidth="850.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AppController">
+<AnchorPane fx:id="pane" minHeight="980.0" minWidth="850.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AppController">
     <children>
-        <BorderPane layoutY="9.0" prefHeight="27.0" prefWidth="671.0">
-            <right>
-                <HBox fx:id="topBox" minWidth="696.0" prefHeight="76.0" prefWidth="866.0" spacing="20.0" style="-fx-background-color: lightGreen;" translateY="-9.0" BorderPane.alignment="CENTER">
+        <HBox layoutY="-1.0" minWidth="188.0" prefHeight="55.0" prefWidth="187.0" style="-fx-background-color: #347235;">
+            <children>
+                <Label text="MENU" textFill="WHITE" translateX="55.0" translateY="10.0">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <VBox fx:id="menuBox" layoutX="-5.0" layoutY="52.0" minWidth="150.0" prefHeight="932.0" prefWidth="193.0" spacing="15.0" style="-fx-background-color: #12AD2B;">
+            <children>
+                <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="50.0">
                     <children>
-                        <ImageView fitHeight="76.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../icon/icon.png" />
+                                <Image url="@../home/home.png" />
                             </image>
                         </ImageView>
-                        <Label minWidth="520.0" prefHeight="76.0" prefWidth="588.0" styleClass="title" text="SEASONALWORKAPP" translateX="20.0" />
+                        <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Home" textFill="WHITE" />
                     </children>
                 </HBox>
-            </right>
-        </BorderPane>
-        <VBox fx:id="menuBox" layoutX="1.0" layoutY="75.0" minWidth="150.0" prefHeight="910.0" prefWidth="150.0" spacing="15.0" style="-fx-background-color: Aquamarine;">
-            <children>
-                <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="113.0" text="Home" translateY="25.0" />
-                <Button minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="113.0" text="Search" translateY="70.0" />
-                <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="Insert" translateY="70.0" />
-                <Button fx:id="updateRecord" onAction="#updateHandler"  minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="Update" translateY="70.0" />
-                <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="LogOut" translateY="143.0" />
-                <Button fx:id="exit" minWidth="120.0" onAction="#exitHandler" prefHeight="40.0" prefWidth="113.0" styleClass="button" text="Exit" translateY="140.0" />
+                <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="100.0">
+                    <children>
+                        <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
+                            <image>
+                                <Image url="@../home/find.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="search" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="100.0">
+                    <children>
+                        <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
+                            <image>
+                                <Image url="@../home/add.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" styleClass="sideMenu" text="Insert" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="100.0">
+                    <children>
+                        <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
+                            <image>
+                                <Image url="@../home/update.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="updateRecord" minWidth="120.0" mnemonicParsing="false" onAction="#updateHandler" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Update" textFill="WHITE" translateX="-5.0" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="200.0">
+                    <children>
+                        <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
+                            <image>
+                                <Image url="@../home/logout.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="LogOut" textFill="WHITE" translateX="-4.0" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="200.0">
+                    <children>
+                        <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
+                            <image>
+                                <Image url="@../home/exit.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="exit" minWidth="120.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Exit" textFill="WHITE" />
+                    </children>
+                </HBox>
             </children>
         </VBox>
-      <Label layoutX="167.0" layoutY="82.0" styleClass="title" text="Insert worker data" />
-      <HBox layoutX="159.0" layoutY="138.0" prefHeight="202.0" prefWidth="648.0">
+      <HBox layoutX="215.0" layoutY="69.0" prefHeight="344.0" prefWidth="640.0" style="-fx-background-color: white;">
          <children>
-              <VBox fx:id="vbox" prefHeight="202.0" prefWidth="348.0" translateY="-20.0">
+              <VBox fx:id="vbox" prefHeight="341.0" prefWidth="346.0" translateY="-20.0">
                   <children>
-                      <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+                  <Label styleClass="title" text="Insert worker data" translateX="5.0" translateY="20.0" />
+                      <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0" translateY="10.0">
                           <children>
-                              <Label text="Nome">
+                              <Label text="Name" translateY="30.0">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="name" prefHeight="29.0" prefWidth="172.0" styleClass="field">
+                        <TextField fx:id="name" prefHeight="29.0" prefWidth="172.0" promptText="Insert name..." styleClass="field" translateY="23.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" />
-                           </HBox.margin></TextField>
+                              <Insets bottom="8.0" />
+                           </HBox.margin>
+                        </TextField>
                           </children>
                      <opaqueInsets>
                         <Insets left="10.0" />
                      </opaqueInsets>
                       </HBox>
-                      <HBox prefHeight="32.0" prefWidth="550.0" spacing="50.0">
+                      <HBox prefHeight="32.0" prefWidth="550.0" spacing="50.0" translateY="35.0">
                           <children>
-                              <Label text="Cognome">
+                              <Label text="Surname">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="surname" prefHeight="29.0" prefWidth="171.0" styleClass="field">
+                        <TextField fx:id="surname" prefHeight="29.0" prefWidth="171.0" promptText="Insert surname..." styleClass="field" translateX="5.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" />
-                           </HBox.margin></TextField>
+                              <Insets bottom="8.0" />
+                           </HBox.margin>
+                        </TextField>
                           </children>
                       </HBox>
-                  <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0">
+                  <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="35.0">
                      <children>
                         <Label text="Cell">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="cellnum" prefWidth="171.0" styleClass="field" translateX="68.0">
+                        <TextField fx:id="cellnum" prefWidth="171.0" promptText="Insert telephone..." styleClass="field" translateX="68.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="8.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                      <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0">
+                      <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0" translateY="35.0">
                           <children>
-                              <Label text="Indirizzo">
+                              <Label text="Address">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="address" prefWidth="171.0" styleClass="field" translateX="-3.0">
+                        <TextField fx:id="address" prefWidth="171.0" promptText="Insert address..." styleClass="field" translateX="-3.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="8.0" />
                            </HBox.margin>
                         </TextField>
                           </children>
                       </HBox>
-                      <HBox prefHeight="29.0" prefWidth="437.0" spacing="18.0">
+                      <HBox prefHeight="29.0" prefWidth="437.0" spacing="18.0" translateY="35.0">
                           <children>
                         <Label text="Email">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="email" prefHeight="29.0" prefWidth="202.0" styleClass="field" translateX="57.0">
+                        <TextField fx:id="email" prefHeight="29.0" prefWidth="202.0" promptText="Insert email..." styleClass="field" translateX="57.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" />
-                           </HBox.margin></TextField>
+                              <Insets bottom="8.0" />
+                           </HBox.margin>
+                        </TextField>
                           </children>
                       </HBox>
-                  <HBox prefHeight="16.0" prefWidth="550.0" spacing="18.0">
+                  <HBox prefHeight="16.0" prefWidth="550.0" spacing="18.0" translateY="35.0">
                      <children>
-                              <Label text="Data di Nascita">
+                              <Label text="Birth data">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <DatePicker fx:id="date" prefHeight="30.0" prefWidth="175.0" styleClass="field">
+                        <DatePicker fx:id="date" prefHeight="30.0" prefWidth="175.0" styleClass="field" translateX="30.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="8.0" />
                            </HBox.margin>
                         </DatePicker>
                      </children>
                   </HBox>
-                  <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0">
+                  <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0" translateY="35.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="104.0" text="Nazionalità">
+                        <Label prefHeight="18.0" prefWidth="104.0" text="Nationality">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="nazionalità" prefWidth="171.0" styleClass="field" translateX="-28.0">
+                        <TextField fx:id="nazionalità" prefWidth="171.0" promptText="Insert nationality..." styleClass="field" translateX="-45.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="8.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0">
+                  <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0" translateY="40.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="186.0" text="Luogo di nascita">
+                        <Label prefHeight="18.0" prefWidth="186.0" text="Birth place">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="cittàNascita" prefWidth="171.0" styleClass="field" translateX="-67.0">
+                        <TextField fx:id="cittàNascita" prefWidth="171.0" promptText="Insert birth place..." styleClass="field" translateX="-90.0">
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin>
@@ -160,100 +212,83 @@
                   </HBox>
                   </children>
               </VBox>
-            <VBox prefHeight="202.0" prefWidth="343.0">
+            <VBox prefHeight="323.0" prefWidth="296.0" translateX="-13.0">
                <children>
-                  <HBox prefHeight="29.0" prefWidth="202.0" spacing="72.0">
+                  <Label styleClass="title" text="Insert emergency contact" />
+                  <HBox prefHeight="28.0" prefWidth="296.0" spacing="18.0" translateY="10.0">
                      <children>
-                        <Label text="Nome">
+                        <Label text="Name" translateY="10.0">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="emergency_name" prefHeight="29.0" prefWidth="171.0" styleClass="field">
+                        <TextField fx:id="emergency_name" prefHeight="29.0" prefWidth="197.0" promptText="Insert contact name.." styleClass="field" translateX="40.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" />
-                           </HBox.margin>
-                        </TextField>
-                     </children>
-                     <opaqueInsets>
-                        <Insets left="10.0" />
-                     </opaqueInsets>
-                  </HBox>
-                  <HBox prefHeight="32.0" prefWidth="550.0" spacing="50.0">
-                     <children>
-                        <Label text="Cognome">
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <TextField fx:id="emergency_surname" prefHeight="29.0" prefWidth="169.0" styleClass="field">
-                           <HBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="5.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0">
+                  <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
                      <children>
-                        <Label text="Cell" translateY="5">
+                        <Label text="Surname" translateY="10.0">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="emergency_cellnum" prefWidth="171.0" styleClass="field" translateX="68.0" />
+                        <TextField fx:id="emergency_surname" prefHeight="29.0" prefWidth="197.0" promptText="Insert contact surname..." styleClass="field" translateX="25.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
                      </children>
                   </HBox>
-               </children>
-               <HBox.margin>
-                  <Insets left="50.0" />
-               </HBox.margin>
-                <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0">
-                    <children>
+                  <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
+                     <children>
                         <Label text="Email" translateY="10.0">
-                            <padding>
-                                <Insets left="10.0" />
-                            </padding>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
                         </Label>
-                        <TextField fx:id="emergency_email" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="57.0">
-                            <HBox.margin>
-                                <Insets bottom="5.0" top="5.0" />
-                            </HBox.margin>
+                        <TextField fx:id="emergency_email" prefHeight="29.0" prefWidth="197.0" promptText="Insert contact email..." styleClass="field" translateX="47.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </HBox.margin>
                         </TextField>
-                    </children>
-                </HBox>
-               <TextField fx:id="errorEmergencyField" disable="true" minWidth="100.0" prefHeight="26.0" prefWidth="365.0" translateX="20.0" translateY="50.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
+                     <children>
+                        <Label text="Cell" translateY="10.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="emergency_cellnum" prefHeight="29.0" prefWidth="197.0" promptText="Insert contact telephone..." styleClass="field" translateX="57.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="errorEmergencyField" disable="true" minWidth="100.0" prefHeight="26.0" prefWidth="365.0">
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
             </VBox>
          </children>
       </HBox>
-      <Label layoutX="519.0" layoutY="82.0" styleClass="title" text="Insert emergency contact" />
-      <Label layoutX="163.0" layoutY="419.0" styleClass="title" text="Insert worker profile data " />
-      <VBox layoutX="164.0" layoutY="459.0" prefHeight="587.0" prefWidth="793.0">
+      <VBox layoutX="214.0" layoutY="481.0" prefHeight="424.0" prefWidth="640.0" style="-fx-background-color: white;">
          <children>
-            <Label text="Select language">
-               <padding>
-                  <Insets bottom="15.0" />
-               </padding>
-            </Label>
-            <HBox fx:id="languages" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
-               <children>
-                  <CheckBox fx:id="ita" mnemonicParsing="false" text="Italian" />
-                  <CheckBox fx:id="eng" mnemonicParsing="false" text="English" />
-                  <CheckBox fx:id="deu" mnemonicParsing="false" text="German" />
-                  <CheckBox fx:id="fra" mnemonicParsing="false" text="French" />
-               </children>
-               <opaqueInsets>
-                  <Insets left="10.0" />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </HBox>
-            <Label text="Select license">
+            <Label styleClass="title" text="Insert worker profile data " translateX="5.0" />
+            <Label text="Select license" translateX="5.0">
                <padding>
                   <Insets bottom="15.0" top="12.0" />
                </padding>
             </Label>
-            <HBox fx:id="license1" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="license1" prefHeight="29.0" prefWidth="550.0" spacing="72.0" translateX="5.0">
                <children>
                   <CheckBox fx:id="AM" mnemonicParsing="false" text="AM" />
                   <CheckBox fx:id="A1" mnemonicParsing="false" text="A1" />
@@ -265,7 +300,7 @@
                   <Insets left="10.0" />
                </opaqueInsets>
             </HBox>
-            <HBox fx:id="license2" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="license2" prefHeight="29.0" prefWidth="550.0" spacing="72.0" translateX="5.0">
                <children>
                   <CheckBox fx:id="B" mnemonicParsing="false" text="B" />
                   <CheckBox fx:id="C1" mnemonicParsing="false" text="C1" translateX="12.0" />
@@ -279,8 +314,11 @@
                <padding>
                   <Insets top="12.0" />
                </padding>
+               <VBox.margin>
+                  <Insets top="4.0" />
+               </VBox.margin>
             </HBox>
-            <HBox fx:id="license3" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
+            <HBox fx:id="license3" prefHeight="29.0" prefWidth="550.0" spacing="72.0" translateX="5.0" translateY="-5.0">
                <children>
                   <CheckBox fx:id="BE" mnemonicParsing="false" text="BE" />
                   <CheckBox fx:id="C1E" mnemonicParsing="false" text="C1E" translateX="3.0" />
@@ -295,62 +333,16 @@
                   <Insets top="30.0" />
                </padding>
             </HBox>
-            <Label text="Activity area">
-               <padding>
-                  <Insets bottom="15.0" top="12.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets top="15.0" />
-               </VBox.margin>
-            </Label>
-            <HBox fx:id="city1" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
-               <children>
-                  <CheckBox mnemonicParsing="false" text="Verona" />
-                  <CheckBox mnemonicParsing="false" text="Vicenza" translateX="-3.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </CheckBox>
-                  <CheckBox mnemonicParsing="false" text="Padova" translateX="-3.0" />
-                  <CheckBox mnemonicParsing="false" text="Rovigo" translateX="-2.0" />
-               </children>
-               <opaqueInsets>
-                  <Insets left="10.0" />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets top="50.0" />
-               </VBox.margin>
-               <padding>
-                  <Insets top="-50.0" />
-               </padding>
-            </HBox>
-            <HBox fx:id="city2" prefHeight="29.0" prefWidth="550.0" spacing="72.0">
-               <children>
-                  <CheckBox mnemonicParsing="false" text="Venezia" />
-                  <CheckBox mnemonicParsing="false" text="Belluno" translateX="-8.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </CheckBox>
-                  <CheckBox mnemonicParsing="false" text="Treviso" translateX="-5.0" />
-               </children>
-               <opaqueInsets>
-                  <Insets left="10.0" />
-               </opaqueInsets>
-               <padding>
-                  <Insets top="-45.0" />
-               </padding>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="100.0" prefWidth="690.0">
                <children>
                   <VBox prefHeight="61.0" prefWidth="440.0">
                      <children>
-                        <Label prefHeight="45.0" prefWidth="46.0" text="Period">
+                        <Label prefHeight="45.0" prefWidth="46.0" text="Period" translateX="5.0">
                            <padding>
                               <Insets bottom="15.0" top="12.0" />
                            </padding>
                         </Label>
-                        <HBox fx:id="season" prefHeight="43.0" prefWidth="488.0">
+                        <HBox fx:id="season" prefHeight="43.0" prefWidth="488.0" translateX="5.0">
                            <children>
                               <CheckBox mnemonicParsing="false" text="Winter">
                                  <padding>
@@ -378,14 +370,17 @@
                         </HBox>
                      </children>
                      <padding>
-                        <Insets top="-30.0" />
+                        <Insets top="20.0" />
                      </padding>
                   </VBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                                     <Label text="With vehicle" translateY="17.0" />
-                        <ToggleButton fx:id="veichle" mnemonicParsing="false" text="yes" translateX="10.0" translateY="10.0" />
+                        <ToggleButton fx:id="vehicle" mnemonicParsing="false" text="yes" translateX="10.0" translateY="10.0" />
                      </children>
+                     <padding>
+                        <Insets top="55.0" />
+                     </padding>
                   </HBox>
                </children>
             </HBox>
@@ -397,11 +392,11 @@
                   <Insets top="-80.0" />
                </padding>
                <children>
-                  <Button fx:id="next" mnemonicParsing="false" onAction="#nextInsertHandler" text="Next" translateY="40.0" />
+                  <Button fx:id="next" mnemonicParsing="false" onAction="#nextInsertHandler" text="Next" translateX="5.0" translateY="40.0" />
                   <TextField fx:id="errorField" disable="true" minWidth="100.0" prefHeight="26.0" prefWidth="365.0" translateX="50.0" translateY="40.0" />
                </children>
                <VBox.margin>
-                  <Insets top="-32.0" />
+                  <Insets top="50.0" />
                </VBox.margin>
             </HBox>
          </children>

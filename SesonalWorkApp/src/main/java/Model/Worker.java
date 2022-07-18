@@ -10,7 +10,7 @@ public abstract class Worker extends Person{
     private BirthData brithInfo;
     private List<Language> languages;
     private List<License> license;
-    private boolean withVehicle;
+    private Boolean withVehicle;
     private List<City> activityArea;
     private List<Season> period;
     private Person emergencyContact;
@@ -20,7 +20,7 @@ public abstract class Worker extends Person{
     }
 
     public Worker(String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages,
-                  List<License> license, boolean withVehicle, List<City> activityArea, List<Season> period,
+                  List<License> license, Boolean withVehicle, List<City> activityArea, List<Season> period,
                   Person emergencyContact, Record record) {
 
         super(record);
@@ -75,11 +75,11 @@ public abstract class Worker extends Person{
         this.license = license;
     }
 
-    public boolean isWithVehicle() {
+    public Boolean isWithVehicle() {
         return withVehicle;
     }
 
-    public void setWithVehicle(boolean withVehicle) {
+    public void setWithVehicle(Boolean withVehicle) {
         this.withVehicle = withVehicle;
     }
 

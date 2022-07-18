@@ -24,7 +24,28 @@ public class DaoEmployerImplement implements DaoEmployer{
     }
 
     @Override
-    public void updateRecord(Record record) {
+    public void updateRecord(SeasonalWorker worker) {
+        //write on json
+        Boolean find = false;
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+
+        String path = System.getenv("PWD") + "/src/resources/database/workers.json";
+        List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
+        SeasonalWorker toUpdate = new SeasonalWorker(worker.getId());
+
+        for (SeasonalWorker w : workers) {
+            if(worker.getId() == w.getId()) {
+                toUpdate = w;
+            }
+        }
+
+        String address = worker.getAddress();
+        if(address != null) {
+            toUpdate.setAddress(address);
+        }
+
 
     }
 

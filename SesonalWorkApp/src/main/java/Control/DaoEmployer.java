@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface DaoEmployer {
     List<Job> search(String... filter);
-    void updateRecord(Record record);
+    void updateRecord(SeasonalWorker worker);
     void addRecord(SeasonalWorker worker);
     boolean login(String username, String password);
 

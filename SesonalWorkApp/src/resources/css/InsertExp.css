@@ -29,3 +29,9 @@
     -fx-border-color: red;
     -fx-border-radius: 5;
 }
+
+.success{
+    -fx-border-width: 2;
+    -fx-border-color: green;
+    -fx-border-radius: 5;
+}

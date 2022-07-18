@@ -13,7 +13,7 @@ public class Person {
         this.record = record;
     }
 
-    Record getRecord() {
+    public Record getRecord() {
         return record;
     }
 

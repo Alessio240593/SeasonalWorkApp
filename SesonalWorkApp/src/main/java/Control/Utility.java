@@ -69,7 +69,7 @@ public class Utility {
             content2 = loader.load();
             Scene scene = new Scene(content2, 850, 980);
             stage.setMinWidth(900);
-            stage.setMinHeight(900);
+            stage.setMinHeight(1000);
             stage.getIcons().add(new Image(String.valueOf(Utility.class.getResource("/icon/icon.png"))));
             stage.setTitle("SeasonalWorkApp");
             stage.setScene(scene);
