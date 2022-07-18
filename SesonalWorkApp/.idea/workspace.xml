@@ -5,39 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64c86fc8-88b9-47b7-8376-2aff8acb61cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/TableViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/home/home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Control/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/DaoEmployerImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Control/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Control/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/FactoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/FactoryModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/SeasonalWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SeasonalWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/css/InsertExp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/css/InsertExp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/database/workers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/database/workers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/home/cartoon.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Insert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/InsertExp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/InsertExp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/Update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Update.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/UpdateChoiche.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/UpdateChoiche.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/view/UpdateExp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/UpdateExp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/InsertExp.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/InsertExp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/database/workers.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/workers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/home/cartoon.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Insert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/InsertExp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/InsertExp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Update.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/UpdateChoiche.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/UpdateChoiche.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/UpdateExp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/UpdateExp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +37,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/Control/AppController.java" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -73,25 +50,27 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2C1n5zBSqWDXzXSaLJh9dBwHjOb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/home" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/lotation/Uni/Secondo/Ing Software/Elaborato/SeasonalWorkApp/SesonalWorkApp"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/resources/home" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher.Launcher">
+  <component name="RunManager" selected="Application.SeasonalWorkApp">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Control.Launcher" />
       <module name="p1" />
@@ -105,11 +84,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Launcher.Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SeasonalWorkApp" type="Application" factoryName="Application" temporary="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Launcher.Launcher" />
-      <module name="SesonalWorkApp" />
+      <module name="p1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Launcher.*" />
@@ -122,7 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher.Launcher" />
+        <item itemvalue="Application.SeasonalWorkApp" />
         <item itemvalue="Application.Launcher" />
       </list>
     </recent_temporary>
@@ -138,6 +117,7 @@
       <workItem from="1657978780147" duration="4866000" />
       <workItem from="1657985090891" duration="126000" />
       <workItem from="1657993996532" duration="37660000" />
+      <workItem from="1658163028417" duration="5612000" />
     </task>
     <servers />
   </component>
@@ -154,26 +134,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Control/AppController.java</url>
-          <line>767</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Control/AppController.java</url>
-          <line>392</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Control/AppController.java</url>
-          <line>242</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

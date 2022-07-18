@@ -289,6 +289,7 @@
                    </items>
                </ChoiceBox>
                <Button mnemonicParsing="false" onAction="#addActivityArea" text="Add" translateX="67.0" />
+               <Button id="removeActivityArea" mnemonicParsing="false" onAction="#removeActivityAreaHandler" prefHeight="35.0" prefWidth="98.0" text="Remove" translateX="50.0" />
                <TextField fx:id="cityFeedback" disable="true" prefHeight="24.0" prefWidth="205.0" translateX="90.0" />
             </children>
             <VBox.margin>
@@ -327,6 +328,7 @@
                   </HBox.margin>
                   </ChoiceBox>
                <Button mnemonicParsing="false" onAction="#addLicense" text="Add" translateX="100.0" />
+               <Button id="removeLicense" mnemonicParsing="false" onAction="#removeLicenseHandler" text="Remove" translateX="50.0" />
                <TextField fx:id="licenseFeedback" disable="true" prefHeight="24.0" prefWidth="205.0" translateX="120.0" />
               </children>
               <VBox.margin>
@@ -355,6 +357,11 @@
                       </items>
                   </ChoiceBox>
                <Button mnemonicParsing="false" onAction="#addLanguage" text="Add" translateX="83.0" />
+               <Button id="removeLangauges" mnemonicParsing="false" onAction="#removeLangaugesHandler" text="Remove" translateX="50.0">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
                <TextField fx:id="languageFeedback" disable="true" prefHeight="24.0" prefWidth="209.0" translateX="100.0" />
               </children>
               <VBox.margin>
@@ -379,6 +386,7 @@
                    </items>
                </ChoiceBox>
                <Button mnemonicParsing="false" onAction="#addPeriod" text="Add" translateX="112.0" />
+               <Button id="removePeriod" mnemonicParsing="false" onAction="#removePeriodHandler" text="Remove" translateX="50.0" />
                <TextField fx:id="periodFeedback" disable="true" prefHeight="24.0" prefWidth="209.0" translateX="130.0" />
               </children>
               <VBox.margin>

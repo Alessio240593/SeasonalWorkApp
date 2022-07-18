@@ -13,7 +13,7 @@ public class SeasonalWorker extends Worker{
 
     public SeasonalWorker(String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, Boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
         super(address, pastExperience, brithInfo, languages, liscense, withVehicle, activityArea, period, emergencyContact, record);
-        this.id = 3;//Math.abs(address.hashCode() ^ pastExperience.hashCode() ^ brithInfo.hashCode() ^ languages.hashCode() ^ liscense.hashCode() ^ activityArea.hashCode() ^ period.hashCode() ^ emergencyContact.hashCode() ^ record.hashCode());
+        this.id = Math.abs(address.hashCode() ^ pastExperience.hashCode() ^ brithInfo.hashCode() ^ languages.hashCode() ^ liscense.hashCode() ^ activityArea.hashCode() ^ period.hashCode() ^ emergencyContact.hashCode() ^ record.hashCode());
     }
 
     public SeasonalWorker(int id, String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, Boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
