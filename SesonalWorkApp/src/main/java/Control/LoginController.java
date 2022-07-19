@@ -1,23 +1,13 @@
 package Control;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class LoginController {
-    @FXML
-    private VBox leftSide;
-    @FXML
-    private VBox rightSide;
-    @FXML
-    private Button reset;
     @FXML
     private Button singIn;
     @FXML
@@ -26,9 +16,6 @@ public class LoginController {
     private TextField password;
     @FXML
     private TextField errorField;
-    @FXML
-    private HBox box;
-
 
     public void signInHandler(ActionEvent actionEvent) {
         DaoEmployerImplement tmp = DaoEmployerImplement.getDao();
@@ -39,23 +26,23 @@ public class LoginController {
         else{
             if(username.getText().equals("") && password.getText().equals("")) {
                 errorField.setVisible(true);
-                errorField.setText("Credenziali non inserite");
+                errorField.setText("Please insert credentials");
                 errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px; -fx-font-weight: bolder; -fx-font-family: cursive;");
             }
             else if(password.getText().equals("")){
                 errorField.setVisible(true);
-                errorField.setText("Password non inserita");
-                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+                errorField.setText("Please insert password");
+                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder; -fx-font-family: cursive;");
             }
             else if(username.getText().equals("")){
                 errorField.setVisible(true);
-                errorField.setText("Username non inserito");
-                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+                errorField.setText("Please insert username");
+                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder; -fx-font-family: cursive;");
             }
             else{
                 errorField.setVisible(true);
-                errorField.setText("Le credenziali non sono corrette");
-                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder;");
+                errorField.setText("Incorrect credentials");
+                errorField.setStyle("-fx-text-fill: red; -fx-font-size: 14px;-fx-font-weight: bolder; -fx-font-family: cursive;");
             }
         }
     }

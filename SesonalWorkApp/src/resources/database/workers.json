@@ -1,83 +1,137 @@
 [
   {
-    "id": -320977998,
-    "address": "cc",
-    "pastExperience": [],
+    "id": 1024755810,
+    "address": "ssss",
+    "pastExperience": [
+      {
+        "period": "FALL",
+        "year": 2022,
+        "companyName": "a",
+        "task": "ssss",
+        "area": "VERONA",
+        "grossDailySalary": 1.0,
+        "job": "CHEF"
+      },
+      {
+        "period": "WINTER",
+        "year": 2022,
+        "companyName": "a",
+        "task": "",
+        "area": "VERONA",
+        "grossDailySalary": 1.0,
+        "job": "FARMER"
+      },
+      {
+        "period": "WINTER",
+        "year": 2022,
+        "companyName": "azz",
+        "task": "",
+        "area": "VERONA",
+        "grossDailySalary": 1.0,
+        "job": "FARMER"
+      }
+    ],
     "brithInfo": {
       "birthDate": {
         "year": 2000,
-        "month": 7,
-        "day": 6
+        "month": 6,
+        "day": 30
       },
-      "nationality": "s",
-      "birthplace": "s"
+      "nationality": "ssss",
+      "birthplace": "aaa"
     },
     "languages": [
-      "GERMAN",
-      "FRENCH"
+      "ITALIAN"
     ],
     "license": [
       "A1"
     ],
     "withVehicle": true,
-    "activityArea": [],
-    "period": [
-      "FALL"
+    "activityArea": [
+      "VENEZIA",
+      "VERONA"
     ],
+    "period": [],
     "emergencyContact": {
       "record": {
-        "name": "aa",
-        "surname": "aa",
-        "email": "2222222222",
-        "cellnum": "qq@gmail.cc"
+        "name": "aaaa",
+        "surname": "aaaa",
+        "email": "3456789022",
+        "cellnum": "cicco@hmail.com"
       }
     },
     "record": {
-      "name": "a",
-      "surname": "a",
-      "email": "3333333333",
-      "cellnum": "s@gmail.com"
+      "name": "Alessio",
+      "surname": "Zattoni",
+      "email": "updatediprova@nonva.it",
+      "cellnum": "7777777777"
     }
   },
   {
-    "id": 3,
-    "address": "aa",
-    "pastExperience": [],
+    "id": 1024722810,
+    "address": "ssss",
+    "pastExperience": [
+      {
+        "period": "FALL",
+        "year": 2022,
+        "companyName": "a",
+        "task": "ssss",
+        "area": "VERONA",
+        "grossDailySalary": 1.0,
+        "job": "CHEF"
+      },
+      {
+        "period": "WINTER",
+        "year": 2022,
+        "companyName": "a",
+        "task": "",
+        "area": "VERONA",
+        "grossDailySalary": 1.0,
+        "job": "FARMER"
+      },
+      {
+        "period": "WINTER",
+        "year": 2022,
+        "companyName": "azz",
+        "task": "",
+        "area": "VERONA",
+        "grossDailySalary": 1.0,
+        "job": "FARMER"
+      }
+    ],
     "brithInfo": {
       "birthDate": {
-        "year": 1999,
-        "month": 2,
-        "day": 24
+        "year": 2000,
+        "month": 6,
+        "day": 30
       },
-      "nationality": "a",
-      "birthplace": "ce"
+      "nationality": "ssss",
+      "birthplace": "aaa"
     },
     "languages": [
-      "GERMAN"
+      "ITALIAN"
     ],
     "license": [
-      "C1E"
+      "A1"
     ],
-    "withVehicle": false,
+    "withVehicle": true,
     "activityArea": [
-      "BELLUNO"
+      "VENEZIA"
     ],
-    "period": [
-      "FALL"
-    ],
+    "period": [],
     "emergencyContact": {
       "record": {
-        "name": "de",
-        "surname": "df",
-        "email": "0987654321",
-        "cellnum": "sfdgihj@idfgfdhf.com"
+        "name": "aa",
+        "surname": "aaaa",
+        "email": "3456789022",
+        "cellnum": "cicco@hmail.com"
       }
     },
     "record": {
-      "name": "dd",
-      "surname": "d",
-      "email": "1234567890",
-      "cellnum": "aaaaa@aaaaa.com"
+      "name": "Davide",
+      "surname": "Bragantini",
+      "email": "asssss@gmail.com",
+      "cellnum": "2333333333"
     }
   }
 ]

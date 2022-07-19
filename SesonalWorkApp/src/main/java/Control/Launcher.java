@@ -38,7 +38,7 @@ public class Launcher {
                 .create();
 
         try (BufferedReader br = new BufferedReader(
-                new FileReader("/home/alessio/Scrivania/prova.json"))) {
+                new FileReader("/icons/alessio/Scrivania/prova.json"))) {
             //convert the json string back to object
 
             Type listType = new TypeToken<ArrayList<Launcher>>(){}.getType();
@@ -54,7 +54,7 @@ public class Launcher {
 
             countryObj.add(l1);
 
-            gsonWriterList("/home/alessio/Scrivania/prova.json", gson, countryObj);
+            gsonWriterList("/icons/alessio/Scrivania/prova.json", gson, countryObj);
 
         }
         catch (IOException ex) {
@@ -93,7 +93,7 @@ public class Launcher {
 
         System.out.println(gsonBuilder.toJson(allItems));
 
-        try(FileWriter writer = new FileWriter("/home/alessio/Scrivania/prova.json")) {
+        try(FileWriter writer = new FileWriter("/icons/alessio/Scrivania/prova.json")) {
             gsonBuilder.toJson(allItems, writer);
         } catch (IOException e) {
             e.printStackTrace();

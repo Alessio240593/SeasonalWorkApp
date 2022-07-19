@@ -33,20 +33,16 @@ public class DaoEmployerImplement implements DaoEmployer{
 
         String path = System.getenv("PWD") + "/src/resources/database/workers.json";
         List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
-        SeasonalWorker toUpdate = new SeasonalWorker(worker.getId());
 
         for (SeasonalWorker w : workers) {
             if(worker.getId() == w.getId()) {
-                toUpdate = w;
+                int pos = workers.indexOf(w);
+                workers.remove(w);
+                workers.add(pos, worker);
+                break;
             }
         }
-
-        String address = worker.getAddress();
-        if(address != null) {
-            toUpdate.setAddress(address);
-        }
-
-
+        Utility.gsonWriter(path, gson, workers);
     }
 
     @Override

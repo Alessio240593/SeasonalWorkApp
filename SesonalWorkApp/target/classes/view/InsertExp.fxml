@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" minHeight="800.0" minWidth="950.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AppController">
+<AnchorPane fx:id="pane" minHeight="800.0" minWidth="950.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.InsertExpController">
     <children>
         <HBox layoutY="-1.0" minWidth="188.0" prefHeight="55.0" prefWidth="187.0" style="-fx-background-color: #347235;">
             <children>
@@ -33,7 +33,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/home.png" />
+                                <Image url="@../icons/home.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Home" textFill="WHITE" />
@@ -43,7 +43,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/find.png" />
+                                <Image url="@../icons/find.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="search" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0" />
@@ -53,7 +53,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/add.png" />
+                                <Image url="@../icons/add.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" styleClass="sideMenu" text="Insert" textFill="WHITE" />
@@ -63,7 +63,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/update.png" />
+                                <Image url="@../icons/update.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="updateRecord" minWidth="120.0" mnemonicParsing="false" onAction="#updateHandler" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Update" textFill="WHITE" translateX="-5.0" />
@@ -73,7 +73,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/logout.png" />
+                                <Image url="@../icons/logout.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="LogOut" textFill="WHITE" translateX="-4.0" />
@@ -83,7 +83,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/exit.png" />
+                                <Image url="@../icons/exit.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="exit" minWidth="120.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Exit" textFill="WHITE" />

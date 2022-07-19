@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" minHeight="800.0" minWidth="868.0" prefHeight="984.0" prefWidth="950.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AppController">
+<AnchorPane fx:id="pane" minHeight="800.0" minWidth="950.0" prefHeight="984.0" prefWidth="1000.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.UpdateExpController">
     <children>
         <HBox layoutY="-1.0" minWidth="188.0" prefHeight="55.0" prefWidth="187.0" style="-fx-background-color: #347235;">
             <children>
@@ -33,7 +33,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/home.png" />
+                                <Image url="@../icons/home.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Home" textFill="WHITE" />
@@ -43,7 +43,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/find.png" />
+                                <Image url="@../icons/find.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="search" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0" />
@@ -53,7 +53,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/add.png" />
+                                <Image url="@../icons/add.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" styleClass="sideMenu" text="Insert" textFill="WHITE" />
@@ -63,7 +63,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/update.png" />
+                                <Image url="@../icons/update.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="updateRecord" minWidth="120.0" mnemonicParsing="false" onAction="#updateHandler" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Update" textFill="WHITE" translateX="-5.0" />
@@ -73,7 +73,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/logout.png" />
+                                <Image url="@../icons/logout.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="LogOut" textFill="WHITE" translateX="-4.0" />
@@ -83,7 +83,7 @@
                     <children>
                         <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="5.0">
                             <image>
-                                <Image url="@../home/exit.png" />
+                                <Image url="@../icons/exit.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="exit" minWidth="120.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Exit" textFill="WHITE" />
@@ -91,9 +91,9 @@
                 </HBox>
             </children>
         </VBox>
-        <HBox layoutX="208.0" layoutY="358.0" prefHeight="587.0" prefWidth="710.0">
+        <HBox layoutX="208.0" layoutY="358.0" prefHeight="587.0" prefWidth="769.0">
             <children>
-                <VBox fx:id="vbox" prefHeight="537.0" prefWidth="706.0" style="-fx-background-color: white;">
+                <VBox fx:id="vbox" minWidth="300.0" prefHeight="537.0" prefWidth="824.0" style="-fx-background-color: white;">
                     <children>
                     <Label prefHeight="65.0" prefWidth="472.0" styleClass="title" text="Insert past experience data" translateX="5.0" translateY="-40.0">
                         <font>
@@ -262,7 +262,7 @@
                 </VBox>
             </children>
         </HBox>
-      <VBox layoutX="204.0" layoutY="56.0" prefHeight="300.0" prefWidth="710.0" style="-fx-background-color: white;">
+      <VBox layoutX="204.0" layoutY="56.0" prefHeight="300.0" prefWidth="777.0" style="-fx-background-color: white;">
          <Label prefHeight="65.0" prefWidth="472.0" styleClass="title" text="Insert user data" translateX="5.0">
             <font>
                <Font size="17.0" />
@@ -270,12 +270,12 @@
          </Label>
          <HBox prefHeight="29.0" prefWidth="437.0" spacing="18.0" translateY="40.0">
             <children>
-               <Label text="Activity area" translateX="10.0">
+               <Label prefHeight="16.0" prefWidth="105.0" text="Activity area" translateX="10.0">
                   <padding>
                      <Insets left="10.0" />
                   </padding>
                </Label>
-               <ChoiceBox fx:id="updateActivityArea" prefHeight="24.0" prefWidth="149.0" translateX="40.0">
+               <ChoiceBox fx:id="updateActivityArea" prefHeight="24.0" prefWidth="149.0" translateX="23.0">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
                            <String fx:value="VERONA" />
@@ -288,9 +288,9 @@
                        </FXCollections>
                    </items>
                </ChoiceBox>
-               <Button mnemonicParsing="false" onAction="#addActivityArea" text="Add" translateX="67.0" />
-               <Button id="removeActivityArea" mnemonicParsing="false" onAction="#removeActivityAreaHandler" prefHeight="35.0" prefWidth="98.0" text="Remove" translateX="50.0" />
-               <TextField fx:id="cityFeedback" disable="true" prefHeight="24.0" prefWidth="205.0" translateX="90.0" />
+               <Button minWidth="88.0" mnemonicParsing="false" onAction="#addActivityArea" prefHeight="0.0" prefWidth="0.0" text="Add" translateX="45.0" />
+               <Button id="removeActivityArea" mnemonicParsing="false" onAction="#removeActivityAreaHandler" prefHeight="32.0" prefWidth="122.0" text="Remove" translateX="38.0" />
+               <TextField fx:id="cityFeedback" disable="true" prefHeight="24.0" prefWidth="205.0" translateX="33.0" translateY="5.0" />
             </children>
             <VBox.margin>
                <Insets bottom="10.0" />
@@ -327,9 +327,9 @@
                      <Insets top="5.0" />
                   </HBox.margin>
                   </ChoiceBox>
-               <Button mnemonicParsing="false" onAction="#addLicense" text="Add" translateX="100.0" />
-               <Button id="removeLicense" mnemonicParsing="false" onAction="#removeLicenseHandler" text="Remove" translateX="50.0" />
-               <TextField fx:id="licenseFeedback" disable="true" prefHeight="24.0" prefWidth="205.0" translateX="120.0" />
+               <Button minWidth="88.0" mnemonicParsing="false" onAction="#addLicense" text="Add" translateX="90.0" />
+               <Button id="removeLicense" minWidth="122.0" mnemonicParsing="false" onAction="#removeLicenseHandler" text="Remove" translateX="85.0" />
+               <TextField fx:id="licenseFeedback" disable="true" prefHeight="24.0" prefWidth="205.0" translateX="80.0" translateY="5.0" />
               </children>
               <VBox.margin>
                   <Insets bottom="20.0" top="10.0" />
@@ -338,7 +338,7 @@
           <HBox prefHeight="16.0" prefWidth="550.0" spacing="18.0" />
           <HBox prefHeight="29.0" prefWidth="437.0" spacing="18.0" translateY="40.0">
               <children>
-                  <Label text="Languages" translateX="10.0">
+                  <Label prefHeight="16.0" prefWidth="102.0" text="Languages" translateX="10.0">
                       <padding>
                           <Insets left="10.0" />
                       </padding>
@@ -346,7 +346,7 @@
                      <Insets />
                   </HBox.margin>
                   </Label>
-                  <ChoiceBox fx:id="updateLanguagesBox" prefHeight="24.0" prefWidth="149.0" translateX="50.0">
+                  <ChoiceBox fx:id="updateLanguagesBox" prefHeight="24.0" prefWidth="149.0" translateX="27.0">
                       <items>
                           <FXCollections fx:factory="observableArrayList">
                               <String fx:value="ITALIAN" />
@@ -356,13 +356,13 @@
                           </FXCollections>
                       </items>
                   </ChoiceBox>
-               <Button mnemonicParsing="false" onAction="#addLanguage" text="Add" translateX="83.0" />
-               <Button id="removeLangauges" mnemonicParsing="false" onAction="#removeLangaugesHandler" text="Remove" translateX="50.0">
+               <Button minWidth="88.0" mnemonicParsing="false" onAction="#addLanguage" text="Add" translateX="51.0" />
+               <Button id="removeLangauges" minWidth="122.0" mnemonicParsing="false" onAction="#removeLangaugesHandler" text="Remove" translateX="47.0">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
                </Button>
-               <TextField fx:id="languageFeedback" disable="true" prefHeight="24.0" prefWidth="209.0" translateX="100.0" />
+               <TextField fx:id="languageFeedback" disable="true" prefHeight="24.0" prefWidth="205.0" translateX="39.0" />
               </children>
               <VBox.margin>
                   <Insets bottom="20.0" top="10.0" />
@@ -385,9 +385,9 @@
                        </FXCollections>
                    </items>
                </ChoiceBox>
-               <Button mnemonicParsing="false" onAction="#addPeriod" text="Add" translateX="112.0" />
-               <Button id="removePeriod" mnemonicParsing="false" onAction="#removePeriodHandler" text="Remove" translateX="50.0" />
-               <TextField fx:id="periodFeedback" disable="true" prefHeight="24.0" prefWidth="209.0" translateX="130.0" />
+               <Button minWidth="88.0" mnemonicParsing="false" onAction="#addPeriod" text="Add" translateX="100.0" />
+               <Button id="removePeriod" minWidth="122.0" mnemonicParsing="false" onAction="#removePeriodHandler" text="Remove" translateX="96.0" />
+               <TextField fx:id="periodFeedback" disable="true" prefHeight="24.0" prefWidth="205.0" translateX="90.0" />
               </children>
               <VBox.margin>
                   <Insets bottom="20.0" top="9.0" />
