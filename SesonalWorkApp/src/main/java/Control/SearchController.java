@@ -4,6 +4,9 @@ import Model.Model;
 import Model.SeasonalWorker;
 import Model.TableViewModel;
 import Model.Worker;
+import Model.Language;
+import Model.License;
+import Model.SearchModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,9 +16,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class HomeController {
+public class SearchController {
+
+    @FXML
+    public ChoiceBox languageFilter;
+    @FXML
+    public ChoiceBox languageOrAndFilter;
+    @FXML
+    public ChoiceBox licenseFilter;
+    @FXML
+    public ChoiceBox licenseOrAndFilter;
     @FXML
     private Button updateRecord;
     @FXML
@@ -84,8 +98,65 @@ public class HomeController {
         Utility.changeScene("Login.fxml", stage);
     }
 
-
     public void exitHandler(ActionEvent actionEvent) {
         System.exit(0);
+    }
+
+    public void addLanguageFilter(ActionEvent actionEvent) {
+        Stage stage = (Stage) languageFilter.getScene().getWindow();
+        List<SearchModel> model = (List<SearchModel>) stage.getUserData();
+        if (model == null) {
+            model = new ArrayList<SearchModel>();
+            stage.setUserData(model);
+        }
+
+
+        if (languageFilter.getValue() != null) {
+            Language lang = Language.valueOf((String) languageFilter.getValue());
+
+            if(!model.contains(lang)) {
+                if (model.size() == 0) {
+                    model.add(new SearchModel(lang, null));
+                }
+                else {
+                    if (languageOrAndFilter.getValue() != null) {
+                        model.add(new SearchModel(lang, (String) languageOrAndFilter.getValue()));
+                    }
+                    else {
+                        //super errore
+                    }
+                }
+            }
+        }
+        System.out.println(model);
+    }
+
+    public void addLicenseFilter(ActionEvent actionEvent) {
+        Stage stage = (Stage) licenseFilter.getScene().getWindow();
+        List<SearchModel> model = (List<SearchModel>) stage.getUserData();
+        if (model == null) {
+            model = new ArrayList<SearchModel>();
+            stage.setUserData(model);
+        }
+
+
+        if (licenseFilter.getValue() != null) {
+            License lic = License.valueOf((String) licenseFilter.getValue());
+
+            if(!model.contains(lic)) {
+                if (model.size() == 0) {
+                    model.add(new SearchModel(lic, null));
+                }
+                else {
+                    if (licenseOrAndFilter.getValue() != null) {
+                        model.add(new SearchModel(lic, (String) licenseOrAndFilter.getValue()));
+                    }
+                    else {
+                        //super errore
+                    }
+                }
+            }
+        }
+        System.out.println(model);
     }
 }

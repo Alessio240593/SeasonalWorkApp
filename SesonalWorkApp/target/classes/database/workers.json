@@ -133,5 +133,56 @@
       "email": "asssss@gmail.com",
       "cellnum": "2333333333"
     }
+  },
+  {
+    "id": 58483535,
+    "address": "via delle penne 6",
+    "pastExperience": [
+      {
+        "period": "SPRING",
+        "year": 2020,
+        "companyName": "Mannaggia",
+        "task": "",
+        "area": "VICENZA",
+        "grossDailySalary": 898.0,
+        "job": "CHEF"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1998,
+        "month": 7,
+        "day": 16
+      },
+      "nationality": "Senegal",
+      "birthplace": "Mianmar"
+    },
+    "languages": [
+      "GERMAN"
+    ],
+    "license": [
+      "C1"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VICENZA"
+    ],
+    "period": [
+      "FALL"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "M",
+        "surname": "l",
+        "email": "6745367898",
+        "cellnum": "mele@mail.com"
+      }
+    },
+    "record": {
+      "name": "a",
+      "surname": "a",
+      "email": "casa@gmail.com",
+      "cellnum": "2563545362"
+    }
   }
 ]
