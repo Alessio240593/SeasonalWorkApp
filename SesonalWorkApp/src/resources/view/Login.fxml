@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="950.0" minWidth="950.0" prefHeight="765.0" prefWidth="756.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.LoginController">
+<AnchorPane minHeight="950.0" minWidth="950.0" prefHeight="765.0" prefWidth="756.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
    <children>
       <HBox fx:id="box" layoutX="27.0" layoutY="69.0" prefHeight="855.0" prefWidth="831.0" spacing="40.0" style="-fx-background-color: #E5E4E2;">
          <children>

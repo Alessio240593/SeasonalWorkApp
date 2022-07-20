@@ -1,12 +1,13 @@
 package Model;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+import java.util.Objects;
 
 public class SearchModel {
-
-    Object filter;
-    String type;
+    private Object filter;
+    private String type;
 
     @Override
     public String toString() {
@@ -21,4 +22,32 @@ public class SearchModel {
         this.type = value;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SearchModel that = (SearchModel) o;
+        return Objects.equals(filter, that.filter) && Objects.equals(type, that.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(filter, type);
+    }
+
+    public Object getFilter() {
+        return filter;
+    }
+
+    public void setFilter(Object filter) {
+        this.filter = filter;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

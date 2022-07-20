@@ -5,8 +5,9 @@ module Main {
     requires javafx.graphics;
     requires com.google.gson;
     requires com.jfoenix;
+    requires java.scripting;
 
-    opens Control;
+    opens Controller;
     opens Model;
     opens Launcher;
 }

@@ -23,6 +23,10 @@ public class Model {
         return new TableViewModel(name, surname, email, cell, birthDate, birthPlace);
     }
 
+    public SearchModel createSearchModel(Object filter, String type) {
+        return new SearchModel(filter, type);
+    }
+
     public Worker createWorker(String type, String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, Boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
         return FactoryModel.getWorker(type, address, pastExperience, brithInfo, languages, liscense, withVehicle, activityArea, period, emergencyContact, record);
     }

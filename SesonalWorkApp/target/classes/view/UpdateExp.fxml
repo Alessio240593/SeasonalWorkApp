@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" minHeight="800.0" minWidth="950.0" prefHeight="984.0" prefWidth="1000.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.UpdateExpController">
+<AnchorPane fx:id="pane" minHeight="800.0" minWidth="950.0" prefHeight="984.0" prefWidth="1000.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UpdateExpController">
     <children>
         <HBox layoutY="-1.0" minWidth="188.0" prefHeight="55.0" prefWidth="187.0" style="-fx-background-color: #347235;">
             <children>
@@ -46,7 +46,7 @@
                                 <Image url="@../icons/find.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="search" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0" />
+                        <Button fx:id="search" onAction="#searchHandler" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0" />
                     </children>
                 </HBox>
                 <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="100.0">
