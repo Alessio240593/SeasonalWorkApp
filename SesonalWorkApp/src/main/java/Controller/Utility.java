@@ -3,6 +3,7 @@ package Controller;
 import Model.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -171,9 +173,85 @@ public class Utility {
     }
 
     private static void successStyle(Node field, TextField error) {
-        field.getStyleClass().removeAll("field");
-        field.getStyleClass().add("error");
+        field.getStyleClass().removeAll("error");
+        field.getStyleClass().add("field");
         error.setVisible(true);
         error.setStyle("-fx-text-fill: green; -fx-font-size: 13px;-fx-font-weight: bolder; -fx-border-color: green");
+    }
+
+    public static String getItalianDate(SeasonalWorker tmp) {
+        return (tmp.getBrithInfo().getBirthDate().getDayOfMonth() < 10 ? "0" + tmp.getBrithInfo().getBirthDate().getDayOfMonth() :
+                tmp.getBrithInfo().getBirthDate().getDayOfMonth()) + "/" + (tmp.getBrithInfo().getBirthDate().getMonth().getValue() < 10 ? "0" +
+                tmp.getBrithInfo().getBirthDate().getMonth().getValue() : tmp.getBrithInfo().getBirthDate().getMonth().getValue()) + "/" +
+                tmp.getBrithInfo().getBirthDate().getYear();
+    }
+
+    public static String checkType(Object filter) {
+        Object state = null;
+
+        for(Language lang : Language.values()) {
+            try {
+                state = Language.valueOf(filter.toString().toUpperCase());
+            }
+            catch (IllegalArgumentException ex) {
+                state = null;
+                break;
+            }
+
+            if(lang.equals(Language.valueOf(filter.toString().toUpperCase()))) {
+                return "Language";
+            }
+        }
+
+        for(License lic: License.values()) {
+            try {
+                state = License.valueOf(filter.toString().toUpperCase());
+            }
+            catch (IllegalArgumentException ex) {
+                state = null;
+                break;
+            }
+            if(lic.equals(License.valueOf(filter.toString().toUpperCase()))) {
+                return "License";
+            }
+        }
+
+        for(City city : City.values()) {
+            try {
+                state = City.valueOf(filter.toString().toUpperCase());
+            }
+            catch (IllegalArgumentException ex) {
+                state = null;
+                break;
+            }
+            if(city.equals(City.valueOf(filter.toString().toUpperCase()))) {
+                return "City";
+            }
+        }
+        for(Season season : Season.values()) {
+            try {
+                state = Season.valueOf(filter.toString().toUpperCase());
+            }
+            catch (IllegalArgumentException ex) {
+                state = null;
+                break;
+            }
+            if(season.equals(Season.valueOf(filter.toString().toUpperCase()))) {
+                return "Season";
+            }
+        }
+        for(Jobs job: Jobs.values()) {
+            try {
+                state = Jobs.valueOf(filter.toString().toUpperCase());
+            }
+            catch (IllegalArgumentException ex) {
+                state = null;
+                break;
+            }
+            if(job.equals(Jobs.valueOf(filter.toString().toUpperCase()))) {
+                return "Season";
+            }
+        }
+        return null;
     }
 }

@@ -94,31 +94,22 @@
                 </HBox>
             </children>
         </VBox>
-        <HBox layoutX="201.0" layoutY="54.0" prefHeight="898.0" prefWidth="700.0" style="-fx-background-color: white;">
+        <HBox layoutX="201.0" layoutY="54.0" maxHeight="300.0" minWidth="300.0" prefHeight="479.0" prefWidth="716.0" style="-fx-background-color: white;">
             <children>
-                <VBox fx:id="vbox" minHeight="600.0" minWidth="700.0" prefHeight="857.0" prefWidth="700.0" translateY="-30.0">
+                <VBox fx:id="vbox" minHeight="470.0" minWidth="363.0" prefHeight="470.0" prefWidth="363.0" translateY="-30.0">
                     <children>
-                        <VBox prefHeight="213.0" prefWidth="665.0" spacing="10.0" translateY="50.0">
-                            <children>
-                        <VBox prefHeight="303.0" prefWidth="655.0" spacing="30.0">
+                  <HBox prefHeight="484.0" prefWidth="481.0">
+                     <children>
+                              <VBox prefHeight="213.0" prefWidth="665.0" spacing="10.0">
                            <children>
-                                      <Label prefHeight="65.0" prefWidth="472.0" styleClass="title" text="Search Worker">
-                                          <font>
-                                              <Font size="25.0" />
-                                          </font>
-                                      </Label>
-                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="200.0">
+                              <VBox prefHeight="484.0" prefWidth="385.0" spacing="30.0">
                                  <children>
+                                            <Label prefHeight="65.0" prefWidth="472.0" styleClass="title" text="Search Worker">
+                                                <font>
+                                                    <Font size="25.0" />
+                                                </font>
+                                            </Label>
                                     <Label text="Filter" />
-                                    <Label text="Fields" />
-                                    <Label text="And/or" translateX="-40.0" />
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="10.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="60.0">
-                                 <children>
                                     <ChoiceBox fx:id="filter" prefWidth="150.0">
                                         <items>
                                             <FXCollections fx:factory="observableArrayList">
@@ -126,114 +117,131 @@
                                                 <String fx:value="LICENSE" />
                                                 <String fx:value="PERIOD" />
                                                 <String fx:value="JOB" />
-                                                <String fx:value="ACTIVITY AREA"/>
-                                                <String fx:value="WITH VEHICLE"/>
+                                                <String fx:value="ACTIVITY AREA" />
+                                                <String fx:value="WITH VEHICLE" />
                                             </FXCollections>
                                         </items>
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
                                     </ChoiceBox>
-                                     <ChoiceBox fx:id="filterField" prefWidth="150.0">
-                                         <items>
-                                             <FXCollections fx:factory="observableArrayList">
-                                       </FXCollections>
-                                         </items>
-                                     </ChoiceBox>
-                                    <ChoiceBox fx:id="andOrFilter" prefWidth="150.0">
+                                    <Label text="Fields" />
+                                    <ChoiceBox fx:id="filterField" prefWidth="150.0">
                                         <items>
                                             <FXCollections fx:factory="observableArrayList">
-                                                <String fx:value="AND" />
-                                                <String fx:value="OR" />
                                             </FXCollections>
                                         </items>
                                     </ChoiceBox>
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="23.0" prefWidth="690.0" spacing="130.0">
-                                 <children>
-                                    <Button id="addFilter" mnemonicParsing="false" onAction="#addFilter" prefHeight="32.0" prefWidth="103.0" text="Add" />
-                                    <Button onAction="#resetFilter" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Reset" translateX="-20.0" translateY="2.0" />
-                                    <TextField fx:id="searchFeedback" disable="true" maxWidth="300.0" prefHeight="24.0" prefWidth="211.0" translateX="-45.0" translateY="5.0" />
+                                    <Label text="And/or" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="200.0">
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                     <ChoiceBox fx:id="andOrFilter" prefWidth="150.0" translateY="-20.0">
+                                         <items>
+                                             <FXCollections fx:factory="observableArrayList">
+                                                 <String fx:value="AND" />
+                                                 <String fx:value="OR" />
+                                             </FXCollections>
+                                         </items>
+                                     </ChoiceBox>
+                                    <HBox prefHeight="23.0" prefWidth="690.0" spacing="130.0">
+                                       <children>
+                                          <Button id="addFilter" mnemonicParsing="false" onAction="#addFilter" prefHeight="32.0" prefWidth="101.0" text="Add" translateX="-10.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                          <TableView fx:id="table" maxWidth="285.0" minHeight="100.0" minWidth="226.0" prefHeight="100.0" prefWidth="285.0" translateX="140.0" translateY="-60.0">
+                                              <columns>
+                                                  <TableColumn prefWidth="57.0" text="Type">
+                                                      <cellValueFactory>
+                                                          <PropertyValueFactory property="type" />
+                                                      </cellValueFactory>
+                                                  </TableColumn>
+                                                  <TableColumn prefWidth="227.0" text="Filter">
+                                                      <cellValueFactory>
+                                                          <PropertyValueFactory property="filter" />
+                                                      </cellValueFactory>
+                                                  </TableColumn>
+                                              </columns>
+                                          </TableView>
+                                    <Button mnemonicParsing="false" onAction="#resetFilter" prefHeight="32.0" prefWidth="102.0" text="Reset" translateY="-130.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets left="10.0" />
                                  </VBox.margin>
-                              </HBox>
+                              </VBox>
                            </children>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </VBox>
-                            </children>
-                        </VBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                              <TableView fx:id="table" maxWidth="230.0" minHeight="100.0" minWidth="230.0" prefHeight="97.0" prefWidth="230.0" translateY="-15.0">
-                                  <columns>
-                                      <TableColumn prefWidth="57.0" text="Type">
-                                          <cellValueFactory>
-                                              <PropertyValueFactory property="type" />
-                                          </cellValueFactory>
-                                      </TableColumn>
-                                      <TableColumn prefWidth="172.0" text="Filter">
-                                          <cellValueFactory>
-                                              <PropertyValueFactory property="filter" />
-                                          </cellValueFactory>
-                                      </TableColumn>
-                              <TableColumn prefWidth="172.0" text="Filter">
-                                 <cellValueFactory>
-                                    <PropertyValueFactory property="filter" />
-                                 </cellValueFactory>
-                              </TableColumn>
-                                  </columns>
-                              </TableView>
-                        <Button mnemonicParsing="false" onAction="#searchRecord" text="Search" translateX="50.0" translateY="-20.0">
-                           <HBox.margin>
-                              <Insets top="50.0" />
-                           </HBox.margin>
-                        </Button>
+                              </VBox>
                      </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <VBox.margin>
                         <Insets top="95.0" />
                      </VBox.margin>
                   </HBox>
-                  <Line endX="599.2929077148438" endY="1.6862154006958008E-4" startX="-100.0" translateY="-5.0">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin></Line>
-                        <HBox prefHeight="73.0" prefWidth="586.0" spacing="18.0" translateY="-10.0">
-                            <VBox.margin>
-                                <Insets top="30.0" />
-                            </VBox.margin>
-                        </HBox>
-                  <TableView fx:id="resultTable" maxWidth="670.0" minHeight="511.0" minWidth="670.0" prefHeight="511.0" prefWidth="670.0" translateX="-85.0" translateY="-100.0">
-                     <columns>
-                        <TableColumn prefWidth="106.0" text="Name">
-                           <cellValueFactory>
-                              <PropertyValueFactory property="type" />
-                           </cellValueFactory>
-                        </TableColumn>
-                        <TableColumn prefWidth="123.0" text="Surname">
-                           <cellValueFactory>
-                              <PropertyValueFactory property="filter" />
-                           </cellValueFactory>
-                        </TableColumn>
-                        <TableColumn prefWidth="180.0" text="Cell">
-                           <cellValueFactory>
-                              <PropertyValueFactory property="filter" />
-                           </cellValueFactory>
-                        </TableColumn>
-                        <TableColumn prefWidth="260.0" text="Email" />
-                     </columns>
-                     <VBox.margin>
-                        <Insets left="100.0" top="80.0" />
-                     </VBox.margin>
-                  </TableView>
                     </children>
                 </VBox>
+            <VBox prefHeight="530.0" prefWidth="230.0" spacing="50.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="118.0" text="Nome" translateY="30.0" />
+                  <TextField fx:id="name" translateY="8.0" />
+                  <Label prefHeight="16.0" prefWidth="133.0" text="Cognome" translateY="-7.0" />
+                  <TextField fx:id="surname" prefHeight="0.0" prefWidth="171.0" translateY="-25.0" />
+                  <Label text="And/or" translateY="-50.0" />
+                  <ChoiceBox fx:id="andOrFilter1" prefWidth="150.0" translateY="-55.0">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="AND" />
+                           <String fx:value="OR" />
+                        </FXCollections>
+                     </items>
+                  </ChoiceBox>
+                  <Button mnemonicParsing="false" onAction="#searchRecord" text="Search" translateX="20.0" />
+                  <Button fx:id="addTextFilter" mnemonicParsing="false" onAction="#addTextFilter" prefHeight="32.0" prefWidth="101.0" text="Add" translateX="20.0" translateY="-140.0" />
+                  <TextField fx:id="searchFeedback" disable="true" maxWidth="300.0" prefHeight="24.0" prefWidth="211.0" translateX="-40.0" />
+               </children>
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
+            </VBox>
             </children>
         </HBox>
+      <Line endX="558.0" endY="-5.0" layoutX="359.0" layoutY="529.0" startX="-158.0" startY="-5.0" />
+      <TableView fx:id="resultTable" layoutX="201.0" layoutY="525.0" maxWidth="716.0" minHeight="441.0" minWidth="670.0" prefHeight="446.0" prefWidth="716.0">
+          <columns>
+              <TableColumn prefWidth="75.0" text="Name">
+                  <cellValueFactory>
+                      <PropertyValueFactory property="name" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn prefWidth="75.0" text="Surname">
+                  <cellValueFactory>
+                      <PropertyValueFactory property="surname" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn prefWidth="185.0" text="Email">
+                  <cellValueFactory>
+                      <PropertyValueFactory property="email" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn prefWidth="129.0" text="Cell">
+                  <cellValueFactory>
+                      <PropertyValueFactory property="cell" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn prefWidth="84.0" text="BirthDate">
+                  <cellValueFactory>
+                      <PropertyValueFactory property="birthDate" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn prefWidth="144.0" text="Birth place">
+                  <cellValueFactory>
+                      <PropertyValueFactory property="birthPlace" />
+                  </cellValueFactory>
+              </TableColumn>
+          </columns>
+      </TableView>
     </children>
 
     <stylesheets>

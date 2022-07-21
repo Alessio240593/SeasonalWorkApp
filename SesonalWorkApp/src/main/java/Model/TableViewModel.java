@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Objects;
+
 public class TableViewModel {
     private String name;
     private String surname;
@@ -63,5 +65,18 @@ public class TableViewModel {
 
     public void setBirthPlace(String birthPlace) {
         this.birthPlace = birthPlace;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TableViewModel that = (TableViewModel) o;
+        return Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(email, that.email) && Objects.equals(cell, that.cell) && Objects.equals(birthDate, that.birthDate) && Objects.equals(birthPlace, that.birthPlace);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, email, cell, birthDate, birthPlace);
     }
 }

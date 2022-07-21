@@ -219,6 +219,10 @@ public class InsertController {
         return Pattern.matches(regex, name);
     }
 
+    public static boolean checkSurname(String surname, String regex) {
+        return Pattern.matches(regex, surname);
+    }
+
     public void nextInsertHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) insertRecord.getScene().getWindow();
 
@@ -257,7 +261,7 @@ public class InsertController {
         } else {
             for (Worker worker : workers)
                 if (worker.getRecord().getCellnum().equals(cellulare)) {
-                    System.out.println("Numero di cellulare associato a un altro utente");
+                    System.out.println("Numero di cellulare associato ad un altro utente");
                     setError(cellnum, errorField, "duplicate field");
                     break;
                 }
@@ -273,21 +277,29 @@ public class InsertController {
             System.err.println("email è sbagliato");
             setError(email, errorField, "error");
         } else {
-            unSetError(email, errorField);
+            for (Worker worker : workers) {
+                if (worker.getRecord().getEmail().equals(postaelettronica)) {
+                    System.out.println("Email associata ad un altro utente");
+                    setError(email, errorField, "duplicate field");
+                    break;
+                }
+                else {
+                    unSetError(email, errorField);
+                }
+            }
         }
 
+        //TODO controllare regex
         String indirizzo = address.getText();
-        /*TODO controllare regex
-
-        regex = "^[a-zA-Z]+ .+,? (?:n.)?[0-9]+.*$";
+        /*regex = "^[a-zA-z]+ .+,? (?:n.)?[0-9]+.*$";
         if (!Pattern.matches(regex, cellulare)) {
             System.out.println("indirizzo è sbagliato");
-            setError(address, errorField);
+            setError(address, errorField, "error");
         }
         else {
-            unSetError(address);
-        }
-        */
+            unSetError(address, errorField);
+        }*/
+
         LocalDate data = date.getValue();
 
         if (data == null) {

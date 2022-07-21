@@ -11,10 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import Model.Season;
 import Model.Jobs;
@@ -22,9 +19,10 @@ import Model.City;
 import Model.SearchModel;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
+import Model.Job;
 
-import static Controller.Utility.unSetError;
-import static Controller.Utility.setError;
+import static Controller.Utility.*;
 
 public class SearchController {
     @FXML
@@ -35,6 +33,12 @@ public class SearchController {
     public ChoiceBox andOrFilter;
     @FXML
     public TextField searchFeedback;
+    @FXML
+    public TextField name;
+    @FXML
+    public TextField surname;
+    @FXML
+    Button addTextFilter;
     @FXML
     private Button updateRecord;
     @FXML
@@ -99,7 +103,6 @@ public class SearchController {
                             list.add("NO VEHICLE");
                             break;
                     }
-
                     filterField.setItems(list);
                 }
             }
@@ -117,10 +120,8 @@ public class SearchController {
         String path = System.getenv("PWD") + "/src/resources/database/workers.json";
         Utility.changeScene("UpdateChoice.fxml", stage);
         stage.setUserData(null);
-
         List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
         ChoiceBox<String> check = (ChoiceBox<String>) stage.getScene().lookup("#workerId");
-
         ObservableList<String> list = FXCollections.observableArrayList();
 
         for (SeasonalWorker w : workers) {
@@ -245,46 +246,6 @@ public class SearchController {
         }
     }
 
-    public void searchRecord(ActionEvent actionEvent) {
-        Stage stage = (Stage) insertRecord.getScene().getWindow();
-        String path = System.getenv("PWD") + "/src/resources/database/workers.json";
-
-        if(stage.getUserData() != null) {
-            List<SearchModel> filters = (List<SearchModel>) stage.getUserData();
-            List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
-
-            for(SearchModel filter : filters) {
-                if(filter.getType().equals("and")) {
-                    Object f = filter.getFilter();
-                    andSearch(f, workers);
-                }
-                else if (filter.getType().equals("or")) {
-
-                }
-                else {
-                    //qui è null
-                }
-            }
-        }
-    }
-
-    public List<SeasonalWorker> andSearch(Object filter, List<SeasonalWorker> workers) {
-        List<SeasonalWorker> res = new ArrayList<SeasonalWorker>();
-
-        for(SeasonalWorker w : workers) {
-            if(filter.getClass().getName().equals("Language")) {
-                if(w.getLanguages().equals(filter)) {
-                    res.add(w);
-                }
-            }
-            else if(filter.getClass().getName().equals("License")) {
-
-            }
-            //vari use case
-        }
-        return res;
-    }
-
     public void resetFilter(ActionEvent actionEvent) {
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         TableView<SearchModel> table = (TableView<SearchModel>) stage.getScene().lookup("#table");
@@ -292,5 +253,223 @@ public class SearchController {
 
         stage.setUserData(null);
         table.setItems(list);
+    }
+
+    public void addTextFilter(ActionEvent actionEvent) {
+        Stage stage = (Stage) insertRecord.getScene().getWindow();
+
+        if(stage.getUserData() == null) {
+            List<SearchModel> tmp = new ArrayList<>();
+            stage.setUserData(tmp);
+        }
+
+        List<SearchModel> filters = (List<SearchModel>) stage.getUserData();
+
+        String nome = name.getText();
+        String regex = "^[a-zA-Z]+";
+        if (!Pattern.matches(regex, nome)) {
+            System.err.println("nome è sbagliato");
+            setError(name, searchFeedback, "error");
+        } else {
+            unSetError(name, searchFeedback);
+        }
+
+        String cognome = surname.getText();
+        if (!Pattern.matches(regex, cognome)) {
+            System.err.println("cognome è sbagliato");
+            setError(surname, searchFeedback, "error");
+        } else {
+            unSetError(surname, searchFeedback);
+        }
+
+        if (filters.size() != 0) {
+            if(andOrFilter.getValue() == null ) {
+                setError(andOrFilter, searchFeedback, "error");
+            }
+            else {
+                unSetError(andOrFilter, searchFeedback);
+            }
+        }
+
+        if(name.getStyleClass().toString().contains("error") || surname.getStyleClass().toString().contains("error") ||
+                (andOrFilter.getValue() == null && filters.size() != 0)) {
+            System.out.println("campo nome e/o cognome non corretti");
+        }
+        else {
+            TableView<SearchModel> table = (TableView<SearchModel>) stage.getScene().lookup("#table");
+
+            unSetError(name, searchFeedback);
+            unSetError(surname, searchFeedback);
+
+            SearchModel newFilter = null;
+            if(filters.size() != 0) {
+                newFilter = new SearchModel("name=" +name.getText() + " surn=" +  surname.getText(),
+                        andOrFilter.getValue().toString().toLowerCase());
+            }
+            else {
+                newFilter = new SearchModel( "name=" +name.getText() + " surn=" +  surname.getText(), null);
+            }
+
+            final ObservableList<SearchModel> data = FXCollections.observableArrayList(
+                    newFilter);
+
+            if(table.getItems().size() == 0) {
+                table.setItems(data);
+            }
+            else {
+                table.getItems().add(newFilter);
+            }
+            name.setText("");
+            surname.setText("");
+            andOrFilter.setValue(null);
+        }
+    }
+
+    public void searchRecord(ActionEvent actionEvent) {
+        Stage stage = (Stage) insertRecord.getScene().getWindow();
+        String path = System.getenv("PWD") + "/src/resources/database/workers.json";
+        TableView<TableViewModel> table = (TableView<TableViewModel>) stage.getScene().lookup("#resultTable");
+        table.setItems(null);
+
+        if(stage.getUserData() != null) {
+            List<SearchModel> filters = (List<SearchModel>) stage.getUserData();
+            System.out.println(filters);
+            List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
+            List<SeasonalWorker> res = new ArrayList<>(workers);
+
+            for(SearchModel filter : filters) {
+                if(filter.getType() != null && filter.getType().equals("and")) {
+                    Object f = filter.getFilter();
+                    res = andSearch(f, res);
+                }
+                else if (filter.getType() != null && filter.getType().equals("or")) {
+                    Object f = filter.getFilter();
+                    res = orSearch(f, workers, res);
+                }
+                else {
+                    Object f = filter.getFilter();
+                    res = andSearch(f, res);
+                }
+            }
+
+            ObservableList<TableViewModel> tableRes = FXCollections.observableArrayList();
+            for(SeasonalWorker w : res) {
+                tableRes.add(new TableViewModel(w.getRecord().getName(), w.getRecord().getSurname(),
+                        w.getRecord().getEmail(), w.getRecord().getCellnum(), getItalianDate(w),
+                        w.getBrithInfo().getBirthplace()));
+            }
+
+            table.setItems(tableRes);
+        }
+    }
+
+    public List<SeasonalWorker> orSearch(Object filter, List<SeasonalWorker> workers, List<SeasonalWorker> res) {
+        for(SeasonalWorker w : workers) {
+            if(checkType(filter).equals("Language")) {
+                for (Language lang : w.getLanguages()) {
+                    if(lang.equals(Language.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+            else if(checkType(filter).equals("License")) {
+                for (License lic : w.getLicense()) {
+                    if (lic.equals(License.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+            else if(checkType(filter).equals("Season")) {
+                for (Season season : w.getPeriod()) {
+                    if(season.equals(Season.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+            else if(checkType(filter).equals("Jobs")) {
+                for (Job j : w.getPastExperience()) {
+                    if(j.getJob().equals(Jobs.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+            else if(checkType(filter).equals("City")) {
+                for (City city : w.getActivityArea()) {
+                    if(city.equals(City.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+        }
+
+        return res;
+    }
+
+    public List<SeasonalWorker> andSearch(Object filter, List<SeasonalWorker> res) {
+        List<SeasonalWorker> copy = new ArrayList<>(res);
+        for(SeasonalWorker w : copy) {
+            if(checkType(filter).equals("Language")) {
+                for (Language lang : w.getLanguages()) {
+                    if(!lang.equals(Language.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
+                        res.remove(w);
+                    }
+                    else if(lang.equals(Language.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+            else if(checkType(filter).equals("License")) {
+                for (License lic : w.getLicense()) {
+                    if (!lic.equals(License.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
+                        res.remove(w);
+                    }
+                    else if(lic.equals(License.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+            else if(checkType(filter).equals("Season")) {
+                for (Season season : w.getPeriod()) {
+                    if(!season.equals(Season.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
+                        res.remove(w);
+                    }
+                    else if(season.equals(Season.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+            else if(checkType(filter).equals("Jobs")) {
+                for (Job j : w.getPastExperience()) {
+                    if(!j.getJob().equals(Jobs.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
+                        res.remove(w);
+                    }
+                    else if(j.equals(Jobs.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+            else if(checkType(filter).equals("City")) {
+                for (City city : w.getActivityArea()) {
+                    if(!city.equals(City.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
+                        res.remove(w);
+                    }
+                    else if(city.equals(City.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                        res.add(w);
+                        break;
+                    }
+                }
+            }
+        }
+
+        return res;
     }
 }

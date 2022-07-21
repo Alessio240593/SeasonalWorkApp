@@ -245,6 +245,20 @@
                         </TextField>
                      </children>
                   </HBox>
+                   <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
+                       <children>
+                           <Label text="Cell" translateY="10.0">
+                               <padding>
+                                   <Insets left="10.0" />
+                               </padding>
+                           </Label>
+                           <TextField fx:id="emergency_cellnum" prefHeight="29.0" prefWidth="197.0" promptText="Insert contact telephone..." styleClass="field" translateX="57.0">
+                               <HBox.margin>
+                                   <Insets bottom="5.0" top="5.0" />
+                               </HBox.margin>
+                           </TextField>
+                       </children>
+                   </HBox>
                   <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
                      <children>
                         <Label text="Email" translateY="10.0">
@@ -253,20 +267,6 @@
                            </padding>
                         </Label>
                         <TextField fx:id="emergency_email" prefHeight="29.0" prefWidth="197.0" promptText="Insert contact email..." styleClass="field" translateX="47.0">
-                           <HBox.margin>
-                              <Insets bottom="5.0" top="5.0" />
-                           </HBox.margin>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
-                     <children>
-                        <Label text="Cell" translateY="10.0">
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <TextField fx:id="emergency_cellnum" prefHeight="29.0" prefWidth="197.0" promptText="Insert contact telephone..." styleClass="field" translateX="57.0">
                            <HBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </HBox.margin>
