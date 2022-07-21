@@ -8,6 +8,9 @@ import Model.Season;
 import Model.Language;
 import Model.Jobs;
 import Model.License;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,12 +23,19 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import  Model.Job;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class HomeController {
+    @FXML
+    public AnchorPane pane;
     @FXML
     private Button updateRecord;
     @FXML
@@ -33,25 +43,56 @@ public class HomeController {
     @FXML
     private Button insertRecord;
 
-    /*@FXML
-    public void initialze() {
-        Stage stage = (Stage) insertRecord.getScene().getWindow();
-        BarChart<Jobs, Integer> chart = (BarChart<Jobs, Integer>) stage.getScene().lookup("#chart");
+    @FXML
+    private void initialize() {
+        String path = System.getenv("PWD") + "/src/resources/database/workers.json";
+        List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
+        Map<Jobs, Integer> map =  new HashMap<>();
+
+        for (Worker w : workers) {
+            List<Job> past = w.getPastExperience();
+            for (Job job : past) {
+                if (!map.containsKey(job.getJob())) {
+                    map.put(job.getJob(), 1);
+                }
+                else {
+                    map.merge(job.getJob(), 1, Integer::sum);
+                }
+            }
+        }
 
         //Defining the x axis
         CategoryAxis xAxis = new CategoryAxis();
-
-        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
-                "Speed", "User rating", "Milage", "Safety")));
+        xAxis.setCategories(FXCollections.<String>
+                observableArrayList(Arrays.asList("chef", "farmer", "waiter", "busdriver",
+                "maintainer", "lifeguard", "sailinginstructor")));
         xAxis.setLabel("category");
 
-        //Defining the y axis
         NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("score");
+        yAxis.setLabel("Number");
+
+        //Creating the Bar chart
+        BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
+        barChart.setTitle("Workers type");
+        barChart.setTranslateX(250);
+        barChart.setTranslateY(650);
+
+        //Prepare XYChart.Series objects by setting data
+        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.CHEF).toLowerCase(), map.containsKey(Jobs.CHEF) ? map.get(Jobs.CHEF) : 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.FARMER).toLowerCase(), map.containsKey(Jobs.FARMER ) ? map.get(Jobs.FARMER) : 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.WAITER).toLowerCase(), map.containsKey(Jobs.WAITER) ? map.get(Jobs.WAITER): 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.BUSDRIVER).toLowerCase(), map.containsKey(Jobs.BUSDRIVER) ? map.get(Jobs.BUSDRIVER): 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.MAINTAINER).toLowerCase(), map.containsKey(Jobs.MAINTAINER) ? map.get(Jobs.MAINTAINER): 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.LIFEGUARD).toLowerCase(), map.containsKey(Jobs.LIFEGUARD) ? map.get(Jobs.LIFEGUARD): 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.SAILINGINSTRUCTOR).toLowerCase(),  map.containsKey(Jobs.SAILINGINSTRUCTOR) ? map.get(Jobs.SAILINGINSTRUCTOR): 0));
 
 
-        chart.getData().add(new XYChart.Data<>(Jobs.CHEF, 3));
-    }*/
+        //Setting the data to bar chart
+        barChart.getData().addAll(series1);
+
+        pane.getChildren().add(barChart);
+    }
 
     public void homeHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) logOut.getScene().getWindow();

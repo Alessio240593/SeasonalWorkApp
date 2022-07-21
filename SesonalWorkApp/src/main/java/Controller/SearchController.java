@@ -19,11 +19,8 @@ import javafx.stage.Stage;
 import Model.Season;
 import Model.Jobs;
 import Model.SearchModel;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.Predicate;
 
 import static Controller.Utility.unSetError;
 import static Controller.Utility.setError;
@@ -274,5 +271,9 @@ public class SearchController {
             //vari use case
         }
         return res;
+    }
+
+    public void resetFilter(ActionEvent actionEvent) {
+
     }
 }
