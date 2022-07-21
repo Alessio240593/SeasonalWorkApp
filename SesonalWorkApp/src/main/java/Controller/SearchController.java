@@ -410,62 +410,64 @@ public class SearchController {
         return res;
     }
 
+    boolean found = false;
     public List<SeasonalWorker> andSearch(Object filter, List<SeasonalWorker> res) {
         List<SeasonalWorker> copy = new ArrayList<>(res);
         for(SeasonalWorker w : copy) {
+            found = false;
             if(checkType(filter).equals("Language")) {
                 for (Language lang : w.getLanguages()) {
-                    if(!lang.equals(Language.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
-                        res.remove(w);
-                    }
-                    else if(lang.equals(Language.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
-                        res.add(w);
+                    if(lang.equals(Language.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
+                        found = true;
                         break;
                     }
+                }
+                if(!found) {
+                    res.remove(w);
                 }
             }
             else if(checkType(filter).equals("License")) {
                 for (License lic : w.getLicense()) {
-                    if (!lic.equals(License.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
-                        res.remove(w);
-                    }
-                    else if(lic.equals(License.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
-                        res.add(w);
+                    if(lic.equals(License.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
+                        found = true;
                         break;
                     }
+                }
+                if(!found) {
+                    res.remove(w);
                 }
             }
             else if(checkType(filter).equals("Season")) {
                 for (Season season : w.getPeriod()) {
-                    if(!season.equals(Season.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
-                        res.remove(w);
-                    }
-                    else if(season.equals(Season.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
-                        res.add(w);
+                    if(season.equals(Season.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
+                        found = true;
                         break;
                     }
+                }
+                if(!found) {
+                    res.remove(w);
                 }
             }
             else if(checkType(filter).equals("Jobs")) {
                 for (Job j : w.getPastExperience()) {
-                    if(!j.getJob().equals(Jobs.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
-                        res.remove(w);
-                    }
-                    else if(j.equals(Jobs.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
-                        res.add(w);
+                    if(j.equals(Jobs.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
+                        found = true;
                         break;
                     }
+                }
+                if(!found) {
+                    res.remove(w);
                 }
             }
             else if(checkType(filter).equals("City")) {
                 for (City city : w.getActivityArea()) {
-                    if(!city.equals(City.valueOf(filter.toString().toUpperCase())) && res.contains(w)) {
-                        res.remove(w);
-                    }
-                    else if(city.equals(City.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
+                    if(city.equals(City.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
                         res.add(w);
                         break;
                     }
+                }
+                if(!found) {
+                    res.remove(w);
                 }
             }
         }
