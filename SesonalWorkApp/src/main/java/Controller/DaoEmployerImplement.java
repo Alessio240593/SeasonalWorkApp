@@ -44,7 +44,7 @@ public class DaoEmployerImplement implements DaoEmployer{
     }
 
     @Override
-    public void addRecord(SeasonalWorker worker) {
+    public boolean addRecord(SeasonalWorker worker) {
         //write on json
         Boolean find = false;
         Gson gson = new GsonBuilder()
@@ -68,6 +68,9 @@ public class DaoEmployerImplement implements DaoEmployer{
             workers.add(worker);
 
         Utility.gsonWriter(path, gson, workers);
+
+        //se c'è gia ritorna falso
+        return !find;
     }
 
     @Override

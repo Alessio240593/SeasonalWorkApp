@@ -126,6 +126,8 @@
                                                 <String fx:value="LICENSE" />
                                                 <String fx:value="PERIOD" />
                                                 <String fx:value="JOB" />
+                                                <String fx:value="ACTIVITY AREA"/>
+                                                <String fx:value="WITH VEHICLE"/>
                                             </FXCollections>
                                         </items>
                                        <HBox.margin>

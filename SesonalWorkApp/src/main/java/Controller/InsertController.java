@@ -20,7 +20,9 @@ import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.time.Year;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 import Model.License;
 import Model.Language;
@@ -87,28 +89,30 @@ public class InsertController {
     public void homeHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) logOut.getScene().getWindow();
         Utility.changeScene("Home.fxml", stage);
+        stage.setUserData(null);
     }
 
     public void searchHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         Utility.changeScene("Search.fxml", stage);
+        stage.setUserData(null);
 
 
-        ChoiceBox<String> filter = (ChoiceBox<String>) stage.getScene().lookup("#filter");
+        ChoiceBox<Object> filter = (ChoiceBox<Object>) stage.getScene().lookup("#filter");
         ChoiceBox<Object> filterField = (ChoiceBox<Object>) stage.getScene().lookup("#filterField");
 
         filter.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                String langFilter = null;
+                String Filter = null;
                 if (filter.getValue() == null) {
                     filter.getStyleClass().add("error");
                 } else {
-                    langFilter = (String) filter.getValue().toString().toLowerCase();
+                    Filter = (String) filter.getValue().toString().toLowerCase();
                     filter.getStyleClass().removeAll("error");
                     ObservableList<Object> list = FXCollections.observableArrayList();
 
-                    switch (langFilter) {
+                    switch (Filter) {
                         case "language":
                             for (Language lan : Language.values()) {
                                 list.add(lan);
@@ -129,6 +133,16 @@ public class InsertController {
                                 list.add(job);
                             }
                             break;
+                        case "activity area":
+                            for (City city : City.values()) {
+                                list.add(city);
+                            }
+                            break;
+                        case "with vehicle":
+                            //se vogliamo gestire si and no vehicle nella ricerca
+                            list.add("YES VEHICLE");
+                            list.add("NO VEHICLE");
+                            break;
                     }
 
                     filterField.setItems(list);
@@ -140,12 +154,14 @@ public class InsertController {
     public void insertHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         Utility.changeScene("Insert.fxml", stage);
+        stage.setUserData(null);
     }
 
     public void updateHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) updateRecord.getScene().getWindow();
         String path = System.getenv("PWD") + "/src/resources/database/workers.json";
         Utility.changeScene("UpdateChoice.fxml", stage);
+        stage.setUserData(null);
 
         List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
         ChoiceBox<String> check = (ChoiceBox<String>) stage.getScene().lookup("#workerId");
@@ -167,6 +183,7 @@ public class InsertController {
                     Worker tmp = null;
                     for (SeasonalWorker w : workers) {
                         if (w.getId() == id) {
+                            System.out.println(w);
                             tmp = Model.getModel().createWorker("SEASONAL", w.getAddress(), w.getPastExperience(), w.getBrithInfo(), w.getLanguages(), w.getLicense(),
                                     w.isWithVehicle(),  w.getActivityArea(), w.getPeriod(), w.getEmergencyContact() , w.getRecord());
                         }
@@ -191,6 +208,7 @@ public class InsertController {
     public void logOutHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) logOut.getScene().getWindow();
         Utility.changeScene("Login.fxml", stage);
+        stage.setUserData(null);
     }
 
     public void exitHandler(ActionEvent actionEvent) {
@@ -202,6 +220,15 @@ public class InsertController {
     }
 
     public void nextInsertHandler(ActionEvent actionEvent) {
+        Stage stage = (Stage) insertRecord.getScene().getWindow();
+
+        List<SeasonalWorker> workers = (List<SeasonalWorker>) stage.getUserData();
+
+        if(workers == null) {
+            String path = System.getenv("PWD") + "/src/resources/database/workers.json";
+            workers = Utility.gsonWorkerReader(path);
+            stage.setUserData(workers);
+        }
 
         String nome = name.getText();
         String regex = "^[a-zA-Z]+";
@@ -211,6 +238,8 @@ public class InsertController {
         } else {
             unSetError(name, errorField);
         }
+        //worker.stream().forEach(worker1 -> {if(worker1.getRecord().getName().equals(name.getText()))});
+
 
         String cognome = surname.getText();
         if (!Pattern.matches(regex, cognome)) {
@@ -226,8 +255,17 @@ public class InsertController {
             System.err.println("cellulare è sbagliato");
             setError(cellnum, errorField, "error");
         } else {
-            unSetError(cellnum, errorField);
+            for (Worker worker : workers)
+                if (worker.getRecord().getCellnum().equals(cellulare)) {
+                    System.out.println("Numero di cellulare associato a un altro utente");
+                    setError(cellnum, errorField, "duplicate field");
+                    break;
+                }
+                else {
+                    unSetError(cellnum, errorField);
+                }
         }
+
 
         String postaelettronica = email.getText();
         regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
@@ -239,8 +277,8 @@ public class InsertController {
         }
 
         String indirizzo = address.getText();
-        //TODO controllare regex
-        /*
+        /*TODO controllare regex
+
         regex = "^[a-zA-Z]+ .+,? (?:n.)?[0-9]+.*$";
         if (!Pattern.matches(regex, cellulare)) {
             System.out.println("indirizzo è sbagliato");
@@ -248,8 +286,8 @@ public class InsertController {
         }
         else {
             unSetError(address);
-        }*/
-
+        }
+        */
         LocalDate data = date.getValue();
 
         if (data == null) {
@@ -379,7 +417,7 @@ public class InsertController {
                 data == null || date.getStyleClass().toString().contains("error") || withVehicleChoicheBox.getValue() == null) {
             System.out.println("c'è qualche campo sbagliato");
         } else {
-            Stage stage = (Stage) next.getScene().getWindow();
+            stage = (Stage) next.getScene().getWindow();
             Parent content2;
             try {
                 FXMLLoader loader = new FXMLLoader();
@@ -396,6 +434,8 @@ public class InsertController {
                         new ArrayList<City>(), seasonlist, new Person(new Record(nome_emergenza, cognome_emergenza,
                                 cellulare_emergenza, postaelettronica_emergenza)),
                         new Record(nome, cognome, postaelettronica, cellulare)));
+
+                //stage.setUserData(new SeasonalWorker(12));
                 stage.setTitle("SeasonalWorkApp");
                 stage.setScene(scene);
                 stage.show();

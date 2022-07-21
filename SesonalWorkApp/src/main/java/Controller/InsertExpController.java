@@ -54,28 +54,29 @@ public class InsertExpController {
     public void homeHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) logOut.getScene().getWindow();
         Utility.changeScene("Home.fxml", stage);
+        stage.setUserData(null);
     }
 
     public void searchHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         Utility.changeScene("Search.fxml", stage);
+        stage.setUserData(null);
 
-
-        ChoiceBox<String> filter = (ChoiceBox<String>) stage.getScene().lookup("#filter");
+        ChoiceBox<Object> filter = (ChoiceBox<Object>) stage.getScene().lookup("#filter");
         ChoiceBox<Object> filterField = (ChoiceBox<Object>) stage.getScene().lookup("#filterField");
 
         filter.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                String langFilter = null;
+                String Filter = null;
                 if (filter.getValue() == null) {
                     filter.getStyleClass().add("error");
                 } else {
-                    langFilter = (String) filter.getValue().toString().toLowerCase();
+                    Filter = (String) filter.getValue().toString().toLowerCase();
                     filter.getStyleClass().removeAll("error");
                     ObservableList<Object> list = FXCollections.observableArrayList();
 
-                    switch (langFilter) {
+                    switch (Filter) {
                         case "language":
                             for (Language lan : Language.values()) {
                                 list.add(lan);
@@ -96,6 +97,16 @@ public class InsertExpController {
                                 list.add(job);
                             }
                             break;
+                        case "activity area":
+                            for (City city : City.values()) {
+                                list.add(city);
+                            }
+                            break;
+                        case "with vehicle":
+                            //se vogliamo gestire si and no vehicle nella ricerca
+                            list.add("YES VEHICLE");
+                            list.add("NO VEHICLE");
+                            break;
                     }
 
                     filterField.setItems(list);
@@ -107,12 +118,14 @@ public class InsertExpController {
     public void insertHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         Utility.changeScene("Insert.fxml", stage);
+        stage.setUserData(null);
     }
 
     public void updateHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) updateRecord.getScene().getWindow();
         String path = System.getenv("PWD") + "/src/resources/database/workers.json";
         Utility.changeScene("UpdateChoice.fxml", stage);
+        stage.setUserData(null);
 
         List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
         ChoiceBox<String> check = (ChoiceBox<String>) stage.getScene().lookup("#workerId");
@@ -158,6 +171,7 @@ public class InsertExpController {
     public void logOutHandler(ActionEvent actionEvent) {
         Stage stage = (Stage) logOut.getScene().getWindow();
         Utility.changeScene("Login.fxml", stage);
+        stage.setUserData(null);
     }
 
     public void exitHandler(ActionEvent actionEvent) {
@@ -307,12 +321,18 @@ public class InsertExpController {
         Stage stage = (Stage) add.getScene().getWindow();
         SeasonalWorker worker = (SeasonalWorker) stage.getUserData();
         DaoEmployerImplement tmp = DaoEmployerImplement.getDao();
-        tmp.addRecord(worker);
-        Utility.changeScene("Home.fxml", (Stage) submit.getScene().getWindow());
-        TextField homeFeedback = (TextField) stage.getScene().lookup("#homeFeedback");
-        homeFeedback.setVisible(true);
-        homeFeedback.setStyle("-fx-text-fill: green; -fx-font-size: 20px;-fx-font-weight: bolder;-fx-text-alignment: center;");
-        homeFeedback.setText("Record insert successfully");
+        boolean success = tmp.addRecord(worker);
+
+        if(success) {
+            Utility.changeScene("Home.fxml", (Stage) submit.getScene().getWindow());
+            TextField homeFeedback = (TextField) stage.getScene().lookup("#homeFeedback");
+            homeFeedback.setVisible(true);
+            homeFeedback.setStyle("-fx-text-fill: green; -fx-font-size: 20px;-fx-font-weight: bolder;-fx-text-alignment: center;");
+            homeFeedback.setText("Record insert successfully");
+        }
+        else {
+            setError(expErrorField, expErrorField, "duplicate workers");
+        }
     }
 
 }

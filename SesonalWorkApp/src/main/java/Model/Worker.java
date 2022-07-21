@@ -12,10 +12,8 @@ public abstract class Worker extends Person{
     private BirthData brithInfo;
     private List<Language> languages;
     private List<License> license;
-    @SerializedName("HaveVeichle")
     private Boolean withVehicle;
     private List<City> activityArea;
-    @SerializedName("Activity period")
     private List<Season> period;
     private Person emergencyContact;
 

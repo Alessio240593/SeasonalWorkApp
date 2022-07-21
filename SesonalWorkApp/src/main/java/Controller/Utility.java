@@ -21,7 +21,7 @@ import java.util.Map;
 public class Utility {
     public static Map<String, String> states = Map.of("dataError","Incorrect red fields data", "contactError", "Incorrect contact data", "insertSuccess" ,  "Data insert successfully",
             "insertError", "Data already exists","duplicate", "Duplicate record",
-            "removeError", "Data not exists","removeSuccess", "Data remove successfully");
+            "removeError", "Data not exists","removeSuccess", "Data remove successfully", "duplicate workers", "duplicate worker entry", "duplicate field", "data already exist");
 
     public static List<Account> gsonReader(String path) {
         List<Account> result = null;
@@ -141,6 +141,14 @@ public class Utility {
                 break;
             case "contactError":
                 state = states.get("contactError");
+                errorStyle(field, error);
+                break;
+            case "duplicate workers":
+                state = states.get("duplicate workers");
+                errorStyle(field, error);
+                break;
+            case "duplicate field":
+                state = states.get("duplicate field");
                 errorStyle(field, error);
                 break;
         }
