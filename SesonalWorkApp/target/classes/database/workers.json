@@ -97,6 +97,33 @@
         "area": "VERONA",
         "grossDailySalary": 1.0,
         "job": "FARMER"
+      },
+      {
+        "period": "WINTER",
+        "year": 2022,
+        "companyName": "hey",
+        "task": "ciao",
+        "area": "VENEZIA",
+        "grossDailySalary": 12.0,
+        "job": "WAITER"
+      },
+      {
+        "period": "SPRING",
+        "year": 2022,
+        "companyName": "ciaoccicc",
+        "task": "",
+        "area": "VENEZIA",
+        "grossDailySalary": 22.0,
+        "job": "BUSDRIVER"
+      },
+      {
+        "period": "WINTER",
+        "year": 2022,
+        "companyName": "Cio",
+        "task": "",
+        "area": "VENEZIA",
+        "grossDailySalary": 12.0,
+        "job": "WAITER"
       }
     ],
     "brithInfo": {

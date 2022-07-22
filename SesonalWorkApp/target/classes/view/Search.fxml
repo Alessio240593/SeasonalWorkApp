@@ -180,6 +180,7 @@
                         <Insets top="95.0" />
                      </VBox.margin>
                   </HBox>
+                  <Button mnemonicParsing="false" onAction="#inspectRecord" prefHeight="32.0" prefWidth="125.0" text="Inspect" translateX="250.0" translateY="-400.0" />
                     </children>
                 </VBox>
             <VBox prefHeight="530.0" prefWidth="230.0" spacing="50.0">

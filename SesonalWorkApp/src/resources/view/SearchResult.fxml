@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" minHeight="980.0" minWidth="850.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InsertController">
+<AnchorPane fx:id="pane" minHeight="980.0" minWidth="850.0" prefHeight="984.0" prefWidth="950.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchController">
     <children>
         <HBox layoutY="-1.0" minWidth="188.0" prefHeight="55.0" prefWidth="187.0" style="-fx-background-color: #347235;">
             <children>
@@ -90,11 +92,11 @@
                 </HBox>
             </children>
         </VBox>
-        <HBox layoutX="215.0" layoutY="69.0" prefHeight="365.0" prefWidth="642.0" style="-fx-background-color: white;">
+        <HBox layoutX="215.0" layoutY="69.0" prefHeight="365.0" prefWidth="696.0" style="-fx-background-color: white;">
             <children>
                 <VBox fx:id="vbox" prefHeight="341.0" prefWidth="346.0" translateY="-20.0">
                     <children>
-                        <Label styleClass="title" text="\$WORKER_NAME data" translateX="5.0" translateY="20.0">
+                        <Label styleClass="title" text="Worker data" translateX="5.0" translateY="20.0">
                      <VBox.margin>
                         <Insets left="2.0" />
                      </VBox.margin></Label>
@@ -105,7 +107,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="name" prefHeight="29.0" prefWidth="172.0" styleClass="field" translateY="23.0">
+                                <TextField fx:id="resultName" editable="false" prefHeight="29.0" prefWidth="172.0" styleClass="field" translateY="23.0">
                                     <HBox.margin>
                                         <Insets bottom="8.0" />
                                     </HBox.margin>
@@ -122,7 +124,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="surname" prefHeight="29.0" prefWidth="171.0" styleClass="field" translateX="3.0">
+                                <TextField fx:id="resultSurname" editable="false" prefHeight="29.0" prefWidth="171.0" styleClass="field" translateX="3.0">
                                     <HBox.margin>
                                         <Insets bottom="8.0" />
                                     </HBox.margin>
@@ -136,7 +138,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="cellnum" prefWidth="171.0" styleClass="field" translateX="68.0">
+                                <TextField fx:id="resultCellnum" editable="false" prefWidth="171.0" styleClass="field" translateX="68.0">
                                     <HBox.margin>
                                         <Insets bottom="8.0" />
                                     </HBox.margin>
@@ -150,7 +152,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="address" prefWidth="171.0" styleClass="field" translateX="-1.0">
+                                <TextField fx:id="resultAddress" editable="false" prefWidth="171.0" styleClass="field" translateX="-1.0">
                                     <HBox.margin>
                                         <Insets bottom="8.0" />
                                     </HBox.margin>
@@ -164,7 +166,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="email" prefHeight="29.0" prefWidth="202.0" styleClass="field" translateX="57.0">
+                                <TextField fx:id="resultEmail" editable="false" prefHeight="29.0" prefWidth="202.0" styleClass="field" translateX="57.0">
                                     <HBox.margin>
                                         <Insets bottom="8.0" />
                                     </HBox.margin>
@@ -178,7 +180,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                        <TextField fx:id="cittàNascita1" prefWidth="171.0" styleClass="field" translateX="30.0">
+                        <TextField fx:id="resultBirthData" editable="false" prefWidth="171.0" styleClass="field" translateX="30.0">
                            <HBox.margin>
                               <Insets bottom="8.0" />
                            </HBox.margin>
@@ -192,7 +194,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="nazionalità" prefWidth="171.0" styleClass="field" translateX="-45.0">
+                                <TextField fx:id="resultNazionalità" editable="false" prefWidth="171.0" styleClass="field" translateX="-45.0">
                                     <HBox.margin>
                                         <Insets bottom="8.0" />
                                     </HBox.margin>
@@ -206,7 +208,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="cittàNascita" prefWidth="171.0" styleClass="field" translateX="-91.0">
+                                <TextField fx:id="resultCittàNascita" editable="false" prefHeight="28.0" prefWidth="246.0" styleClass="field" translateX="-55.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" />
                                     </HBox.margin>
@@ -228,7 +230,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="emergency_name" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="40.0">
+                                <TextField fx:id="resultEmergency_name" editable="false" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="40.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" top="5.0" />
                                     </HBox.margin>
@@ -242,7 +244,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="emergency_surname" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="21.0">
+                                <TextField fx:id="resultEmergency_surname" editable="false" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="21.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" top="5.0" />
                                     </HBox.margin>
@@ -256,7 +258,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="emergency_cellnum" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="53.0">
+                                <TextField fx:id="resultEmergency_cellnum" editable="false" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="53.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" top="5.0" />
                                     </HBox.margin>
@@ -270,7 +272,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </Label>
-                                <TextField fx:id="emergency_email" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="43.0">
+                                <TextField fx:id="resultEmergency_email" editable="false" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="43.0">
                                     <HBox.margin>
                                         <Insets bottom="5.0" top="5.0" />
                                     </HBox.margin>
@@ -281,7 +283,7 @@
                 </VBox>
             </children>
         </HBox>
-        <VBox layoutX="215.0" layoutY="481.0" prefHeight="550.0" prefWidth="642.0" style="-fx-background-color: white;" translateY="-50.0">
+        <VBox layoutX="215.0" layoutY="481.0" prefHeight="531.0" prefWidth="696.0" style="-fx-background-color: white;" translateY="-50.0">
             <children>
             <HBox prefHeight="50.0" prefWidth="630.0">
                <children>
@@ -295,11 +297,9 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                             </Label>
-                        <ChoiceBox fx:id="withVehicleChoicheBox1" prefWidth="100.0" translateX="40.0">
+                        <ChoiceBox fx:id="resultLanguage" minWidth="0.0" prefHeight="24.0" prefWidth="179.0" translateX="40.0">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="YES" />
-                                 <String fx:value="NO" />
                               </FXCollections>
                            </items>
                            <HBox.margin>
@@ -310,7 +310,7 @@
                   </HBox>
                   <HBox prefHeight="50.0" prefWidth="300.0">
                      <children>
-                        <Label prefHeight="40.0" prefWidth="60.0" text="City">
+                        <Label prefHeight="40.0" prefWidth="94.0" text="Activity area">
                            <padding>
                               <Insets bottom="6.0" top="4.0" />
                            </padding>
@@ -318,11 +318,9 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <ChoiceBox fx:id="withVehicleChoicheBox11" prefWidth="100.0" translateX="60.0">
+                        <ChoiceBox fx:id="resultCity" prefWidth="179.0" translateX="25.0">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="YES" />
-                                 <String fx:value="NO" />
                               </FXCollections>
                            </items>
                            <HBox.margin>
@@ -345,11 +343,9 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <ChoiceBox fx:id="withVehicleChoicheBox11" prefWidth="100.0" translateX="40.0">
+                        <ChoiceBox fx:id="resultLicense" prefHeight="24.0" prefWidth="180.0" translateX="40.0">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="YES" />
-                                 <String fx:value="NO" />
                               </FXCollections>
                            </items>
                            <HBox.margin>
@@ -368,11 +364,9 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <ChoiceBox fx:id="withVehicleChoicheBox111" prefWidth="100.0" translateX="60.0">
+                        <ChoiceBox fx:id="resultPeriod" prefWidth="179.0" translateX="60.0">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="YES" />
-                                 <String fx:value="NO" />
                               </FXCollections>
                            </items>
                            <HBox.margin>
@@ -387,7 +381,7 @@
                <children>
                   <HBox prefHeight="50.0" prefWidth="340.0">
                      <children>
-                        <Label prefHeight="40.0" prefWidth="80.0" text="With Vehicle">
+                        <Label prefHeight="40.0" prefWidth="99.0" text="With Vehicle">
                            <padding>
                               <Insets bottom="6.0" top="4.0" />
                            </padding>
@@ -395,11 +389,9 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <ChoiceBox fx:id="withVehicleChoicheBox11" prefWidth="100.0" translateX="40.0">
+                        <ChoiceBox fx:id="resultWithVehicle" prefHeight="24.0" prefWidth="180.0" translateX="23.0">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="YES" />
-                                 <String fx:value="NO" />
                               </FXCollections>
                            </items>
                            <HBox.margin>
@@ -411,7 +403,49 @@
                   <HBox prefHeight="50.0" prefWidth="300.0" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Delete" translateX="530.0" translateY="355.0" />
+            <Label styleClass="title" text="Worker past experience" translateY="20.0">
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin></Label>
+            <TableView fx:id="pastExpTable" prefHeight="313.0" prefWidth="696.0" translateY="35.0">
+              <columns>
+                <TableColumn prefWidth="87.0" text="Company">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="companyName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="78.0" text="Period">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="period" />
+                    </cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="73.0" text="Year">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="year" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="62.0" text="Place">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="area" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Salary">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="grossDailySalary" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Job">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="job" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="245.0" text="task">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="task" />
+                      </cellValueFactory>
+                  </TableColumn>
+              </columns>
+            </TableView>
             </children>
         </VBox>
     </children>

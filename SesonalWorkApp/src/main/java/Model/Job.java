@@ -26,8 +26,12 @@ public class Job {
         return period;
     }
 
-    public void setPeriod(Season period) {
-        this.period = period;
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public String getCompanyName() {

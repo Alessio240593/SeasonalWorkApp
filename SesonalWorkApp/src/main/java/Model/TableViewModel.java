@@ -3,6 +3,7 @@ package Model;
 import java.util.Objects;
 
 public class TableViewModel {
+    private int id;
     private String name;
     private String surname;
     private String email;
@@ -10,13 +11,57 @@ public class TableViewModel {
     private String birthDate;
     private String birthPlace;
 
-    public TableViewModel(String name, String surname, String email, String cell, String birthDate, String birthPlace) {
+    public TableViewModel(int id, String name, String surname, String email, String cell, String birthDate, String birthPlace) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.cell = cell;
         this.birthDate = birthDate;
         this.birthPlace = birthPlace;
+    }
+
+    public TableViewModel(String name, String surname, String email, String cell, String birthDate, String birthPlace) {
+        this.id = id = 0;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.cell = cell;
+        this.birthDate = birthDate;
+        this.birthPlace = birthPlace;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TableViewModel that = (TableViewModel) o;
+        return Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(email, that.email) && Objects.equals(cell, that.cell) && Objects.equals(birthDate, that.birthDate) && Objects.equals(birthPlace, that.birthPlace);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, email, cell, birthDate, birthPlace);
+    }
+
+    @Override
+    public String toString() {
+        return "TableViewModel{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", cell='" + cell + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", birthPlace='" + birthPlace + '\'' +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -65,18 +110,5 @@ public class TableViewModel {
 
     public void setBirthPlace(String birthPlace) {
         this.birthPlace = birthPlace;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TableViewModel that = (TableViewModel) o;
-        return Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(email, that.email) && Objects.equals(cell, that.cell) && Objects.equals(birthDate, that.birthDate) && Objects.equals(birthPlace, that.birthPlace);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, surname, email, cell, birthDate, birthPlace);
     }
 }
