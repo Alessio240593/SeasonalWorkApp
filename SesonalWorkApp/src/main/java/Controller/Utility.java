@@ -89,7 +89,7 @@ public class Utility {
             loader.setLocation(Utility.class.getResource("/view/" + currentScene ));
             content2 = loader.load();
             Scene scene = new Scene(content2, 850, 980);
-            stage.setMinWidth(900);
+            stage.setMinWidth(930);
             stage.setMinHeight(1000);
             stage.getIcons().add(new Image(String.valueOf(Utility.class.getResource("/logo/icon.png"))));
             stage.setTitle("SeasonalWorkApp");
@@ -249,7 +249,19 @@ public class Utility {
                 break;
             }
             if(job.equals(Jobs.valueOf(filter.toString().toUpperCase()))) {
-                return "Season";
+                return "Jobs";
+            }
+        }
+        for(VehicleDisp veh: VehicleDisp.values()) {
+            try {
+                state = VehicleDisp.valueOf(filter.toString().toUpperCase());
+            }
+            catch (IllegalArgumentException ex) {
+                state = null;
+                break;
+            }
+            if(veh.equals(VehicleDisp.valueOf(filter.toString().toUpperCase()))) {
+                return "VehicleDisp";
             }
         }
         return null;

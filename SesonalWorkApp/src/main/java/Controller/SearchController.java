@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 import Model.Job;
+import Model.VehicleDisp;
 
 import static Controller.Utility.*;
 
@@ -37,6 +38,8 @@ public class SearchController {
     public TextField name;
     @FXML
     public TextField surname;
+    @FXML
+    public ChoiceBox andOrFilterText;
     @FXML
     Button addTextFilter;
     @FXML
@@ -98,9 +101,8 @@ public class SearchController {
                             }
                             break;
                         case "with vehicle":
-                            //se vogliamo gestire si and no vehicle nella ricerca
-                            list.add("YES VEHICLE");
-                            list.add("NO VEHICLE");
+                            list.add("YES_VEHICLE");
+                            list.add("NO_VEHICLE");
                             break;
                     }
                     filterField.setItems(list);
@@ -183,18 +185,34 @@ public class SearchController {
         String andOrField = null;
         SearchModel newFilter = null;
 
-        if (filter.getValue() == null) {
+        if (filter.getValue() == null || filterField.getValue() == null) {
+            if(filter.getValue() == null ) {
+                setError(filter, searchFeedback, "error");
+            }
+            else {
+                setError(filterField, searchFeedback, "error");
+            }
+        }
+        else {
+            if (filterField.getValue() != null) {
+                unSetError(filterField, searchFeedback);
+            }
+            if (filter.getValue() != null) {
+                unSetError(filter, searchFeedback);
+            }
+        }
+
+        if (filterField.getValue() == null && filter.getValue() == null) {
+            setError(filterField, searchFeedback, "error");
             setError(filter, searchFeedback, "error");
         }
         else {
-            unSetError(filter, searchFeedback);
-        }
-
-        if (filterField.getValue() == null) {
-            setError(filterField, searchFeedback, "error");
-        }
-        else {
-            unSetError(filterField, searchFeedback);
+            if (filterField.getValue() != null) {
+                unSetError(filterField, searchFeedback);
+            }
+            if (filter.getValue() != null) {
+                unSetError(filter, searchFeedback);
+            }
         }
 
         if (filters.size() != 0) {
@@ -206,7 +224,8 @@ public class SearchController {
             }
         }
 
-        if(filter.getValue() == null || filterField.getValue() == null || (andOrFilter.getValue() == null && filters.size() != 0)) {
+        if(filter.getStyleClass().toString().contains("error") || filterField.getStyleClass().toString().contains("error")||
+                (andOrFilter.getStyleClass().toString().contains("error"))) {
             System.out.println("dati sbagliati");
         }
         else {
@@ -252,6 +271,12 @@ public class SearchController {
         ObservableList<SearchModel> list = FXCollections.observableArrayList();
 
         stage.setUserData(null);
+        andOrFilter.setValue(null);
+        andOrFilterText.setValue(null);
+        filterField.setValue(null);
+        filter.setValue(null);
+        name.setText("");
+        surname.setText("");
         table.setItems(list);
     }
 
@@ -283,45 +308,74 @@ public class SearchController {
         }
 
         if (filters.size() != 0) {
-            if(andOrFilter.getValue() == null ) {
-                setError(andOrFilter, searchFeedback, "error");
+            if(andOrFilterText.getValue() == null ) {
+                setError(andOrFilterText, searchFeedback, "error");
             }
             else {
-                unSetError(andOrFilter, searchFeedback);
+                unSetError(andOrFilterText, searchFeedback);
             }
         }
 
         if(name.getStyleClass().toString().contains("error") || surname.getStyleClass().toString().contains("error") ||
-                (andOrFilter.getValue() == null && filters.size() != 0)) {
+                andOrFilterText.toString().contains("error")) {
             System.out.println("campo nome e/o cognome non corretti");
         }
         else {
-            TableView<SearchModel> table = (TableView<SearchModel>) stage.getScene().lookup("#table");
-
             unSetError(name, searchFeedback);
             unSetError(surname, searchFeedback);
 
-            SearchModel newFilter = null;
+            SearchModel newName = null;
+            SearchModel newSurname = null;
             if(filters.size() != 0) {
-                newFilter = new SearchModel("name=" +name.getText() + " surn=" +  surname.getText(),
-                        andOrFilter.getValue().toString().toLowerCase());
+                newName = new SearchModel(name,
+                        andOrFilterText.getValue().toString().toLowerCase());
+
+                newSurname = new SearchModel(surname,
+                        andOrFilterText.getValue().toString().toLowerCase());
             }
             else {
-                newFilter = new SearchModel( "name=" +name.getText() + " surn=" +  surname.getText(), null);
+                //newFilter = new SearchModel( name.getText() + " " + surname.getText(), null);
             }
 
-            final ObservableList<SearchModel> data = FXCollections.observableArrayList(
-                    newFilter);
+            if(!Utility.containsSameFilter(filters, newName)) {
+                filters.add(newName);
 
-            if(table.getItems().size() == 0) {
-                table.setItems(data);
+                TableView<SearchModel> table = (TableView<SearchModel>) stage.getScene().lookup("#table");
+
+                final ObservableList<SearchModel> data = FXCollections.observableArrayList(
+                        newName);
+
+                if(table.getItems().size() == 0) {
+                    table.setItems(data);
+                }
+                else {
+                    table.getItems().add(newName);
+                }
+                name.setText("");
+                surname.setText("");
+                andOrFilter.setValue(null);
+            }
+            else if (!Utility.containsSameFilter(filters, newSurname)) {
+                    filters.add(newSurname);
+
+                    TableView<SearchModel> table = (TableView<SearchModel>) stage.getScene().lookup("#table");
+
+                    final ObservableList<SearchModel> data = FXCollections.observableArrayList(
+                            newSurname);
+
+                    if(table.getItems().size() == 0) {
+                        table.setItems(data);
+                    }
+                    else {
+                        table.getItems().add(newSurname);
+                    }
+                    name.setText("");
+                    surname.setText("");
+                    andOrFilter.setValue(null);
             }
             else {
-                table.getItems().add(newFilter);
+                setError(searchFeedback, searchFeedback, "duplicate");
             }
-            name.setText("");
-            surname.setText("");
-            andOrFilter.setValue(null);
         }
     }
 
@@ -331,7 +385,7 @@ public class SearchController {
         TableView<TableViewModel> table = (TableView<TableViewModel>) stage.getScene().lookup("#resultTable");
         table.setItems(null);
 
-        if(stage.getUserData() != null) {
+        if(stage.getUserData() != null && ((List<SearchModel>)stage.getUserData()).size() != 0) {
             List<SearchModel> filters = (List<SearchModel>) stage.getUserData();
             System.out.println(filters);
             List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
@@ -405,13 +459,19 @@ public class SearchController {
                     }
                 }
             }
+            else if(checkType(filter).equals("VehicleDisp")) {
+                if(w.isWithVehicle().equals(VehicleDisp.converter(filter.toString().toUpperCase())) && !res.contains(w)) {
+                    res.add(w);
+                    break;
+                }
+            }
         }
 
         return res;
     }
 
-    boolean found = false;
     public List<SeasonalWorker> andSearch(Object filter, List<SeasonalWorker> res) {
+        boolean found = false;
         List<SeasonalWorker> copy = new ArrayList<>(res);
         for(SeasonalWorker w : copy) {
             found = false;
@@ -470,8 +530,16 @@ public class SearchController {
                     res.remove(w);
                 }
             }
+            else if(checkType(filter).equals("VehicleDisp")) {
+                if(w.isWithVehicle() == VehicleDisp.converter(filter.toString().toUpperCase())) {
+                   found = true;
+                   break;
+                }
+                if(!found) {
+                    res.remove(w);
+                }
+            }
         }
-
         return res;
     }
 }

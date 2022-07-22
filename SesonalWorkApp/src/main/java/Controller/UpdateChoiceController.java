@@ -81,8 +81,8 @@ public class UpdateChoiceController {
                             break;
                         case "with vehicle":
                             //se vogliamo gestire si and no vehicle nella ricerca
-                            list.add("YES VEHICLE");
-                            list.add("NO VEHICLE");
+                            list.add("YES_VEHICLE");
+                            list.add("NO_VEHICLE");
                             break;
                     }
 

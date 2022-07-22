@@ -140,8 +140,8 @@ public class InsertController {
                             break;
                         case "with vehicle":
                             //se vogliamo gestire si and no vehicle nella ricerca
-                            list.add("YES VEHICLE");
-                            list.add("NO VEHICLE");
+                            list.add("YES_VEHICLE");
+                            list.add("NO_VEHICLE");
                             break;
                     }
 
@@ -215,12 +215,20 @@ public class InsertController {
         System.exit(0);
     }
 
-    public static boolean checkName(String name, String regex) {
+    public boolean checkName(String name, String regex) {
         return Pattern.matches(regex, name);
     }
 
-    public static boolean checkSurname(String surname, String regex) {
+    public boolean checkSurname(String surname, String regex) {
         return Pattern.matches(regex, surname);
+    }
+
+    public boolean checkCell(String cell, String regex) {
+        return Pattern.matches(regex, cell);
+    }
+
+    public boolean checkEmail(String email, String regex) {
+        return Pattern.matches(regex, email);
     }
 
     public void nextInsertHandler(ActionEvent actionEvent) {
@@ -236,17 +244,15 @@ public class InsertController {
 
         String nome = name.getText();
         String regex = "^[a-zA-Z]+";
-        if (!Pattern.matches(regex, nome)) {
+        if (!checkName(nome, regex)) {
             System.err.println("nome è sbagliato");
             setError(name, errorField, "error");
         } else {
             unSetError(name, errorField);
         }
-        //worker.stream().forEach(worker1 -> {if(worker1.getRecord().getName().equals(name.getText()))});
-
 
         String cognome = surname.getText();
-        if (!Pattern.matches(regex, cognome)) {
+        if (!checkSurname(cognome, regex)) {
             System.err.println("cognome è sbagliato");
             setError(surname, errorField, "error");
         } else {
@@ -255,7 +261,7 @@ public class InsertController {
 
         String cellulare = cellnum.getText();
         regex = "^[0-9]{10}$";
-        if (!Pattern.matches(regex, cellulare)) {
+        if (!checkCell(cellulare, regex)) {
             System.err.println("cellulare è sbagliato");
             setError(cellnum, errorField, "error");
         } else {
@@ -273,7 +279,7 @@ public class InsertController {
 
         String postaelettronica = email.getText();
         regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-        if (!Pattern.matches(regex, postaelettronica)) {
+        if (!checkEmail(postaelettronica, regex)) {
             System.err.println("email è sbagliato");
             setError(email, errorField, "error");
         } else {
@@ -414,6 +420,9 @@ public class InsertController {
 
         Boolean veicolo = null;
         if(withVehicleChoicheBox.getValue() == null) {
+            withVehicleChoicheBox.getStyleClass().add("error");
+        }
+        else if (licenselist.isEmpty() && withVehicleChoicheBox.getValue().toString().toLowerCase().equals("yes")) {
             withVehicleChoicheBox.getStyleClass().add("error");
         }
         else {
