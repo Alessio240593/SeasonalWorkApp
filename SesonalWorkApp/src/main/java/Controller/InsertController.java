@@ -220,16 +220,27 @@ public class InsertController {
         return Pattern.matches("^[a-zA-Z]+", name);
     }
 
-    public boolean checkSurname(String surname, String regex) {
-        return Pattern.matches(regex, surname);
+    public boolean checkSurname(String surname) {
+        return Pattern.matches("^[a-zA-Z]+", surname);
     }
 
-    public boolean checkCell(String cell, String regex) {
-        return Pattern.matches(regex, cell);
+    public boolean checkCell(String cell) {
+        return Pattern.matches("^[0-9]{10}$", cell);
     }
 
-    public boolean checkEmail(String email, String regex) {
-        return Pattern.matches(regex, email);
+    public boolean checkEmail(String email) {
+        return Pattern.matches("^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$", email);
+    }
+
+    public boolean checkNazionalita(String nazionalità) {
+        return Pattern.matches("^[a-zA-Z]+", nazionalità);
+    }
+
+    public boolean checkDate(LocalDate data) {
+        if((data.getYear() < 1900 || data.getYear() >= (Year.now().getValue() - 16))) {
+            return false;
+        }
+        return true;
     }
 
     public void nextInsertHandler(ActionEvent actionEvent) {
@@ -253,7 +264,7 @@ public class InsertController {
         }
 
         String cognome = surname.getText();
-        if (!checkSurname(cognome, regex)) {
+        if (!checkSurname(cognome)) {
             System.err.println("cognome è sbagliato");
             setError(surname, errorField, "error");
         } else {
@@ -261,8 +272,7 @@ public class InsertController {
         }
 
         String cellulare = cellnum.getText();
-        regex = "^[0-9]{10}$";
-        if (!checkCell(cellulare, regex)) {
+        if (!checkCell(cellulare)) {
             System.err.println("cellulare è sbagliato");
             setError(cellnum, errorField, "error");
         } else {
@@ -279,8 +289,7 @@ public class InsertController {
 
 
         String postaelettronica = email.getText();
-        regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-        if (!checkEmail(postaelettronica, regex)) {
+        if (!checkEmail(postaelettronica)) {
             System.err.println("email è sbagliato");
             setError(email, errorField, "error");
         } else {
@@ -319,8 +328,7 @@ public class InsertController {
         }
 
         String nazionalita = nazionalità.getText();
-        regex = "^[a-zA-Z]+";
-        if (!Pattern.matches(regex, nazionalita)) {
+        if (!checkNazionalita(nazionalita)) {
             System.err.println("nazionalità è sbagliato");
             setError(nazionalità, errorField, "error");
         } else {
