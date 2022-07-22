@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" minHeight="800.0" minWidth="950.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchController">
+<AnchorPane fx:id="pane" minHeight="980.0" minWidth="850.0" prefHeight="984.0" prefWidth="868.0" style="-fx-background-color: #E5E4E2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InsertController">
     <children>
         <HBox layoutY="-1.0" minWidth="188.0" prefHeight="55.0" prefWidth="187.0" style="-fx-background-color: #347235;">
             <children>
@@ -89,119 +90,334 @@
                 </HBox>
             </children>
         </VBox>
-      <VBox layoutX="236.0" layoutY="52.0" prefHeight="908.0" prefWidth="670.0" spacing="100.0" style="-fx-background-color: white;">
-         <children>
-              <TableView fx:id="resultTable" maxWidth="716.0" minHeight="76.0" minWidth="670.0" prefHeight="76.0" prefWidth="716.0">
-                  <columns>
-                      <TableColumn prefWidth="75.0" text="Name">
-                          <cellValueFactory>
-                              <PropertyValueFactory property="name" />
-                          </cellValueFactory>
-                      </TableColumn>
-                      <TableColumn prefWidth="75.0" text="Surname">
-                          <cellValueFactory>
-                              <PropertyValueFactory property="surname" />
-                          </cellValueFactory>
-                      </TableColumn>
-                      <TableColumn prefWidth="185.0" text="Email">
-                          <cellValueFactory>
-                              <PropertyValueFactory property="email" />
-                          </cellValueFactory>
-                      </TableColumn>
-                      <TableColumn prefWidth="129.0" text="Cell">
-                          <cellValueFactory>
-                              <PropertyValueFactory property="cell" />
-                          </cellValueFactory>
-                      </TableColumn>
-                      <TableColumn prefWidth="84.0" text="BirthDate">
-                          <cellValueFactory>
-                              <PropertyValueFactory property="birthDate" />
-                          </cellValueFactory>
-                      </TableColumn>
-                      <TableColumn prefWidth="144.0" text="Birth place">
-                          <cellValueFactory>
-                              <PropertyValueFactory property="birthPlace" />
-                          </cellValueFactory>
-                      </TableColumn>
-                  </columns>
-              </TableView>
-            <TableView fx:id="resultTable1" maxWidth="716.0" minHeight="76.0" minWidth="670.0" prefHeight="76.0" prefWidth="716.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="Name">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="name" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Surname">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="surname" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="185.0" text="Email">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="email" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="129.0" text="Cell">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="cell" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="84.0" text="BirthDate">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="birthDate" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="144.0" text="Birth place">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="birthPlace" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Column X" />
-               </columns>
-            </TableView>
-            <TableView fx:id="resultTable11" maxWidth="716.0" minHeight="76.0" minWidth="670.0" prefHeight="76.0" prefWidth="716.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="Name">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="name" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Surname">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="surname" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="185.0" text="Email">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="email" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="129.0" text="Cell">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="cell" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="84.0" text="BirthDate">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="birthDate" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="144.0" text="Birth place">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="birthPlace" />
-                     </cellValueFactory>
-                  </TableColumn>
-               </columns>
-            </TableView>
-            <Label text="License" />
-            <ChoiceBox prefWidth="150.0" />
-         </children>
-      </VBox>
+        <HBox layoutX="215.0" layoutY="69.0" prefHeight="365.0" prefWidth="642.0" style="-fx-background-color: white;">
+            <children>
+                <VBox fx:id="vbox" prefHeight="341.0" prefWidth="346.0" translateY="-20.0">
+                    <children>
+                        <Label styleClass="title" text="\$WORKER_NAME data" translateX="5.0" translateY="20.0">
+                     <VBox.margin>
+                        <Insets left="2.0" />
+                     </VBox.margin></Label>
+                        <HBox prefHeight="29.0" prefWidth="550.0" spacing="72.0" translateY="10.0">
+                            <children>
+                                <Label text="Name" translateY="30.0">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="name" prefHeight="29.0" prefWidth="172.0" styleClass="field" translateY="23.0">
+                                    <HBox.margin>
+                                        <Insets bottom="8.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                            <opaqueInsets>
+                                <Insets left="10.0" />
+                            </opaqueInsets>
+                        </HBox>
+                        <HBox prefHeight="32.0" prefWidth="550.0" spacing="50.0" translateY="35.0">
+                            <children>
+                                <Label text="Surname">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="surname" prefHeight="29.0" prefWidth="171.0" styleClass="field" translateX="3.0">
+                                    <HBox.margin>
+                                        <Insets bottom="8.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="35.0">
+                            <children>
+                                <Label text="Cell">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="cellnum" prefWidth="171.0" styleClass="field" translateX="68.0">
+                                    <HBox.margin>
+                                        <Insets bottom="8.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0" translateY="35.0">
+                            <children>
+                                <Label text="Address">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="address" prefWidth="171.0" styleClass="field" translateX="-1.0">
+                                    <HBox.margin>
+                                        <Insets bottom="8.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="437.0" spacing="18.0" translateY="35.0">
+                            <children>
+                                <Label text="Email">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="email" prefHeight="29.0" prefWidth="202.0" styleClass="field" translateX="57.0">
+                                    <HBox.margin>
+                                        <Insets bottom="8.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="16.0" prefWidth="550.0" spacing="18.0" translateY="35.0">
+                            <children>
+                                <Label text="Birth data">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                        <TextField fx:id="cittàNascita1" prefWidth="171.0" styleClass="field" translateX="30.0">
+                           <HBox.margin>
+                              <Insets bottom="8.0" />
+                           </HBox.margin>
+                        </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0" translateY="35.0">
+                            <children>
+                                <Label prefHeight="18.0" prefWidth="104.0" text="Nationality">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="nazionalità" prefWidth="171.0" styleClass="field" translateX="-45.0">
+                                    <HBox.margin>
+                                        <Insets bottom="8.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="33.0" prefWidth="550.0" spacing="60.0" translateY="40.0">
+                            <children>
+                                <Label prefHeight="18.0" prefWidth="186.0" text="Birth place">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="cittàNascita" prefWidth="171.0" styleClass="field" translateX="-91.0">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox prefHeight="323.0" prefWidth="296.0" translateX="-13.0">
+                    <children>
+                        <Label styleClass="title" text="Emergency contact">
+                     <VBox.margin>
+                        <Insets left="8.0" />
+                     </VBox.margin></Label>
+                        <HBox prefHeight="28.0" prefWidth="296.0" spacing="18.0" translateY="10.0">
+                            <children>
+                                <Label text="Name" translateY="10.0">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="emergency_name" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="40.0">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" top="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
+                            <children>
+                                <Label text="Surname" translateY="10.0">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="emergency_surname" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="21.0">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" top="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
+                            <children>
+                                <Label text="Cell" translateY="10.0">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="emergency_cellnum" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="53.0">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" top="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="550.0" spacing="18.0" translateY="10.0">
+                            <children>
+                                <Label text="Email" translateY="10.0">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="emergency_email" prefHeight="29.0" prefWidth="197.0" styleClass="field" translateX="43.0">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" top="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <VBox layoutX="215.0" layoutY="481.0" prefHeight="550.0" prefWidth="642.0" style="-fx-background-color: white;" translateY="-50.0">
+            <children>
+            <HBox prefHeight="50.0" prefWidth="630.0">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="340.0">
+                     <children>
+                            <Label prefHeight="40.0" prefWidth="80.0" text="Languages">
+                                <padding>
+                                    <Insets bottom="6.0" top="4.0" />
+                                </padding>
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                            </Label>
+                        <ChoiceBox fx:id="withVehicleChoicheBox1" prefWidth="100.0" translateX="40.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="YES" />
+                                 <String fx:value="NO" />
+                              </FXCollections>
+                           </items>
+                           <HBox.margin>
+                              <Insets bottom="8.0" top="8.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="300.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="60.0" text="City">
+                           <padding>
+                              <Insets bottom="6.0" top="4.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="withVehicleChoicheBox11" prefWidth="100.0" translateX="60.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="YES" />
+                                 <String fx:value="NO" />
+                              </FXCollections>
+                           </items>
+                           <HBox.margin>
+                              <Insets bottom="8.0" top="8.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="630.0">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="340.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="80.0" text="License">
+                           <padding>
+                              <Insets bottom="6.0" top="4.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="withVehicleChoicheBox11" prefWidth="100.0" translateX="40.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="YES" />
+                                 <String fx:value="NO" />
+                              </FXCollections>
+                           </items>
+                           <HBox.margin>
+                              <Insets bottom="8.0" top="8.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="300.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="60.0" text="Period">
+                           <padding>
+                              <Insets bottom="6.0" top="4.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="withVehicleChoicheBox111" prefWidth="100.0" translateX="60.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="YES" />
+                                 <String fx:value="NO" />
+                              </FXCollections>
+                           </items>
+                           <HBox.margin>
+                              <Insets bottom="8.0" top="8.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="630.0">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="340.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="80.0" text="With Vehicle">
+                           <padding>
+                              <Insets bottom="6.0" top="4.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="withVehicleChoicheBox11" prefWidth="100.0" translateX="40.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="YES" />
+                                 <String fx:value="NO" />
+                              </FXCollections>
+                           </items>
+                           <HBox.margin>
+                              <Insets bottom="8.0" top="8.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="300.0" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" text="Delete" translateX="530.0" translateY="355.0" />
+            </children>
+        </VBox>
     </children>
 
     <stylesheets>
-        <URL value="@../css/InsertExp.css" />
+        <URL value="@../css/Insert.css" />
     </stylesheets>
 
 </AnchorPane>
