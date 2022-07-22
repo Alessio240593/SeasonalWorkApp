@@ -186,8 +186,9 @@ public class Utility {
                 tmp.getBrithInfo().getBirthDate().getYear();
     }
 
-    public static String checkType(Object filter) {
+    public static String checkType(SearchModel fil) {
         Object state = null;
+        Object filter = fil.getFilter();
 
         for(Language lang : Language.values()) {
             try {
@@ -264,6 +265,9 @@ public class Utility {
                 return "VehicleDisp";
             }
         }
+        if(fil.getFilter() instanceof String)
+            return fil.getObjectType();
+
         return null;
     }
 }

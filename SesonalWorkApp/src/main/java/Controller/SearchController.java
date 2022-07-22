@@ -292,7 +292,7 @@ public class SearchController {
 
         String nome = name.getText();
         String regex = "^[a-zA-Z]+";
-        if (!Pattern.matches(regex, nome)) {
+        if (!Pattern.matches(regex, nome) && !nome.equals("")) {
             System.err.println("nome è sbagliato");
             setError(name, searchFeedback, "error");
         } else {
@@ -300,7 +300,7 @@ public class SearchController {
         }
 
         String cognome = surname.getText();
-        if (!Pattern.matches(regex, cognome)) {
+        if (!Pattern.matches(regex, cognome) && !cognome.equals("")) {
             System.err.println("cognome è sbagliato");
             setError(surname, searchFeedback, "error");
         } else {
@@ -316,7 +316,7 @@ public class SearchController {
             }
         }
 
-        if(name.getStyleClass().toString().contains("error") || surname.getStyleClass().toString().contains("error") ||
+        if(name.getStyleClass().toString().contains("error") && surname.getStyleClass().toString().contains("error") ||
                 andOrFilterText.toString().contains("error")) {
             System.out.println("campo nome e/o cognome non corretti");
         }
@@ -326,18 +326,23 @@ public class SearchController {
 
             SearchModel newName = null;
             SearchModel newSurname = null;
-            if(filters.size() != 0) {
-                newName = new SearchModel(name,
-                        andOrFilterText.getValue().toString().toLowerCase());
 
-                newSurname = new SearchModel(surname,
-                        andOrFilterText.getValue().toString().toLowerCase());
+            boolean duplicate = false;
+
+            if(filters.size() != 0) {
+                newName = new SearchModel(nome,
+                        andOrFilterText.getValue().toString().toLowerCase(), "NOME");
+
+                newSurname = new SearchModel(cognome,
+                        andOrFilterText.getValue().toString().toLowerCase(), "COGNOME");
             }
             else {
-                //newFilter = new SearchModel( name.getText() + " " + surname.getText(), null);
+                newName = new SearchModel(nome, null, "NOME");
+
+                newSurname = new SearchModel(cognome, null, "COGNOME");
             }
 
-            if(!Utility.containsSameFilter(filters, newName)) {
+            if(!Utility.containsSameFilter(filters, newName) && !((String) newName.getFilter()).equals("")) {
                 filters.add(newName);
 
                 TableView<SearchModel> table = (TableView<SearchModel>) stage.getScene().lookup("#table");
@@ -355,7 +360,11 @@ public class SearchController {
                 surname.setText("");
                 andOrFilter.setValue(null);
             }
-            else if (!Utility.containsSameFilter(filters, newSurname)) {
+            else if (Utility.containsSameFilter(filters, newName)){
+                duplicate = true;
+            }
+
+            if (!Utility.containsSameFilter(filters, newSurname) && !((String) newSurname.getFilter()).equals("")) {
                     filters.add(newSurname);
 
                     TableView<SearchModel> table = (TableView<SearchModel>) stage.getScene().lookup("#table");
@@ -373,7 +382,11 @@ public class SearchController {
                     surname.setText("");
                     andOrFilter.setValue(null);
             }
-            else {
+            else if (Utility.containsSameFilter(filters, newSurname)){
+                duplicate = true;
+            }
+
+            if(duplicate) {
                 setError(searchFeedback, searchFeedback, "duplicate");
             }
         }
@@ -393,15 +406,15 @@ public class SearchController {
 
             for(SearchModel filter : filters) {
                 if(filter.getType() != null && filter.getType().equals("and")) {
-                    Object f = filter.getFilter();
+                    SearchModel f = filter;
                     res = andSearch(f, res);
                 }
                 else if (filter.getType() != null && filter.getType().equals("or")) {
-                    Object f = filter.getFilter();
+                    SearchModel f = filter;
                     res = orSearch(f, workers, res);
                 }
                 else {
-                    Object f = filter.getFilter();
+                    SearchModel f = filter;
                     res = andSearch(f, res);
                 }
             }
@@ -417,9 +430,11 @@ public class SearchController {
         }
     }
 
-    public List<SeasonalWorker> orSearch(Object filter, List<SeasonalWorker> workers, List<SeasonalWorker> res) {
+    public List<SeasonalWorker> orSearch(SearchModel fil, List<SeasonalWorker> workers, List<SeasonalWorker> res) {
+        Object filter = fil.getFilter();
+
         for(SeasonalWorker w : workers) {
-            if(checkType(filter).equals("Language")) {
+            if(checkType(fil).equals("Language")) {
                 for (Language lang : w.getLanguages()) {
                     if(lang.equals(Language.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
@@ -427,7 +442,7 @@ public class SearchController {
                     }
                 }
             }
-            else if(checkType(filter).equals("License")) {
+            else if(checkType(fil).equals("License")) {
                 for (License lic : w.getLicense()) {
                     if (lic.equals(License.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
@@ -435,7 +450,7 @@ public class SearchController {
                     }
                 }
             }
-            else if(checkType(filter).equals("Season")) {
+            else if(checkType(fil).equals("Season")) {
                 for (Season season : w.getPeriod()) {
                     if(season.equals(Season.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
@@ -443,7 +458,7 @@ public class SearchController {
                     }
                 }
             }
-            else if(checkType(filter).equals("Jobs")) {
+            else if(checkType(fil).equals("Jobs")) {
                 for (Job j : w.getPastExperience()) {
                     if(j.getJob().equals(Jobs.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
@@ -451,7 +466,7 @@ public class SearchController {
                     }
                 }
             }
-            else if(checkType(filter).equals("City")) {
+            else if(checkType(fil).equals("City")) {
                 for (City city : w.getActivityArea()) {
                     if(city.equals(City.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
@@ -459,10 +474,20 @@ public class SearchController {
                     }
                 }
             }
-            else if(checkType(filter).equals("VehicleDisp")) {
+            else if(checkType(fil).equals("VehicleDisp")) {
                 if(w.isWithVehicle().equals(VehicleDisp.converter(filter.toString().toUpperCase())) && !res.contains(w)) {
                     res.add(w);
                     break;
+                }
+            }
+            else if(checkType(fil).equals("nome")) {
+                if (w.getRecord().getName().equals(filter)) {
+                    res.add(w);
+                }
+            }
+            else if(checkType(fil).equals("cognome")) {
+                if(w.getRecord().getName().equals(filter)) {
+                    res.add(w);
                 }
             }
         }
@@ -470,12 +495,13 @@ public class SearchController {
         return res;
     }
 
-    public List<SeasonalWorker> andSearch(Object filter, List<SeasonalWorker> res) {
+    public List<SeasonalWorker> andSearch(SearchModel fil, List<SeasonalWorker> res) {
+        Object filter = fil.getFilter();
         boolean found = false;
         List<SeasonalWorker> copy = new ArrayList<>(res);
         for(SeasonalWorker w : copy) {
             found = false;
-            if(checkType(filter).equals("Language")) {
+            if(checkType(fil).equals("Language")) {
                 for (Language lang : w.getLanguages()) {
                     if(lang.equals(Language.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
                         found = true;
@@ -486,7 +512,7 @@ public class SearchController {
                     res.remove(w);
                 }
             }
-            else if(checkType(filter).equals("License")) {
+            else if(checkType(fil).equals("License")) {
                 for (License lic : w.getLicense()) {
                     if(lic.equals(License.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
                         found = true;
@@ -497,7 +523,7 @@ public class SearchController {
                     res.remove(w);
                 }
             }
-            else if(checkType(filter).equals("Season")) {
+            else if(checkType(fil).equals("Season")) {
                 for (Season season : w.getPeriod()) {
                     if(season.equals(Season.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
                         found = true;
@@ -508,7 +534,7 @@ public class SearchController {
                     res.remove(w);
                 }
             }
-            else if(checkType(filter).equals("Jobs")) {
+            else if(checkType(fil).equals("Jobs")) {
                 for (Job j : w.getPastExperience()) {
                     if(j.equals(Jobs.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
                         found = true;
@@ -519,7 +545,7 @@ public class SearchController {
                     res.remove(w);
                 }
             }
-            else if(checkType(filter).equals("City")) {
+            else if(checkType(fil).equals("City")) {
                 for (City city : w.getActivityArea()) {
                     if(city.equals(City.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
                         res.add(w);
@@ -530,12 +556,22 @@ public class SearchController {
                     res.remove(w);
                 }
             }
-            else if(checkType(filter).equals("VehicleDisp")) {
+            else if(checkType(fil).equals("VehicleDisp")) {
                 if(w.isWithVehicle() == VehicleDisp.converter(filter.toString().toUpperCase())) {
                    found = true;
                    break;
                 }
                 if(!found) {
+                    res.remove(w);
+                }
+            }
+            else if(checkType(fil).equals("nome")) {
+                if (!(w.getRecord().getName().equals(filter))) {
+                    res.remove(w);
+                }
+            }
+            else if(checkType(fil).equals("cognome")) {
+                if(!w.getRecord().getName().equals(filter)) {
                     res.remove(w);
                 }
             }

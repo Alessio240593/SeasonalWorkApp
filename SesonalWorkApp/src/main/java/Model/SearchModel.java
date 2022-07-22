@@ -8,6 +8,7 @@ import java.util.Objects;
 public class SearchModel {
     private Object filter;
     private String type;
+    private String objectType;
 
     @Override
     public String toString() {
@@ -20,6 +21,13 @@ public class SearchModel {
     public SearchModel(Object filter, String value) {
         this.filter = filter;
         this.type = value;
+        this.objectType = null;
+    }
+
+    public SearchModel(Object filter, String value, String objectType) {
+        this.filter = filter;
+        this.type = value;
+        this.objectType = objectType.toLowerCase();
     }
 
     @Override
@@ -49,5 +57,13 @@ public class SearchModel {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getObjectType() {
+        return objectType;
+    }
+
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
     }
 }
