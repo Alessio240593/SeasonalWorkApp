@@ -22,7 +22,7 @@ public class InsertControllerTest {
     @DisplayName("Check surname with literal")
     public void checkNameLiteralTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
-        Assert.assertEquals(testModel.checkName("Ziopino", "^[a-zA-Z]+"), true);
+        Assert.assertEquals(testModel.checkName("Ziopino"), true);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 
@@ -30,7 +30,7 @@ public class InsertControllerTest {
     @DisplayName("Check surname with number")
     public void checkNameNumberTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
-        Assert.assertEquals(testModel.checkName("123", "^[a-zA-Z]+"), false);
+        Assert.assertEquals(testModel.checkName("123"), false);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 
@@ -38,7 +38,7 @@ public class InsertControllerTest {
     @DisplayName("Check surname with other expression")
     public void checkNameOtherExpTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
-        Assert.assertEquals(testModel.checkName("??%%&&$£", "^[a-zA-Z]+"), false);
+        Assert.assertEquals(testModel.checkName("??%%&&$£"), false);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 
@@ -46,7 +46,7 @@ public class InsertControllerTest {
     @DisplayName("Check surname with space")
     public void checkNameSpaceTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
-        Assert.assertEquals(testModel.checkName(" ", "^[a-zA-Z]+"), false);
+        Assert.assertEquals(testModel.checkName(" "), false);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 
@@ -54,7 +54,7 @@ public class InsertControllerTest {
     @DisplayName("Check surname with nothing")
     public void checkNameNothingTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
-        Assert.assertEquals(testModel.checkName("", "^[a-zA-Z]+"), false);
+        Assert.assertEquals(testModel.checkName(""), false);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 

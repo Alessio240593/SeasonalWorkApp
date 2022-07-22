@@ -235,11 +235,11 @@ public class SearchController {
 
             if(filters.size() != 0) {
                 newFilter = new SearchModel((String) filterField.getValue().toString().toLowerCase(),
-                        (String) andOrFilter.getValue().toString().toLowerCase());
+                        (String) andOrFilter.getValue().toString().toLowerCase(), filter.getValue().toString().toLowerCase());
             }
             else {
                 newFilter = new SearchModel((String) filterField.getValue().toString().toLowerCase(),
-                        null);
+                        null, filter.getValue().toString().toLowerCase());
             }
 
             if(!Utility.containsSameFilter(filters, newFilter)) {
@@ -268,6 +268,7 @@ public class SearchController {
     public void resetFilter(ActionEvent actionEvent) {
         Stage stage = (Stage) insertRecord.getScene().getWindow();
         TableView<SearchModel> table = (TableView<SearchModel>) stage.getScene().lookup("#table");
+        TableView<SearchModel> resultTable = (TableView<SearchModel>) stage.getScene().lookup("#resultTable");
         ObservableList<SearchModel> list = FXCollections.observableArrayList();
 
         stage.setUserData(null);
@@ -278,6 +279,7 @@ public class SearchController {
         name.setText("");
         surname.setText("");
         table.setItems(list);
+        resultTable.setItems(list);
     }
 
     public void addTextFilter(ActionEvent actionEvent) {
@@ -305,6 +307,11 @@ public class SearchController {
             setError(surname, searchFeedback, "error");
         } else {
             unSetError(surname, searchFeedback);
+        }
+
+        if(cognome.equals("") && nome.equals("")) {
+            setError(name, searchFeedback, "error");
+            setError(surname, searchFeedback, "error");
         }
 
         if (filters.size() != 0) {

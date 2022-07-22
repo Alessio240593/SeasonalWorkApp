@@ -190,81 +190,30 @@ public class Utility {
         Object state = null;
         Object filter = fil.getFilter();
 
-        for(Language lang : Language.values()) {
-            try {
-                state = Language.valueOf(filter.toString().toUpperCase());
-            }
-            catch (IllegalArgumentException ex) {
-                state = null;
-                break;
-            }
-
-            if(lang.equals(Language.valueOf(filter.toString().toUpperCase()))) {
-                return "Language";
-            }
+        if(fil.getObjectType().equals("language")) {
+            return "Language";
         }
 
-        for(License lic: License.values()) {
-            try {
-                state = License.valueOf(filter.toString().toUpperCase());
-            }
-            catch (IllegalArgumentException ex) {
-                state = null;
-                break;
-            }
-            if(lic.equals(License.valueOf(filter.toString().toUpperCase()))) {
-                return "License";
-            }
+       if(fil.getObjectType().equals("license")) {
+           return "License";
+       }
+
+        if(fil.getObjectType().equals("activity area")) {
+            return "City";
         }
 
-        for(City city : City.values()) {
-            try {
-                state = City.valueOf(filter.toString().toUpperCase());
-            }
-            catch (IllegalArgumentException ex) {
-                state = null;
-                break;
-            }
-            if(city.equals(City.valueOf(filter.toString().toUpperCase()))) {
-                return "City";
-            }
+        if(fil.getObjectType().equals("period")) {
+            return "Season";
         }
-        for(Season season : Season.values()) {
-            try {
-                state = Season.valueOf(filter.toString().toUpperCase());
-            }
-            catch (IllegalArgumentException ex) {
-                state = null;
-                break;
-            }
-            if(season.equals(Season.valueOf(filter.toString().toUpperCase()))) {
-                return "Season";
-            }
+
+        if(fil.getObjectType().equals("job")) {
+            return "Jobs";
         }
-        for(Jobs job: Jobs.values()) {
-            try {
-                state = Jobs.valueOf(filter.toString().toUpperCase());
-            }
-            catch (IllegalArgumentException ex) {
-                state = null;
-                break;
-            }
-            if(job.equals(Jobs.valueOf(filter.toString().toUpperCase()))) {
-                return "Jobs";
-            }
+
+        if(fil.getObjectType().equals("with vehicle")) {
+            return "VehicleDisp";
         }
-        for(VehicleDisp veh: VehicleDisp.values()) {
-            try {
-                state = VehicleDisp.valueOf(filter.toString().toUpperCase());
-            }
-            catch (IllegalArgumentException ex) {
-                state = null;
-                break;
-            }
-            if(veh.equals(VehicleDisp.valueOf(filter.toString().toUpperCase()))) {
-                return "VehicleDisp";
-            }
-        }
+
         if(fil.getFilter() instanceof String)
             return fil.getObjectType();
 

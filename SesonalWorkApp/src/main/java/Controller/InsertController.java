@@ -215,8 +215,9 @@ public class InsertController {
         System.exit(0);
     }
 
-    public boolean checkName(String name, String regex) {
-        return Pattern.matches(regex, name);
+    //TODO sostituire il regex nei vari metodi
+    public boolean checkName(String name) {
+        return Pattern.matches("^[a-zA-Z]+", name);
     }
 
     public boolean checkSurname(String surname, String regex) {
@@ -244,7 +245,7 @@ public class InsertController {
 
         String nome = name.getText();
         String regex = "^[a-zA-Z]+";
-        if (!checkName(nome, regex)) {
+        if (!checkName(nome)) {
             System.err.println("nome è sbagliato");
             setError(name, errorField, "error");
         } else {
