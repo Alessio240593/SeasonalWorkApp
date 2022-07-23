@@ -17,11 +17,6 @@ public class DaoEmployerImplement implements DaoEmployer{
     }
 
     @Override
-    public List<Job> search(String... filter) {
-        return null;
-    }
-
-    @Override
     public void updateRecord(SeasonalWorker worker) {
         //write on json
         Boolean find = false;

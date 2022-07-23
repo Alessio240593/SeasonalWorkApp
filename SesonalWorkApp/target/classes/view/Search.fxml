@@ -135,7 +135,7 @@
                                           <Insets left="10.0" />
                                        </VBox.margin>
                                     </HBox>
-                                     <ChoiceBox disable="true" fx:id="andOrFilter" prefWidth="150.0" translateY="-20.0">
+                                     <ChoiceBox fx:id="andOrFilter" disable="true" prefWidth="150.0" translateY="-20.0">
                                          <items>
                                              <FXCollections fx:factory="observableArrayList">
                                                  <String fx:value="AND" />
@@ -180,7 +180,7 @@
                         <Insets top="95.0" />
                      </VBox.margin>
                   </HBox>
-                  <Button mnemonicParsing="false" onAction="#inspectRecord" prefHeight="32.0" prefWidth="125.0" text="Inspect" translateX="250.0" translateY="-400.0" />
+                  <TextField fx:id="searchFeedback" disable="true" maxWidth="220.0" prefHeight="24.0" prefWidth="200.0" translateX="200.0" translateY="-350.0" />
                     </children>
                 </VBox>
             <VBox prefHeight="530.0" prefWidth="230.0" spacing="50.0">
@@ -190,7 +190,7 @@
                   <Label prefHeight="16.0" prefWidth="133.0" text="Cognome" translateY="-7.0" />
                   <TextField fx:id="surname" prefHeight="0.0" prefWidth="171.0" translateY="-25.0" />
                   <Label text="And/or" translateY="-50.0" />
-                  <ChoiceBox disable="true" fx:id="andOrFilterText" prefWidth="150.0" translateY="-55.0">
+                  <ChoiceBox fx:id="andOrFilterText" disable="true" prefWidth="150.0" translateY="-55.0">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                            <String fx:value="AND" />
@@ -198,9 +198,8 @@
                         </FXCollections>
                      </items>
                   </ChoiceBox>
-                  <Button mnemonicParsing="false" onAction="#searchRecord" text="Search" translateX="20.0" />
+                  <Button mnemonicParsing="false" onAction="#searchRecord" prefHeight="32.0" prefWidth="200.0" text="Search" translateX="20.0" />
                   <Button fx:id="addTextFilter" mnemonicParsing="false" onAction="#addTextFilter" prefHeight="32.0" prefWidth="101.0" text="Add" translateX="20.0" translateY="-140.0" />
-                  <TextField fx:id="searchFeedback" disable="true" maxWidth="300.0" prefHeight="24.0" prefWidth="211.0" translateX="-40.0" />
                </children>
                <HBox.margin>
                   <Insets left="100.0" />
@@ -211,6 +210,11 @@
       <Line endX="558.0" endY="-5.0" layoutX="359.0" layoutY="529.0" startX="-158.0" startY="-5.0" />
       <TableView fx:id="resultTable" layoutX="201.0" layoutY="525.0" maxWidth="716.0" minHeight="441.0" minWidth="670.0" prefHeight="446.0" prefWidth="716.0">
           <columns>
+              <TableColumn prefWidth="144.0" text="ID">
+                  <cellValueFactory>
+                      <PropertyValueFactory property="id" />
+                  </cellValueFactory>
+              </TableColumn>
               <TableColumn prefWidth="75.0" text="Name">
                   <cellValueFactory>
                       <PropertyValueFactory property="name" />
@@ -234,11 +238,6 @@
               <TableColumn prefWidth="84.0" text="BirthDate">
                   <cellValueFactory>
                       <PropertyValueFactory property="birthDate" />
-                  </cellValueFactory>
-              </TableColumn>
-              <TableColumn prefWidth="144.0" text="Birth place">
-                  <cellValueFactory>
-                      <PropertyValueFactory property="birthPlace" />
                   </cellValueFactory>
               </TableColumn>
           </columns>
