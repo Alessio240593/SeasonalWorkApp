@@ -321,7 +321,7 @@ public class InsertController {
         if (data == null) {
             System.out.println("data sbagliata");
             setError(date, errorField, "error");
-        } else if ((data.getYear() < 1900 || data.getYear() >= (Year.now().getValue() - 16))) {
+        } else if (!checkDate(data)) {
             setError(date, errorField, "error");
         } else {
             unSetError(date, errorField);

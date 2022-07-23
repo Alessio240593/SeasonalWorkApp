@@ -220,6 +220,7 @@ public class SearchController {
         }
 
         if (filters.size() != 0) {
+            andOrFilter.setDisable(false);
             if(andOrFilter.getValue() == null ) {
                 setError(andOrFilter, searchFeedback, "error");
             }
@@ -233,6 +234,8 @@ public class SearchController {
             System.out.println("dati sbagliati");
         }
         else {
+            andOrFilter.setDisable(false);
+            andOrFilterText.setDisable(false);
             unSetError(filterField, searchFeedback);
             unSetError(andOrFilter, searchFeedback);
             unSetError(filter, searchFeedback);
@@ -280,6 +283,8 @@ public class SearchController {
         andOrFilterText.setValue(null);
         filterField.setValue(null);
         filter.setValue(null);
+        andOrFilter.setDisable(true);
+        andOrFilterText.setDisable(true);
         name.setText("");
         surname.setText("");
         unSetError(filterField, searchFeedback);
@@ -334,6 +339,8 @@ public class SearchController {
             System.out.println("campo nome e/o cognome non corretti");
         }
         else {
+            andOrFilter.setDisable(false);
+            andOrFilterText.setDisable(false);
             unSetError(name, searchFeedback);
             unSetError(surname, searchFeedback);
 

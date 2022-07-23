@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="16" failures="0" name="InsertControllerTest" time="0.038" errors="0" skipped="0">
+<testsuite tests="23" failures="0" name="InsertControllerTest" time="0.115" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2021.3.3"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -62,20 +62,27 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="InsertControllerTest" name="checkCellSpaceTest" time="0.031"/>
+  <testcase classname="InsertControllerTest" name="checkCellSpaceTest" time="0.047"/>
   <testcase classname="InsertControllerTest" name="checkNameSpaceTest" time="0"/>
   <testcase classname="InsertControllerTest" name="checkNameNumberTest" time="0"/>
   <testcase classname="InsertControllerTest" name="checkCellNumberTest" time="0"/>
-  <testcase classname="InsertControllerTest" name="checkCellNothingTest" time="0"/>
-  <testcase classname="InsertControllerTest" name="checkSurnameNothingTest" time="0.001"/>
-  <testcase classname="InsertControllerTest" name="checkNameOtherExpTest" time="0.001"/>
+  <testcase classname="InsertControllerTest" name="checkEmailNothingTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkEmailSpaceTest" time="0.001"/>
+  <testcase classname="InsertControllerTest" name="checkEmailRegularTest" time="0.001"/>
+  <testcase classname="InsertControllerTest" name="checkCellNothingTest" time="0.001"/>
+  <testcase classname="InsertControllerTest" name="checkSurnameNothingTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkNameOtherExpTest" time="0.002"/>
   <testcase classname="InsertControllerTest" name="checkNameNothingTest" time="0.001"/>
   <testcase classname="InsertControllerTest" name="checkSurnameOtherExpTest" time="0.001"/>
-  <testcase classname="InsertControllerTest" name="checkCellLengthTest" time="0"/>
-  <testcase classname="InsertControllerTest" name="checkSurnameSpaceTest" time="0"/>
-  <testcase classname="InsertControllerTest" name="checkCellOtherExpTest" time="0.001"/>
-  <testcase classname="InsertControllerTest" name="checkSurnameNumberTest" time="0"/>
-  <testcase classname="InsertControllerTest" name="checkCellLiteralTest" time="0"/>
-  <testcase classname="InsertControllerTest" name="checkSurnameLiteralTest" time="0.001"/>
-  <testcase classname="InsertControllerTest" name="checkNameLiteralTest" time="0.001"/>
+  <testcase classname="InsertControllerTest" name="checkDateLegalTest" time="0.039"/>
+  <testcase classname="InsertControllerTest" name="checkCellLengthTest" time="0.001"/>
+  <testcase classname="InsertControllerTest" name="checkSurnameSpaceTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkCellOtherExpTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkEmailOtherExpTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkEmailNumberTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkSurnameNumberTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkEmailLiteralTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkCellLiteralTest" time="0.001"/>
+  <testcase classname="InsertControllerTest" name="checkSurnameLiteralTest" time="0.002"/>
+  <testcase classname="InsertControllerTest" name="checkNameLiteralTest" time="0.002"/>
 </testsuite>

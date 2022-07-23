@@ -22,7 +22,7 @@ public class InsertControllerTest {
     }
 
     @Test
-    @DisplayName("Check surname with literal")
+    @DisplayName("Check name with literal")
     public void checkNameLiteralTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
         Assert.assertEquals(testModel.checkName("Ziopino"), true);
@@ -30,7 +30,7 @@ public class InsertControllerTest {
     }
 
     @Test
-    @DisplayName("Check surname with number")
+    @DisplayName("Check name with number")
     public void checkNameNumberTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
         Assert.assertEquals(testModel.checkName("123"), false);
@@ -38,7 +38,7 @@ public class InsertControllerTest {
     }
 
     @Test
-    @DisplayName("Check surname with other expression")
+    @DisplayName("Check name with other expression")
     public void checkNameOtherExpTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
         Assert.assertEquals(testModel.checkName("??%%&&$£"), false);
@@ -46,7 +46,7 @@ public class InsertControllerTest {
     }
 
     @Test
-    @DisplayName("Check surname with space")
+    @DisplayName("Check name with space")
     public void checkNameSpaceTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
         Assert.assertEquals(testModel.checkName(" "), false);
@@ -202,6 +202,30 @@ public class InsertControllerTest {
     public void checkDateLegalTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
         Assert.assertEquals(testModel.checkDate( LocalDate.of(1993, 10, 27)), true);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check legal date")
+    public void checkDateIllegalMinTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkDate( LocalDate.of(1899, 10, 27)), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check legal date")
+    public void checkDateIllegalMaxTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkDate( LocalDate.of(2023, 10, 27)), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check legal date")
+    public void checkDateIllegalAgeTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkDate( LocalDate.of(2006, 10, 27)), false);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 

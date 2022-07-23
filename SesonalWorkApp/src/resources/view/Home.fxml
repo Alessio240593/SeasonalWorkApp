@@ -108,7 +108,7 @@
             </Label>
          </children>
       </HBox>
-      <VBox layoutX="224.0" layoutY="33.0" prefHeight="902.0" prefWidth="648.0" style="-fx-background-color: white;">
+      <VBox layoutX="224.0" layoutY="53.0" prefHeight="882.0" prefWidth="648.0" style="-fx-background-color: white;">
          <children>
             <Label prefHeight="71.0" prefWidth="384.0" text="SEASONALWORKAPP" textFill="#31944f" translateX="150.0">
                <font>

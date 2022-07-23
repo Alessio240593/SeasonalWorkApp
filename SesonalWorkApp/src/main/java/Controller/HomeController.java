@@ -67,7 +67,6 @@ public class HomeController {
         xAxis.setCategories(FXCollections.<String>
                 observableArrayList(Arrays.asList("chef", "farmer", "waiter", "busdriver",
                 "maintainer", "lifeguard", "sailinginstructor")));
-        xAxis.setLabel("category");
 
         NumberAxis yAxis = new NumberAxis();
         yAxis.setLabel("Number");
