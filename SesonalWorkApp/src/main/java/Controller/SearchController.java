@@ -464,7 +464,12 @@ public class SearchController {
             else {
                 newName = new SearchModel(nome, null, "NOME");
 
-                newSurname = new SearchModel(cognome, null, "COGNOME");
+                if(nome.isEmpty() ) {
+                    newSurname = new SearchModel(cognome, null, "COGNOME");
+                }
+                else {
+                    newSurname = new SearchModel(cognome, "and", "COGNOME");
+                }
             }
 
             if(!Utility.containsSameFilter(filters, newName) && !((String) newName.getFilter()).equals("")) {
@@ -696,15 +701,11 @@ public class SearchController {
                 }
             }
             else if(checkType(fil).equals("cognome")) {
-                if(!w.getRecord().getName().equals(filter)) {
+                if(!w.getRecord().getSurname().equals(filter)) {
                     res.remove(w);
                 }
             }
         }
         return res;
     }
-
-    public void inspectRecord(ActionEvent actionEvent) {
-
-        }
 }

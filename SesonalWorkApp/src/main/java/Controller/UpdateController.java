@@ -296,7 +296,7 @@ public class UpdateController {
 
         String indirizzoAggiornato = updateAddress.getText();
         if (!indirizzoAggiornato.isEmpty() || oldWorker.getAddress().equals(indirizzoAggiornato)) {
-            regex = "^[a-z]+ .+,? (?:n.)?[0-9]+.*$";
+            regex = "^[a-zA-z]+ .+,? (?:n.)?[0-9]+.*$";
             if (!Pattern.matches(regex, indirizzoAggiornato)) {
                 System.err.println("indirizzo aggiornato è sbagliato");
                 setError(updateAddress, updateErrorField, "error");
