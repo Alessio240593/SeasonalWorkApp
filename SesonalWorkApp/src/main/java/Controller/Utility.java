@@ -219,4 +219,13 @@ public class Utility {
 
         return null;
     }
+
+    public static boolean isAlphanumerical(String word) {
+        for (char c : word.toCharArray()) {
+            if(!Character.isAlphabetic(c) && !Character.isDigit(c) && c != ' ') {
+                return false;
+            }
+        }
+        return true;
+    }
 }

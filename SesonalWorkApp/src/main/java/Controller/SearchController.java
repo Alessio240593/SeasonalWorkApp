@@ -13,12 +13,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import Model.Season;
 import Model.Jobs;
 import Model.City;
 import Model.PastExpTableModel;
 import Model.SearchModel;
+import Model.PastExpTableModel;
+
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -110,6 +113,107 @@ public class SearchController {
                             break;
                     }
                     filterField.setItems(list);
+                }
+            }
+        });
+
+        TableView<TableViewModel> table = (TableView<TableViewModel>) stage.getScene().lookup("#resultTable");
+        table.onMouseClickedProperty().set(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                ObservableList<TableViewModel> selected = table.getSelectionModel().getSelectedItems();
+
+                if (!selected.isEmpty()) {
+                    String path = System.getenv("PWD") + "/src/resources/database/workers.json";
+                    List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
+                    SeasonalWorker w = null;
+
+                    for (SeasonalWorker worker : workers) {
+                        if (worker.getId() == selected.get(0).getId()) {
+                            w = worker;
+                            break;
+                        }
+                    }
+                    stage.setUserData(w);
+                    Utility.changeScene("SearchResult.fxml", stage);
+
+                    TextField resultName = (TextField) stage.getScene().lookup("#resultName");
+                    resultName.setText(w.getRecord().getName());
+                    TextField resultSurname = (TextField) stage.getScene().lookup("#resultSurname");
+                    resultSurname.setText(w.getRecord().getSurname());
+                    TextField resultEmail = (TextField) stage.getScene().lookup("#resultEmail");
+                    resultEmail.setText(w.getRecord().getEmail());
+                    TextField resultCellnum = (TextField) stage.getScene().lookup("#resultCellnum");
+                    resultCellnum.setText(w.getRecord().getCellnum());
+                    TextField resultAddress = (TextField) stage.getScene().lookup("#resultAddress");
+                    resultAddress.setText(w.getAddress());
+                    TextField resultBirthData = (TextField) stage.getScene().lookup("#resultBirthData");
+
+                    String tmpDate = (w.getBrithInfo().getBirthDate().getDayOfMonth() < 10 ? "0" + w.getBrithInfo().getBirthDate().getDayOfMonth() :
+                            w.getBrithInfo().getBirthDate().getDayOfMonth()) + "/" + (w.getBrithInfo().getBirthDate().getMonth().getValue() < 10 ? "0" +
+                            w.getBrithInfo().getBirthDate().getMonth().getValue() : w.getBrithInfo().getBirthDate().getMonth().getValue()) + "/" +
+                            w.getBrithInfo().getBirthDate().getYear();
+
+                    resultBirthData.setText(tmpDate);
+                    TextField resultCittàNascita = (TextField) stage.getScene().lookup("#resultCittàNascita");
+                    resultCittàNascita.setText(w.getBrithInfo().getBirthplace());
+                    TextField resultEmergency_name = (TextField) stage.getScene().lookup("#resultEmergency_name");
+                    resultEmergency_name.setText(w.getEmergencyContact().getRecord().getName());
+                    TextField resultEmergency_surname = (TextField) stage.getScene().lookup("#resultEmergency_surname");
+                    resultEmergency_surname.setText(w.getEmergencyContact().getRecord().getSurname());
+                    TextField resultEmergency_cellnum = (TextField) stage.getScene().lookup("#resultEmergency_cellnum");
+                    resultEmergency_cellnum.setText(w.getEmergencyContact().getRecord().getCellnum());
+                    TextField resultEmergency_email = (TextField) stage.getScene().lookup("#resultEmergency_email");
+                    resultEmergency_email.setText(w.getEmergencyContact().getRecord().getEmail());
+                    TextField resultNazionalità = (TextField) stage.getScene().lookup("#resultNazionalità");
+                    resultNazionalità.setText(w.getBrithInfo().getNationality());
+
+                    ObservableList<Object> list = FXCollections.observableArrayList();
+                    ChoiceBox resultLanguage = (ChoiceBox) stage.getScene().lookup("#resultLanguage");
+                    for (Language lan : w.getLanguages()) {
+                        list.add(lan);
+                    }
+                    resultLanguage.setItems(list);
+
+                    ObservableList<Object> list2 = FXCollections.observableArrayList();
+                    ChoiceBox resultLicense = (ChoiceBox) stage.getScene().lookup("#resultLicense");
+                    for (License lic : w.getLicense()) {
+                        list2.add(lic);
+                    }
+                    resultLicense.setItems(list2);
+
+                    ObservableList<Object> list3 = FXCollections.observableArrayList();
+                    ChoiceBox resultCity = (ChoiceBox) stage.getScene().lookup("#resultCity");
+                    for (City city : w.getActivityArea()) {
+                        list3.add(city);
+                    }
+                    resultCity.setItems(list3);
+
+                    ObservableList<Object> list4 = FXCollections.observableArrayList();
+                    ChoiceBox resultPeriod = (ChoiceBox) stage.getScene().lookup("#resultPeriod");
+                    for (Season season : w.getPeriod()) {
+                        list4.add(season);
+                    }
+                    resultPeriod.setItems(list4);
+
+                    ObservableList<Object> list5 = FXCollections.observableArrayList();
+                    ChoiceBox resultWithVehicle = (ChoiceBox) stage.getScene().lookup("#resultWithVehicle");
+                    if (w.isWithVehicle() == true) {
+                        list5.add("YES");
+                    } else {
+                        list5.add("NO");
+                    }
+                    resultWithVehicle.setItems(list5);
+
+                    TableView<PastExpTableModel> pastExpTable = (TableView<PastExpTableModel>) stage.getScene().lookup("#pastExpTable");
+                    ObservableList<PastExpTableModel> pastExp = FXCollections.observableArrayList();
+
+                    for (Job job : w.getPastExperience()) {
+                        pastExp.add(new PastExpTableModel(job.getPeriod().toString(), String.valueOf(job.getYear()), job.getCompanyName(),
+                                job.getTask(), job.getArea().toString(), String.valueOf(job.getGrossDailySalary()) + "€", job.getJob().toString()));
+                    }
+
+                    pastExpTable.setItems(pastExp);
                 }
             }
         });
@@ -278,7 +382,8 @@ public class SearchController {
         TableView<SearchModel> resultTable = (TableView<SearchModel>) stage.getScene().lookup("#resultTable");
         ObservableList<SearchModel> list = FXCollections.observableArrayList();
 
-        stage.setUserData(null);
+        List<SearchModel> filters = (List<SearchModel>) stage.getUserData();
+        filters.clear();
         andOrFilter.setValue(null);
         andOrFilterText.setValue(null);
         filterField.setValue(null);
@@ -600,102 +705,6 @@ public class SearchController {
     }
 
     public void inspectRecord(ActionEvent actionEvent) {
-        Stage stage = (Stage) insertRecord.getScene().getWindow();
-        TableView<TableViewModel> table = (TableView<TableViewModel>) stage.getScene().lookup("#resultTable");
-        ObservableList<TableViewModel> selected = table.getSelectionModel().getSelectedItems();
 
-        if(!selected.isEmpty()) {
-            String path = System.getenv("PWD") + "/src/resources/database/workers.json";
-            List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
-            SeasonalWorker w = null;
-
-            for(SeasonalWorker worker : workers) {
-                if (worker.getId()  == selected.get(0).getId()) {
-                    w = worker;
-                    break;
-                }
-            }
-            stage.setUserData(w);
-            Utility.changeScene("SearchResult.fxml", stage);
-
-            TextField resultName = (TextField) stage.getScene().lookup("#resultName");
-            resultName.setText(w.getRecord().getName());
-            TextField resultSurname = (TextField) stage.getScene().lookup("#resultSurname");
-            resultSurname.setText(w.getRecord().getSurname());
-            TextField resultEmail = (TextField) stage.getScene().lookup("#resultEmail");
-            resultEmail.setText(w.getRecord().getEmail());
-            TextField resultCellnum = (TextField) stage.getScene().lookup("#resultCellnum");
-            resultCellnum.setText(w.getRecord().getCellnum());
-            TextField resultAddress = (TextField) stage.getScene().lookup("#resultAddress");
-            resultAddress.setText(w.getAddress());
-            TextField resultBirthData = (TextField) stage.getScene().lookup("#resultBirthData");
-
-            String tmpDate = (w.getBrithInfo().getBirthDate().getDayOfMonth() < 10 ? "0" + w.getBrithInfo().getBirthDate().getDayOfMonth() :
-                    w.getBrithInfo().getBirthDate().getDayOfMonth()) + "/" + (w.getBrithInfo().getBirthDate().getMonth().getValue() < 10 ? "0" +
-                    w.getBrithInfo().getBirthDate().getMonth().getValue() : w.getBrithInfo().getBirthDate().getMonth().getValue()) + "/" +
-                    w.getBrithInfo().getBirthDate().getYear();
-
-            resultBirthData.setText(tmpDate);
-            TextField  resultCittàNascita = (TextField) stage.getScene().lookup("#resultCittàNascita");
-            resultCittàNascita.setText(w.getBrithInfo().getBirthplace());
-            TextField resultEmergency_name = (TextField) stage.getScene().lookup("#resultEmergency_name");
-            resultEmergency_name.setText(w.getEmergencyContact().getRecord().getName());
-            TextField resultEmergency_surname = (TextField) stage.getScene().lookup("#resultEmergency_surname");
-            resultEmergency_surname.setText(w.getEmergencyContact().getRecord().getSurname());
-            TextField resultEmergency_cellnum = (TextField) stage.getScene().lookup("#resultEmergency_cellnum");
-            resultEmergency_cellnum.setText(w.getEmergencyContact().getRecord().getCellnum());
-            TextField resultEmergency_email = (TextField) stage.getScene().lookup("#resultEmergency_email");
-            resultEmergency_email.setText(w.getEmergencyContact().getRecord().getEmail());
-            TextField resultNazionalità = (TextField) stage.getScene().lookup("#resultNazionalità");
-            resultNazionalità.setText(w.getBrithInfo().getNationality());
-
-            ObservableList<Object> list = FXCollections.observableArrayList();
-            ChoiceBox resultLanguage = (ChoiceBox) stage.getScene().lookup("#resultLanguage");
-            for (Language lan : w.getLanguages()) {
-                list.add(lan);
-            }
-            resultLanguage.setItems(list);
-
-            ObservableList<Object> list2 = FXCollections.observableArrayList();
-            ChoiceBox resultLicense = (ChoiceBox) stage.getScene().lookup("#resultLicense");
-            for (License lic : w.getLicense()) {
-                list2.add(lic);
-            }
-            resultLicense.setItems(list2);
-
-            ObservableList<Object> list3 = FXCollections.observableArrayList();
-            ChoiceBox resultCity = (ChoiceBox) stage.getScene().lookup("#resultCity");
-            for (City city : w.getActivityArea()) {
-                list3.add(city);
-            }
-            resultCity.setItems(list3);
-
-            ObservableList<Object> list4 = FXCollections.observableArrayList();
-            ChoiceBox resultPeriod = (ChoiceBox) stage.getScene().lookup("#resultPeriod");
-            for (Season season : w.getPeriod()) {
-                list4.add(season);
-            }
-            resultPeriod.setItems(list4);
-
-            ObservableList<Object> list5 = FXCollections.observableArrayList();
-            ChoiceBox resultWithVehicle = (ChoiceBox) stage.getScene().lookup("#resultWithVehicle");
-            if(w.isWithVehicle() == true) {
-                list5.add("YES");
-            }
-            else {
-                list5.add("NO");
-            }
-            resultWithVehicle.setItems(list5);
-
-            TableView<PastExpTableModel> pastExpTable = (TableView<PastExpTableModel>) stage.getScene().lookup("#pastExpTable");
-            ObservableList<PastExpTableModel> pastExp = FXCollections.observableArrayList();
-
-            for (Job job : w.getPastExperience()) {
-                pastExp.add(new PastExpTableModel(job.getPeriod().toString(), String.valueOf(job.getYear()), job.getCompanyName(),
-                job.getTask(), job.getArea().toString(), String.valueOf(job.getGrossDailySalary()) + "€", job.getJob().toString()));
-            }
-
-            pastExpTable.setItems(pastExp);
-        }
         }
 }

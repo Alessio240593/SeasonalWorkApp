@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -20,10 +21,10 @@ import Model.Language;
 import Model.City;
 import Model.Season;
 import Model.Job;
+import Model.PastExpTableModel;
 import Model.Jobs;
 
-import static Controller.Utility.setError;
-import static Controller.Utility.unSetError;
+import static Controller.Utility.*;
 
 public class UpdateExpController {
     @FXML
@@ -126,6 +127,107 @@ public class UpdateExpController {
                     }
 
                     filterField.setItems(list);
+                }
+            }
+        });
+
+        TableView<TableViewModel> table = (TableView<TableViewModel>) stage.getScene().lookup("#resultTable");
+        table.onMouseClickedProperty().set(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                ObservableList<TableViewModel> selected = table.getSelectionModel().getSelectedItems();
+
+                if (!selected.isEmpty()) {
+                    String path = System.getenv("PWD") + "/src/resources/database/workers.json";
+                    List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
+                    SeasonalWorker w = null;
+
+                    for (SeasonalWorker worker : workers) {
+                        if (worker.getId() == selected.get(0).getId()) {
+                            w = worker;
+                            break;
+                        }
+                    }
+                    stage.setUserData(w);
+                    Utility.changeScene("SearchResult.fxml", stage);
+
+                    TextField resultName = (TextField) stage.getScene().lookup("#resultName");
+                    resultName.setText(w.getRecord().getName());
+                    TextField resultSurname = (TextField) stage.getScene().lookup("#resultSurname");
+                    resultSurname.setText(w.getRecord().getSurname());
+                    TextField resultEmail = (TextField) stage.getScene().lookup("#resultEmail");
+                    resultEmail.setText(w.getRecord().getEmail());
+                    TextField resultCellnum = (TextField) stage.getScene().lookup("#resultCellnum");
+                    resultCellnum.setText(w.getRecord().getCellnum());
+                    TextField resultAddress = (TextField) stage.getScene().lookup("#resultAddress");
+                    resultAddress.setText(w.getAddress());
+                    TextField resultBirthData = (TextField) stage.getScene().lookup("#resultBirthData");
+
+                    String tmpDate = (w.getBrithInfo().getBirthDate().getDayOfMonth() < 10 ? "0" + w.getBrithInfo().getBirthDate().getDayOfMonth() :
+                            w.getBrithInfo().getBirthDate().getDayOfMonth()) + "/" + (w.getBrithInfo().getBirthDate().getMonth().getValue() < 10 ? "0" +
+                            w.getBrithInfo().getBirthDate().getMonth().getValue() : w.getBrithInfo().getBirthDate().getMonth().getValue()) + "/" +
+                            w.getBrithInfo().getBirthDate().getYear();
+
+                    resultBirthData.setText(tmpDate);
+                    TextField resultCittàNascita = (TextField) stage.getScene().lookup("#resultCittàNascita");
+                    resultCittàNascita.setText(w.getBrithInfo().getBirthplace());
+                    TextField resultEmergency_name = (TextField) stage.getScene().lookup("#resultEmergency_name");
+                    resultEmergency_name.setText(w.getEmergencyContact().getRecord().getName());
+                    TextField resultEmergency_surname = (TextField) stage.getScene().lookup("#resultEmergency_surname");
+                    resultEmergency_surname.setText(w.getEmergencyContact().getRecord().getSurname());
+                    TextField resultEmergency_cellnum = (TextField) stage.getScene().lookup("#resultEmergency_cellnum");
+                    resultEmergency_cellnum.setText(w.getEmergencyContact().getRecord().getCellnum());
+                    TextField resultEmergency_email = (TextField) stage.getScene().lookup("#resultEmergency_email");
+                    resultEmergency_email.setText(w.getEmergencyContact().getRecord().getEmail());
+                    TextField resultNazionalità = (TextField) stage.getScene().lookup("#resultNazionalità");
+                    resultNazionalità.setText(w.getBrithInfo().getNationality());
+
+                    ObservableList<Object> list = FXCollections.observableArrayList();
+                    ChoiceBox resultLanguage = (ChoiceBox) stage.getScene().lookup("#resultLanguage");
+                    for (Language lan : w.getLanguages()) {
+                        list.add(lan);
+                    }
+                    resultLanguage.setItems(list);
+
+                    ObservableList<Object> list2 = FXCollections.observableArrayList();
+                    ChoiceBox resultLicense = (ChoiceBox) stage.getScene().lookup("#resultLicense");
+                    for (License lic : w.getLicense()) {
+                        list2.add(lic);
+                    }
+                    resultLicense.setItems(list2);
+
+                    ObservableList<Object> list3 = FXCollections.observableArrayList();
+                    ChoiceBox resultCity = (ChoiceBox) stage.getScene().lookup("#resultCity");
+                    for (City city : w.getActivityArea()) {
+                        list3.add(city);
+                    }
+                    resultCity.setItems(list3);
+
+                    ObservableList<Object> list4 = FXCollections.observableArrayList();
+                    ChoiceBox resultPeriod = (ChoiceBox) stage.getScene().lookup("#resultPeriod");
+                    for (Season season : w.getPeriod()) {
+                        list4.add(season);
+                    }
+                    resultPeriod.setItems(list4);
+
+                    ObservableList<Object> list5 = FXCollections.observableArrayList();
+                    ChoiceBox resultWithVehicle = (ChoiceBox) stage.getScene().lookup("#resultWithVehicle");
+                    if (w.isWithVehicle() == true) {
+                        list5.add("YES");
+                    } else {
+                        list5.add("NO");
+                    }
+                    resultWithVehicle.setItems(list5);
+
+                    TableView<PastExpTableModel> pastExpTable = (TableView<PastExpTableModel>) stage.getScene().lookup("#pastExpTable");
+                    ObservableList<PastExpTableModel> pastExp = FXCollections.observableArrayList();
+
+                    for (Job job : w.getPastExperience()) {
+                        pastExp.add(new PastExpTableModel(job.getPeriod().toString(), String.valueOf(job.getYear()), job.getCompanyName(),
+                                job.getTask(), job.getArea().toString(), String.valueOf(job.getGrossDailySalary()) + "€", job.getJob().toString()));
+                    }
+
+                    pastExpTable.setItems(pastExp);
                 }
             }
         });
@@ -287,8 +389,6 @@ public class UpdateExpController {
     }
 
     public void removeActivityAreaHandler(ActionEvent actionEvent) {
-        System.out.println("sono stato premuto diocane");
-
         SeasonalWorker worker = Utility.getWorker(updateActivityArea);
         if(updateActivityArea.getValue() != null) {
             City city = City.valueOf((String)updateActivityArea.getValue());
@@ -307,8 +407,6 @@ public class UpdateExpController {
     }
 
     public void removeLicenseHandler(ActionEvent actionEvent) {
-        System.out.println("mi premono dioboia");
-
         SeasonalWorker worker = Utility.getWorker(updateLicenseBox);
         if(updateLicenseBox.getValue() != null) {
             License license = License.valueOf((String)updateLicenseBox.getValue());
@@ -327,8 +425,6 @@ public class UpdateExpController {
     }
 
     public void removeLangaugesHandler(ActionEvent actionEvent) {
-        System.out.println("qualcuno mi premette dioporco");
-
         SeasonalWorker worker = Utility.getWorker(updateLanguagesBox);
         if(updateLanguagesBox.getValue() != null) {
             Language language = Language.valueOf((String) updateLanguagesBox.getValue());
@@ -346,8 +442,6 @@ public class UpdateExpController {
     }
 
     public void removePeriodHandler(ActionEvent actionEvent) {
-        System.out.println("sono stato premuto diocane");
-
         SeasonalWorker worker = Utility.getWorker(updateperiodBox);
         if(updateperiodBox.getValue() != null) {
             Season season1 = Season.valueOf((String)updateperiodBox.getValue());
@@ -366,10 +460,11 @@ public class UpdateExpController {
     }
 
     public void addUpdateExpHandler(ActionEvent actionEvent) {
+        Stage stage = (Stage) insertRecord.getScene().getWindow();
+        SeasonalWorker oldWorker = (SeasonalWorker) stage.getUserData();
 
         String updateNomeAzienda = updateNameAzienda.getText();
-        String regex = "[a-zA-z,.]+";
-        if (!Pattern.matches(regex, updateNomeAzienda)) {
+        if (!isAlphanumerical(updateNomeAzienda) || updateNomeAzienda.equals("") || updateNomeAzienda.equals(" ")) {
             System.err.println("nomeAzienda è sbagliato");
             setError(updateNameAzienda, updateExpErrorField, "error");
         } else {
@@ -378,7 +473,7 @@ public class UpdateExpController {
 
 
         String updateRetribution = updateRetribuzione.getText();
-        regex = "^[+]?([0-9]*[.])?[0-9]+$";
+        String regex = "^[+]?([0-9]*[.])?[0-9]+$";
         if (!Pattern.matches(regex, updateRetribution)) {
             System.err.println("retribuzione è sbagliato");
             setError(updateRetribuzione, updateExpErrorField, "error");
@@ -389,8 +484,10 @@ public class UpdateExpController {
 
         String updateAnnoAssunzione = updateAnnoassunzione.getText();
         regex = "^[0-9]{4}$";
-        if (!Pattern.matches(regex, updateAnnoAssunzione) || Integer.parseInt(updateAnnoAssunzione) < LocalDate.now().getYear() - 5) {
-            System.err.println("anno assunzione è sbagliato");
+        if (!Pattern.matches(regex, updateAnnoAssunzione) || Integer.parseInt(updateAnnoAssunzione) < LocalDate.now().getYear() - 5
+            || Integer.parseInt(updateAnnoAssunzione) > LocalDate.now().getYear() ||
+                Integer.parseInt(updateAnnoAssunzione) < ((oldWorker.getBrithInfo().getBirthDate().getYear() + 16)) ||
+                Integer.parseInt(updateAnnoAssunzione) > LocalDate.now().getYear()) {
             setError(updateAnnoassunzione, updateExpErrorField, "error");
         } else {
             unSetError(updateAnnoassunzione, updateExpErrorField);
@@ -424,6 +521,12 @@ public class UpdateExpController {
         }
 
         String mansion = updateMansioni.getText();
+        if(mansion.length() > 512) {
+            setError(updateMansioni, updateExpErrorField, "error");
+        }
+        else {
+            unSetError(updateMansioni, updateExpErrorField);
+        }
 
         if(updateNameAzienda.getStyleClass().toString().contains("error") || updateRetribuzione.getStyleClass().toString().contains("error") ||
                 updateAnnoassunzione.getStyleClass().toString().contains("error") || updateCitta == null || updatePeriodo == null || updateJob == null
@@ -431,14 +534,11 @@ public class UpdateExpController {
             System.out.println("c'è qualche campo sbagliato");
         }
         else {
-            Stage stage = (Stage) updateExpErrorField.getScene().getWindow();
-            Worker worker = (SeasonalWorker) stage.getUserData();
-
             Job tmp = Model.getModel().createJob(Season.valueOf(period), updateNomeAzienda, mansion, City.valueOf(city),
                     Double.parseDouble(updateRetribution), Jobs.valueOf(lavoro), Integer.parseInt(updateAnnoAssunzione));
 
-            if (!Utility.checkPastExpDuplicate(worker, tmp)){
-                worker.getPastExperience().add(tmp);
+            if (!Utility.checkPastExpDuplicate(oldWorker, tmp)){
+                oldWorker.getPastExperience().add(tmp);
                 //clean fields
                 updateNameAzienda.setText("");
                 updateRetribuzione.setText("");
@@ -455,7 +555,6 @@ public class UpdateExpController {
                 unSetError(updateCitta, updateExpErrorField);
                 unSetError(updatePeriodo, updateExpErrorField);
                 unSetError(updateJob, updateExpErrorField);
-                System.out.println(worker);
             }
             else {
                 setError(updateNameAzienda, updateExpErrorField, "duplicate");
