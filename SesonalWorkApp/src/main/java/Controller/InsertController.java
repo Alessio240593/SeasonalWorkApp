@@ -345,7 +345,7 @@ public class InsertController {
     }
 
     public boolean checkDate(LocalDate data) {
-        if((data.getYear() < 1900 || data.getYear() >= (Year.now().getValue() - 16))) {
+        if((data.getYear() < 1950 || data.getYear() >= (Year.now().getValue() - 16))) {
             return false;
         }
         return true;

@@ -348,7 +348,7 @@ public class InsertExpController {
         Stage stage = (Stage) add.getScene().getWindow();
         String annoAssunzione = annoassunzione.getText();
         regex = "^[0-9]{4}$";
-        if ((!Pattern.matches(regex, annoAssunzione) || Integer.parseInt(annoAssunzione) < 1900) ||
+        if ((!Pattern.matches(regex, annoAssunzione) || Integer.parseInt(annoAssunzione) < 1950) ||
                 Integer.parseInt(annoAssunzione) < LocalDate.now().getYear() - 5 ||
                 Integer.parseInt(annoAssunzione) < (((SeasonalWorker) stage.getUserData()).getBrithInfo().getBirthDate().getYear() + 16) ||
                 Integer.parseInt(annoAssunzione) > LocalDate.now().getYear()) {

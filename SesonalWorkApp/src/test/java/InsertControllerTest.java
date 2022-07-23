@@ -297,7 +297,7 @@ public class InsertControllerTest {
     @DisplayName("Check legal date")
     public void checkDateIllegalMinTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
-        Assert.assertEquals(testModel.checkDate( LocalDate.of(1899, 10, 27)), false);
+        Assert.assertEquals(testModel.checkDate( LocalDate.of(1949, 10, 27)), false);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 
