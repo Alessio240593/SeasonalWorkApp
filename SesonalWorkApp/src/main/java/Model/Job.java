@@ -22,6 +22,32 @@ public class Job {
         this.job = job;
     }
 
+    @Override
+    public String toString() {
+        return "Job{" +
+                "period=" + period +
+                ", year=" + year +
+                ", companyName='" + companyName + '\'' +
+                ", task='" + task + '\'' +
+                ", area=" + area +
+                ", grossDailySalary=" + grossDailySalary +
+                ", job=" + job +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Job job1 = (Job) o;
+        return year == job1.year && Double.compare(job1.grossDailySalary, grossDailySalary) == 0 && period == job1.period && Objects.equals(companyName, job1.companyName) && Objects.equals(task, job1.task) && area == job1.area && job == job1.job;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(period, year, companyName, task, area, grossDailySalary, job);
+    }
+
     public Season getPeriod() {
         return period;
     }
@@ -72,31 +98,5 @@ public class Job {
 
     public void setJob(Jobs job) {
         this.job = job;
-    }
-
-    @Override
-    public String toString() {
-        return "Job{" +
-                "period=" + period +
-                ", year=" + year +
-                ", companyName='" + companyName + '\'' +
-                ", task='" + task + '\'' +
-                ", area=" + area +
-                ", grossDailySalary=" + grossDailySalary +
-                ", job=" + job +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Job job1 = (Job) o;
-        return year == job1.year && Double.compare(job1.grossDailySalary, grossDailySalary) == 0 && period == job1.period && Objects.equals(companyName, job1.companyName) && Objects.equals(task, job1.task) && area == job1.area && job == job1.job;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(period, year, companyName, task, area, grossDailySalary, job);
     }
 }

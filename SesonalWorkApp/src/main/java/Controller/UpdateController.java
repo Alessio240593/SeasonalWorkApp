@@ -14,7 +14,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -25,7 +24,6 @@ import Model.Season;
 import Model.City;
 import Model.Job;
 import Model.PastExpTableModel;
-
 
 import static Controller.Utility.setError;
 import static Controller.Utility.unSetError;
@@ -45,8 +43,6 @@ public class UpdateController {
     private TextField updateEmergencyEmail;
     @FXML
     private TextField updateEmergencyCellnum;
-    @FXML
-    private Button nextUpdateField;
     @FXML
     private TextField updateErrorField;
     @FXML

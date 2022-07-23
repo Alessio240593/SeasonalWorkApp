@@ -10,7 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import Model.License;
 import Model.Language;
@@ -20,7 +19,6 @@ import Model.Season;
 import java.util.List;
 import Model.PastExpTableModel;
 import Model.Job;
-
 
 public class UpdateChoiceController {
     @FXML

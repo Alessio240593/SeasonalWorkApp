@@ -15,15 +15,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.time.Year;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 import Model.License;
 import Model.Language;
@@ -35,7 +32,6 @@ import Model.Season;
 import Model.Person;
 import Model.Job;
 import Model.PastExpTableModel;
-
 
 import static Controller.Utility.setError;
 import static Controller.Utility.unSetError;
@@ -291,7 +287,6 @@ public class InsertController {
                     Worker tmp = null;
                     for (SeasonalWorker w : workers) {
                         if (w.getId() == id) {
-                            System.out.println(w);
                             tmp = Model.getModel().createWorker("SEASONAL", w.getAddress(), w.getPastExperience(), w.getBrithInfo(), w.getLanguages(), w.getLicense(),
                                     w.isWithVehicle(),  w.getActivityArea(), w.getPeriod(), w.getEmergencyContact() , w.getRecord());
                         }
@@ -390,7 +385,6 @@ public class InsertController {
         } else {
             for (Worker worker : workers)
                 if (worker.getRecord().getCellnum().equals(cellulare)) {
-                    System.out.println("Numero di cellulare associato ad un altro utente");
                     setError(cellnum, errorField, "duplicate field");
                     break;
                 }
@@ -407,7 +401,6 @@ public class InsertController {
         } else {
             for (Worker worker : workers) {
                 if (worker.getRecord().getEmail().equals(postaelettronica)) {
-                    System.out.println("Email associata ad un altro utente");
                     setError(email, errorField, "duplicate field");
                     break;
                 }
@@ -419,7 +412,6 @@ public class InsertController {
 
         String indirizzo = address.getText();
         if (!checkAddress(indirizzo)) {
-            System.out.println("indirizzo è sbagliato");
             setError(address, errorField, "error");
         }
         else {
@@ -429,7 +421,6 @@ public class InsertController {
         LocalDate data = date.getValue();
 
         if (data == null) {
-            System.out.println("data sbagliata");
             setError(date, errorField, "error");
         } else if (!checkDate(data)) {
             setError(date, errorField, "error");
@@ -557,7 +548,6 @@ public class InsertController {
                 emergency_surname.getStyleClass().toString().contains("error") || emergency_cellnum.getStyleClass().toString().contains("error") ||
                 emergency_email.getStyleClass().toString().contains("error") || nazionalità.getStyleClass().toString().contains("error") || cittàNascita.getStyleClass().toString().contains("error") ||
                 data == null || date.getStyleClass().toString().contains("error") || withVehicleChoicheBox.getValue() == null) {
-            System.out.println("c'è qualche campo sbagliato");
         } else {
             stage = (Stage) next.getScene().getWindow();
             Parent content2;

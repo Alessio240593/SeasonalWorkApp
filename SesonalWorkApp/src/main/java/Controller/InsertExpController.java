@@ -7,7 +7,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.util.List;
@@ -389,7 +388,6 @@ public class InsertExpController {
                 annoassunzione.getStyleClass().toString().contains("error") ||
                 city == null || period == null || lavoro == null
         ) {
-            System.out.println("c'è qualche campo sbagliato");
         } else {
             Worker worker = (SeasonalWorker) stage.getUserData();
 
@@ -407,7 +405,6 @@ public class InsertExpController {
                 job.setValue(null);
                 mansioni.setText("");
 
-                System.out.println(worker);
                 setError(expErrorField, expErrorField, "insertSuccess");
                 unSetError(nameAzienda, expErrorField);
                 unSetError(retribuzione, expErrorField);

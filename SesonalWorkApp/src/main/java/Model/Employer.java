@@ -11,24 +11,7 @@ public class Employer extends Person{
         super(record);
         this.birthInfo = birthInfo;
         this.account = account;
-        // OCIO se non va lo mettiamo a mano
         this.id = birthInfo.hashCode() ^ account.hashCode() ^ record.hashCode();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public BirthData getBirthInfo() {
-        return birthInfo;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
     }
 
     @Override
@@ -51,5 +34,21 @@ public class Employer extends Person{
                 ", birthInfo=" + birthInfo +
                 ", account=" + account +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public BirthData getBirthInfo() {
+        return birthInfo;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

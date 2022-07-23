@@ -10,7 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -49,8 +48,6 @@ public class UpdateExpController {
     private TextArea updateMansioni;
     @FXML
     private TextField updateExpErrorField;
-    @FXML
-    private Button updateExp;
     @FXML
     private ChoiceBox updateActivityArea;
     @FXML
@@ -536,7 +533,6 @@ public class UpdateExpController {
         if(updateNameAzienda.getStyleClass().toString().contains("error") || updateRetribuzione.getStyleClass().toString().contains("error") ||
                 updateAnnoassunzione.getStyleClass().toString().contains("error") || updateCitta == null || updatePeriodo == null || updateJob == null
                 || updateMansioni.getStyleClass().toString().contains("error")) {
-            System.out.println("c'è qualche campo sbagliato");
         }
         else {
             Job tmp = Model.getModel().createJob(Season.valueOf(period), updateNomeAzienda, mansion, City.valueOf(city),

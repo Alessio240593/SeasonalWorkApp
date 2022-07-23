@@ -13,14 +13,6 @@ public class Person {
         this.record = record;
     }
 
-    public Record getRecord() {
-        return record;
-    }
-
-    public void setRecord(Record record) {
-        this.record = record;
-    }
-
     @Override
     public String toString() {
         return record.toString();
@@ -37,5 +29,13 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(record);
+    }
+
+    public Record getRecord() {
+        return record;
+    }
+
+    public void setRecord(Record record) {
+        this.record = record;
     }
 }

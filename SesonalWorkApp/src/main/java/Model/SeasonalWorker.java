@@ -6,10 +6,6 @@ import java.util.Objects;
 public class SeasonalWorker extends Worker{
 
     private final int id;
-    //da togliere
-    public SeasonalWorker(int id){
-        this.id = id;
-    }
 
     public SeasonalWorker(String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, Boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
         super(address, pastExperience, brithInfo, languages, liscense, withVehicle, activityArea, period, emergencyContact, record);

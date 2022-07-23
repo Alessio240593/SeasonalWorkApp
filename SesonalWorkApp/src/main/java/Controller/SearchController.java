@@ -6,24 +6,18 @@ import Model.TableViewModel;
 import Model.Worker;
 import Model.Language;
 import Model.License;
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import Model.Season;
 import Model.Jobs;
 import Model.City;
 import Model.PastExpTableModel;
 import Model.SearchModel;
-import Model.PastExpTableModel;
-
-
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -342,7 +336,6 @@ public class SearchController {
 
         if(filter.getStyleClass().toString().contains("error") || filterField.getStyleClass().toString().contains("error")||
                 (andOrFilter.getStyleClass().toString().contains("error"))) {
-            System.out.println("dati sbagliati");
         }
         else {
             andOrFilter.setDisable(false);
@@ -452,7 +445,6 @@ public class SearchController {
 
         if(name.getStyleClass().toString().contains("error") && surname.getStyleClass().toString().contains("error") ||
                 andOrFilterText.toString().contains("error")) {
-            System.out.println("campo nome e/o cognome non corretti");
         }
         else {
             andOrFilter.setDisable(false);
@@ -541,7 +533,6 @@ public class SearchController {
 
         if(stage.getUserData() != null && ((List<SearchModel>)stage.getUserData()).size() != 0) {
             List<SearchModel> filters = (List<SearchModel>) stage.getUserData();
-            System.out.println(filters);
             List<SeasonalWorker> workers = Utility.gsonWorkerReader(path);
             List<SeasonalWorker> res = new ArrayList<>(workers);
 
