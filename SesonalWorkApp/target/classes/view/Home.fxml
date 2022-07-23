@@ -123,7 +123,7 @@
                   <Insets bottom="40.0" top="10.0" />
                </VBox.margin>
             </ImageView>
-            <TextArea minHeight="182.0" minWidth="200.0" prefHeight="182.0" prefWidth="648.0" style="-fx-font-size: 21; -fx-font-family: Courier New; -fx-font-style: italic;" text="Benvenuto in SeasonalWorkApp, con questa app potrai &#10;inserire i lavoratori stagionali nel database dell'agenzia, &#10;inoltre si potranno aggiornare i dati dei lavoratori già &#10;presenti nel sistema.SeasonalWOrkApp offre anche servizi &#10;di ricerca di profili adatti ai lavori disponibili. &#10;Queste funzionalità sono offerte nel menù a sinistra.">
+            <TextArea editable="false" minHeight="182.0" minWidth="200.0" prefHeight="182.0" prefWidth="648.0" style="-fx-font-size: 21; -fx-font-family: Courier New; -fx-font-style: italic;" text="Benvenuto in SeasonalWorkApp, con questa app potrai &#10;inserire i lavoratori stagionali nel database dell'agenzia, &#10;inoltre si potranno aggiornare i dati dei lavoratori già &#10;presenti nel sistema.SeasonalWOrkApp offre anche servizi &#10;di ricerca di profili adatti ai lavori disponibili. &#10;Queste funzionalità sono offerte nel menù a sinistra.">
                <font>
                   <Font size="22.0" />
                </font>

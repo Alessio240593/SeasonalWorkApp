@@ -29,11 +29,29 @@
         "area": "VERONA",
         "grossDailySalary": 1.0,
         "job": "FARMER"
+      },
+      {
+        "period": "WINTER",
+        "year": 2022,
+        "companyName": "questa",
+        "task": "merda",
+        "area": "VENEZIA",
+        "grossDailySalary": 2000.0,
+        "job": "PIZZAMAKER"
+      },
+      {
+        "period": "SUMMER",
+        "year": 2022,
+        "companyName": "Quaglia srl",
+        "task": "Univr ciao",
+        "area": "VERONA",
+        "grossDailySalary": 200000.0,
+        "job": "WAITER"
       }
     ],
     "brithInfo": {
       "birthDate": {
-        "year": 2000,
+        "year": 2005,
         "month": 6,
         "day": 30
       },
@@ -51,7 +69,9 @@
       "VENEZIA",
       "VERONA"
     ],
-    "period": [],
+    "period": [
+      "FALL"
+    ],
     "emergencyContact": {
       "record": {
         "name": "aaaa",

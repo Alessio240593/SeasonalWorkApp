@@ -62,6 +62,14 @@ public class InsertControllerTest {
     }
 
     @Test
+    @DisplayName("Check name with alphanumeric")
+    public void checkNameAlphaTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkName("ciao323prova"), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
     @DisplayName("Check surname with literal")
     public void checkSurnameLiteralTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
@@ -98,6 +106,14 @@ public class InsertControllerTest {
     public void checkSurnameNothingTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
         Assert.assertEquals(testModel.checkSurname(""), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check surname with alphanumeric")
+    public void checkSurnameAlphaTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkSurname("ciao323prova"), false);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 
@@ -150,6 +166,14 @@ public class InsertControllerTest {
     }
 
     @Test
+    @DisplayName("Check cell with alphanumeric")
+    public void checkCellAlphaTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkCell("ciao323prova"), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
     @DisplayName("Check email with number")
     public void checkEmailRegularTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
@@ -194,6 +218,70 @@ public class InsertControllerTest {
     public void checkEmailNothingTest() {
         start(new Throwable().getStackTrace()[0].getMethodName());
         Assert.assertEquals(testModel.checkEmail(""), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check email with alphanumeric")
+    public void checkEmailAlphaTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkEmail("ciao323prova"), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check address with litel")
+    public void checkAddressLiteralTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkAddress("questa è una prova"), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check address with number")
+    public void checkAddressNumberTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkAddress("12345"), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check address with other expression")
+    public void checkAddressOtherExpTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkAddress("???$$£$£$£$£$"), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check address with space")
+    public void checkAddressSpaceTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkAddress(" "), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check address with nothing")
+    public void checkAddressNothingTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkAddress(""), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check address with alphanumeric")
+    public void checkAddressAlphaTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkAddress("ciao323prova"), false);
+        checkRes( new Throwable().getStackTrace()[0].getMethodName());
+    }
+
+    @Test
+    @DisplayName("Check address with alphanumeric")
+    public void checkAddressLegalTest() {
+        start(new Throwable().getStackTrace()[0].getMethodName());
+        Assert.assertEquals(testModel.checkAddress("via Prova 13"), true);
         checkRes( new Throwable().getStackTrace()[0].getMethodName());
     }
 
