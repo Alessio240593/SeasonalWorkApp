@@ -70,6 +70,7 @@ public class DaoEmployerImplement implements DaoEmployer{
     @Override
     public boolean login(String username, String password) {
 
+
         List<Account> accounts = Utility.gsonReader(System.getenv("PWD") + "/src/resources/database/employer.json");
 
         for(Account account : accounts) {

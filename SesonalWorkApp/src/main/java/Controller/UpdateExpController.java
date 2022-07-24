@@ -467,7 +467,6 @@ public class UpdateExpController {
 
         String updateNomeAzienda = updateNameAzienda.getText();
         if (!isAlphanumerical(updateNomeAzienda) || updateNomeAzienda.equals("") || updateNomeAzienda.equals(" ")) {
-            System.err.println("nomeAzienda è sbagliato");
             setError(updateNameAzienda, updateExpErrorField, "error");
         } else {
             unSetError(updateNameAzienda, updateExpErrorField);
@@ -477,7 +476,6 @@ public class UpdateExpController {
         String updateRetribution = updateRetribuzione.getText();
         String regex = "^[+]?([0-9]*[.])?[0-9]+$";
         if (!Pattern.matches(regex, updateRetribution)) {
-            System.err.println("retribuzione è sbagliato");
             setError(updateRetribuzione, updateExpErrorField, "error");
         } else {
             unSetError(updateRetribuzione, updateExpErrorField);
@@ -497,7 +495,6 @@ public class UpdateExpController {
 
         String city = (String) updateCitta.getValue();
         if(city == null) {
-            System.err.println("city è sbagliato");
             setError(updateCitta, updateExpErrorField, "error");
         }
         else {
@@ -506,7 +503,6 @@ public class UpdateExpController {
 
         String period = (String) updatePeriodo.getValue();
         if(period == null) {
-            System.err.println("period è sbagliato");
             setError(updatePeriodo, updateExpErrorField, "error");
         }
         else {
@@ -515,7 +511,6 @@ public class UpdateExpController {
 
         String lavoro = (String) updateJob.getValue();
         if(lavoro == null) {
-            System.err.println("lavoro è sbagliato");
             setError(updateJob, updateExpErrorField, "error");
         }
         else {

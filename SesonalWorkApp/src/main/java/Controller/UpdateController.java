@@ -296,7 +296,6 @@ public class UpdateController {
         if (!indirizzoAggiornato.isEmpty() || oldWorker.getAddress().equals(indirizzoAggiornato)) {
             regex = "^[a-zA-z]+ .+,? (?:n.)?[0-9]+.*$";
             if (!Pattern.matches(regex, indirizzoAggiornato)) {
-                System.err.println("indirizzo aggiornato è sbagliato");
                 setError(updateAddress, updateErrorField, "error");
             }
             else {
@@ -310,7 +309,6 @@ public class UpdateController {
         if (!emailAggiornata.isEmpty()) {
             regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
             if (!Pattern.matches(regex, emailAggiornata) || oldWorker.getRecord().getEmail().equals(emailAggiornata)) {
-                System.err.println("email aggiornata è sbagliata");
                 setError(updateEmail, updateErrorField, "error");
             } else {
                 unSetError(updateEmail, updateErrorField);
@@ -323,7 +321,6 @@ public class UpdateController {
         if (!cellulareAggiornato.isEmpty()) {
             regex = "^[0-9]{10}$";
             if (!Pattern.matches(regex, cellulareAggiornato) || oldWorker.getRecord().getEmail().equals(cellulareAggiornato)) {
-                System.err.println("cellulare aggiornato è sbagliato");
                 setError(updateCellnum, updateErrorField, "error");
             } else {
                 unSetError(updateCellnum, updateErrorField);
@@ -343,7 +340,6 @@ public class UpdateController {
             regex = "^[a-zA-Z]+";
             if (!Pattern.matches(regex, nomeEmergenzaAggiornato) || nomeEmergenzaAggiornato.equals(oldWorker.getEmergencyContact().getRecord().getName()) ||
                     nomeEmergenzaAggiornato.equals(oldWorker.getRecord().getName())) {
-                System.err.println("nome emergenza aggiornato è sbagliato");
                 setError(updateEmergencyName, updateErrorField, "error");
             } else {
                 unSetError(updateEmergencyName, updateErrorField);
@@ -357,7 +353,6 @@ public class UpdateController {
             regex = "^[a-zA-Z]+";
             if (!Pattern.matches(regex, cognomeEmergenzaAggiornato) || cognomeEmergenzaAggiornato.equals(oldWorker.getEmergencyContact().getRecord().getSurname()) ||
                     cognomeEmergenzaAggiornato.equals(oldWorker.getRecord().getSurname())) {
-                System.err.println("cognome emergenza aggiornato è sbagliato");
                 setError(updateEmergencySurname, updateErrorField, "error");
             } else {
                 unSetError(updateEmergencySurname, updateErrorField);
@@ -371,7 +366,6 @@ public class UpdateController {
             regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
             if (!Pattern.matches(regex, emailEmergenzaAggiornato) || emailEmergenzaAggiornato.equals(oldWorker.getEmergencyContact().getRecord().getEmail()) ||
                     emailEmergenzaAggiornato.equals(oldWorker.getRecord().getEmail())) {
-                System.err.println("email emergenza aggiornata è sbagliata");
                 setError(updateEmergencyEmail, updateErrorField, "error");
             } else {
                 unSetError(updateEmergencyEmail, updateErrorField);
@@ -385,7 +379,6 @@ public class UpdateController {
             regex = "^[0-9]{10}$";
             if (!Pattern.matches(regex, cellulareEmergenzaAggiornato) || cellulareEmergenzaAggiornato.equals(oldWorker.getEmergencyContact().getRecord().getCellnum()) ||
                     cellulareEmergenzaAggiornato.equals(oldWorker.getRecord().getCellnum())) {
-                System.err.println("cellulare emergenza aggiornato è sbagliato");
                 setError(updateEmergencyCellnum, updateErrorField, "error");
             } else {
                 unSetError(updateEmergencyCellnum, updateErrorField);

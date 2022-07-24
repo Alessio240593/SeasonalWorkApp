@@ -329,7 +329,6 @@ public class InsertExpController {
         //TODO regex azienda da sistemare
         String nomeAzienda = nameAzienda.getText();
         if (!isAlphanumerical(nomeAzienda) || nomeAzienda.equals("") || nomeAzienda.equals(" ")) {
-            System.err.println("nomeAzienda è sbagliato");
             setError(nameAzienda, expErrorField, "error");
         } else {
             unSetError(nameAzienda, expErrorField);
@@ -338,7 +337,6 @@ public class InsertExpController {
         String retribution = retribuzione.getText();
         String regex = "^[+]?([0-9]*[.])?[0-9]+$";
         if (!Pattern.matches(regex, retribution) || Double.parseDouble(retribution) > 10000) {
-            System.err.println("retribuzione è sbagliato");
             setError(retribuzione, expErrorField, "error");
         } else {
             unSetError(retribuzione, expErrorField);
@@ -351,7 +349,6 @@ public class InsertExpController {
                 Integer.parseInt(annoAssunzione) < LocalDate.now().getYear() - 5 ||
                 Integer.parseInt(annoAssunzione) < (((SeasonalWorker) stage.getUserData()).getBrithInfo().getBirthDate().getYear() + 16) ||
                 Integer.parseInt(annoAssunzione) > LocalDate.now().getYear()) {
-            System.err.println("annoAssunzione è sbagliato");
             setError(annoassunzione, expErrorField, "error");
         } else {
             unSetError(annoassunzione, expErrorField);
@@ -359,7 +356,6 @@ public class InsertExpController {
 
         String city = (String) citta.getValue();
         if (city == null) {
-            System.err.println("city è sbagliato");
             setError(citta, expErrorField, "error");
         } else {
             unSetError(citta, expErrorField);
@@ -367,7 +363,6 @@ public class InsertExpController {
 
         String period = (String) periodo.getValue();
         if (period == null) {
-            System.err.println("period è sbagliato");
             setError(periodo, expErrorField, "error");
         } else {
             unSetError(periodo, expErrorField);
@@ -375,7 +370,6 @@ public class InsertExpController {
 
         String lavoro = (String) job.getValue();
         if (lavoro == null) {
-            System.err.println("lavoro è sbagliato");
             setError(job, expErrorField, "error");
         } else {
             unSetError(job, expErrorField);

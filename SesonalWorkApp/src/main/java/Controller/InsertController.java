@@ -363,7 +363,6 @@ public class InsertController {
         String nome = name.getText();
         String regex = "^[a-zA-Z]+";
         if (!checkName(nome)) {
-            System.err.println("nome è sbagliato");
             setError(name, errorField, "error");
         } else {
             unSetError(name, errorField);
@@ -371,7 +370,6 @@ public class InsertController {
 
         String cognome = surname.getText();
         if (!checkSurname(cognome)) {
-            System.err.println("cognome è sbagliato");
             setError(surname, errorField, "error");
         } else {
             unSetError(surname, errorField);
@@ -379,7 +377,6 @@ public class InsertController {
 
         String cellulare = cellnum.getText();
         if (!checkCell(cellulare)) {
-            System.err.println("cellulare è sbagliato");
             setError(cellnum, errorField, "error");
         } else {
             for (Worker worker : workers)
@@ -395,7 +392,6 @@ public class InsertController {
 
         String postaelettronica = email.getText();
         if (!checkEmail(postaelettronica)) {
-            System.err.println("email è sbagliato");
             setError(email, errorField, "error");
         } else {
             for (Worker worker : workers) {
@@ -429,7 +425,6 @@ public class InsertController {
 
         String nazionalita = nazionalità.getText();
         if (!checkNazionalita(nazionalita)) {
-            System.err.println("nazionalità è sbagliato");
             setError(nazionalità, errorField, "error");
         } else {
             unSetError(nazionalità, errorField);
@@ -438,7 +433,6 @@ public class InsertController {
         String luogoNascita = cittàNascita.getText();
         regex = "^[a-zA-Z]+";
         if (!Pattern.matches(regex, luogoNascita)) {
-            System.err.println("luogoNascita è sbagliato");
             setError(cittàNascita, errorField, "error");
         } else {
             unSetError(cittàNascita, errorField);
@@ -447,7 +441,6 @@ public class InsertController {
         String nome_emergenza = emergency_name.getText();
         regex = "^[a-zA-Z]+";
         if (!Pattern.matches(regex, nome_emergenza)) {
-            System.err.println("nome_emergenza è sbagliato");
             setError(emergency_name, errorField, "error");
         }
         else {
@@ -456,7 +449,6 @@ public class InsertController {
 
         String cognome_emergenza = emergency_surname.getText();
         if (!Pattern.matches(regex, cognome_emergenza)) {
-            System.err.println("cognome_emergenza è sbagliato");
             setError(emergency_surname, errorField, "error");
         }
         else {
@@ -466,7 +458,6 @@ public class InsertController {
         String cellulare_emergenza = emergency_cellnum.getText();
         regex = "^[0-9]{10}$";
         if (!Pattern.matches(regex, cellulare_emergenza)) {
-            System.err.println("cellulare_emergenza è sbagliato");
             setError(emergency_cellnum, errorField, "error");
         }
         else if(cellulare_emergenza.equals(cellulare)){
@@ -482,7 +473,6 @@ public class InsertController {
         String postaelettronica_emergenza = emergency_email.getText();
         regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
         if (!Pattern.matches(regex, postaelettronica_emergenza)) {
-            System.err.println("email_emergenza è sbagliato");
             setError(emergency_email, errorField, "error");
         }
         else if(postaelettronica_emergenza.equals(postaelettronica)){

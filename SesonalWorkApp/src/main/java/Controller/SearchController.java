@@ -415,7 +415,6 @@ public class SearchController {
         String nome = name.getText();
         String regex = "^[a-zA-Z]+";
         if (!Pattern.matches(regex, nome) && !nome.equals("")) {
-            System.err.println("nome è sbagliato");
             setError(name, searchFeedback, "error");
         } else {
             unSetError(name, searchFeedback);
@@ -423,7 +422,6 @@ public class SearchController {
 
         String cognome = surname.getText();
         if (!Pattern.matches(regex, cognome) && !cognome.equals("")) {
-            System.err.println("cognome è sbagliato");
             setError(surname, searchFeedback, "error");
         } else {
             unSetError(surname, searchFeedback);
