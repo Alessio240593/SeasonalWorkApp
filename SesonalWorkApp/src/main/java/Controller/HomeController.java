@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class HomeController {
     @FXML
-    public AnchorPane pane;
+    private AnchorPane pane;
     @FXML
     private Button updateRecord;
     @FXML

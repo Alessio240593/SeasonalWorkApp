@@ -28,21 +28,21 @@ import static Controller.Utility.*;
 
 public class SearchController {
     @FXML
-    public ChoiceBox filterField;
+    private ChoiceBox filterField;
     @FXML
-    public ChoiceBox filter;
+    private ChoiceBox filter;
     @FXML
-    public ChoiceBox andOrFilter;
+    private ChoiceBox andOrFilter;
     @FXML
-    public TextField searchFeedback;
+    private TextField searchFeedback;
     @FXML
-    public TextField name;
+    private TextField name;
     @FXML
-    public TextField surname;
+    private TextField surname;
     @FXML
-    public ChoiceBox andOrFilterText;
+    private ChoiceBox andOrFilterText;
     @FXML
-    Button addTextFilter;
+    private Button addTextFilter;
     @FXML
     private Button updateRecord;
     @FXML

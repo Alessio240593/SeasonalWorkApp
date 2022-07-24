@@ -39,7 +39,7 @@ import static Controller.Utility.unSetError;
 public class InsertController {
 
     @FXML
-    public ChoiceBox withVehicleChoicheBox;
+    private ChoiceBox withVehicleChoicheBox;
     @FXML
     private Button insertRecord;
     @FXML
@@ -318,7 +318,6 @@ public class InsertController {
         System.exit(0);
     }
 
-    //TODO sostituire il regex nei vari metodi
     public boolean checkName(String name) {
         return Pattern.matches("^[a-zA-Z]+", name);
     }

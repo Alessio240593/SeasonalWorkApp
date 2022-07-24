@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import java.time.LocalDate;
 
 public class InsertControllerTest {
-    public InsertController testModel;
+    private InsertController testModel;
 
     @Before
     public void setUp() {

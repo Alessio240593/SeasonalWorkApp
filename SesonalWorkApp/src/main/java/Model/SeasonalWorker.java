@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class SeasonalWorker extends Worker{
-
     private final int id;
 
     public SeasonalWorker(String address, List<Job> pastExperience, BirthData brithInfo, List<Language> languages, List<License> liscense, Boolean withVehicle, List<City> activityArea, List<Season> period, Person emergencyContact, Record record) {
