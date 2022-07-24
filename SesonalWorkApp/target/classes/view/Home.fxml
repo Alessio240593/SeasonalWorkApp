@@ -26,7 +26,7 @@
                         <Image url="@../icons/home.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Home" textFill="WHITE">
+                  <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Home" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -39,7 +39,7 @@
                         <Image url="@../icons/find.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="search" minWidth="120.0" mnemonicParsing="false" onAction="#searchHandler" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0">
+                  <Button fx:id="search" minWidth="120.0" mnemonicParsing="false" onAction="#searchHandler" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -52,7 +52,7 @@
                         <Image url="@../icons/add.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="104.0" styleClass="sideMenu" text="Insert" textFill="WHITE">
+                  <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Insert" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -65,7 +65,7 @@
                         <Image url="@../icons/update.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="updateRecord" minWidth="120.0" mnemonicParsing="false" onAction="#updateHandler" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Update" textFill="WHITE" translateX="-5.0">
+                  <Button fx:id="updateRecord" minWidth="120.0" mnemonicParsing="false" onAction="#updateHandler" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Update" textFill="WHITE" translateX="-5.0">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -78,7 +78,7 @@
                         <Image url="@../icons/logout.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="LogOut" textFill="WHITE" translateX="-4.0">
+                  <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="LogOut" textFill="WHITE" translateX="-4.0">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -91,7 +91,7 @@
                         <Image url="@../icons/exit.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="exit" minWidth="120.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Exit" textFill="WHITE">
+                  <Button fx:id="exit" minWidth="120.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Exit" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -108,7 +108,7 @@
             </Label>
          </children>
       </HBox>
-      <VBox layoutX="224.0" layoutY="53.0" prefHeight="882.0" prefWidth="648.0" style="-fx-background-color: white;">
+      <VBox layoutX="224.0" layoutY="53.0" prefHeight="911.0" prefWidth="648.0" style="-fx-background-color: white;">
          <children>
             <Label prefHeight="71.0" prefWidth="384.0" text="SEASONALWORKAPP" textFill="#31944f" translateX="150.0">
                <font>
@@ -123,12 +123,12 @@
                   <Insets bottom="40.0" top="10.0" />
                </VBox.margin>
             </ImageView>
-            <TextArea editable="false" minHeight="182.0" minWidth="200.0" prefHeight="182.0" prefWidth="648.0" style="-fx-font-size: 21; -fx-font-family: Courier New; -fx-font-style: italic;" text="Benvenuto in SeasonalWorkApp, con questa app potrai &#10;inserire i lavoratori stagionali nel database dell'agenzia, &#10;inoltre si potranno aggiornare i dati dei lavoratori già &#10;presenti nel sistema.SeasonalWOrkApp offre anche servizi &#10;di ricerca di profili adatti ai lavori disponibili. &#10;Queste funzionalità sono offerte nel menù a sinistra.">
+            <TextArea editable="false" minHeight="155.0" minWidth="200.0" prefHeight="155.0" prefWidth="648.0" style="-fx-font-size: 21; -fx-font-family: Courier New; -fx-font-style: italic;" text="Benvenuto in SeasonalWorkApp, con questa app potrai &#10;inserire i lavoratori stagionali nel database dell'agenzia, &#10;inoltre si potranno aggiornare i dati dei lavoratori già &#10;presenti nel sistema.SeasonalWorkApp offre anche servizi &#10;di ricerca di profili adatti ai lavori disponibili.">
                <font>
                   <Font size="22.0" />
                </font>
             </TextArea>
-            <TextField fx:id="homeFeedback" disable="true" minWidth="0.0" prefHeight="26.0" prefWidth="598.0" translateY="10.0" />
+            <TextField fx:id="homeFeedback" disable="true" minWidth="0.0" prefHeight="26.0" prefWidth="598.0" />
          </children>
       </VBox>
    </children>

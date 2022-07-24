@@ -35,7 +35,7 @@
                                 <Image url="@../icons/home.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Home" textFill="WHITE" />
+                        <Button fx:id="home" minWidth="120.0" mnemonicParsing="false" onAction="#homeHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Home" textFill="WHITE" />
                     </children>
                 </HBox>
                 <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="100.0">
@@ -45,7 +45,7 @@
                                 <Image url="@../icons/find.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="search" onAction="#searchHandler" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0" />
+                        <Button fx:id="search" onAction="#searchHandler" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Search" textFill="WHITE" translateX="-10.0" />
                     </children>
                 </HBox>
                 <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="100.0">
@@ -55,7 +55,7 @@
                                 <Image url="@../icons/add.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" styleClass="sideMenu" text="Insert" textFill="WHITE" />
+                        <Button fx:id="insertRecord" minWidth="120.0" mnemonicParsing="false" onAction="#insertHandler" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: transparent; -fx-text-fill: white;" styleClass="sideMenu" text="Insert" textFill="WHITE" />
                     </children>
                 </HBox>
                 <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="100.0">
@@ -65,7 +65,7 @@
                                 <Image url="@../icons/update.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="updateRecord" minWidth="120.0" mnemonicParsing="false" onAction="#updateHandler" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Update" textFill="WHITE" translateX="-5.0" />
+                        <Button fx:id="updateRecord" minWidth="120.0" mnemonicParsing="false" onAction="#updateHandler" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Update" textFill="WHITE" translateX="-5.0" />
                     </children>
                 </HBox>
                 <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="200.0">
@@ -75,7 +75,7 @@
                                 <Image url="@../icons/logout.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="LogOut" textFill="WHITE" translateX="-4.0" />
+                        <Button fx:id="logOut" minWidth="120.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="LogOut" textFill="WHITE" translateX="-4.0" />
                     </children>
                 </HBox>
                 <HBox prefHeight="44.0" prefWidth="150.0" translateX="25.0" translateY="200.0">
@@ -85,7 +85,7 @@
                                 <Image url="@../icons/exit.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="exit" minWidth="120.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: acquamarine; -fx-text-fill: white;" text="Exit" textFill="WHITE" />
+                        <Button fx:id="exit" minWidth="120.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Exit" textFill="WHITE" />
                     </children>
                 </HBox>
             </children>

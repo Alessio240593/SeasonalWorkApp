@@ -58,18 +58,18 @@ public class HomeController {
 
         //Defining the x axis
         CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Jobs");
         xAxis.setCategories(FXCollections.<String>
                 observableArrayList(Arrays.asList("chef", "farmer", "waiter", "busdriver",
-                "maintainer", "lifeguard", "sailinginstructor")));
+                "maintainer", "lifeguard", "sailing\ninstructor")));
 
         NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Number");
+        yAxis.setLabel("database occurency");
 
         //Creating the Bar chart
         BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
-        barChart.setTitle("Workers type");
         barChart.setTranslateX(250);
-        barChart.setTranslateY(650);
+        barChart.setTranslateY(620);
 
         //Prepare XYChart.Series objects by setting data
         XYChart.Series<String, Number> series1 = new XYChart.Series<>();

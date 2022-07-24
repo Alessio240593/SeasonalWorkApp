@@ -613,12 +613,12 @@ public class SearchController {
                 }
             }
             else if(checkType(fil).equals("nome") && !res.contains(w)) {
-                if (w.getRecord().getName().equals(filter)) {
+                if (w.getRecord().getName().equalsIgnoreCase((String) filter)) {
                     res.add(w);
                 }
             }
             else if(checkType(fil).equals("cognome") && !res.contains(w)) {
-                if(w.getRecord().getName().equals(filter)) {
+                if(w.getRecord().getSurname().equalsIgnoreCase((String) filter)) {
                     res.add(w);
                 }
             }
@@ -698,12 +698,12 @@ public class SearchController {
                 }
             }
             else if(checkType(fil).equals("nome")) {
-                if (!(w.getRecord().getName().equals(filter))) {
+                if (!(w.getRecord().getName().equalsIgnoreCase((String) filter))) {
                     res.remove(w);
                 }
             }
             else if(checkType(fil).equals("cognome")) {
-                if(!w.getRecord().getSurname().equals(filter)) {
+                if(!w.getRecord().getSurname().equalsIgnoreCase((String) filter)) {
                     res.remove(w);
                 }
             }

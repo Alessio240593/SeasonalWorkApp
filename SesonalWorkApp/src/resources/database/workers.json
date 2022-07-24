@@ -273,5 +273,56 @@
       "email": "ciao@ciao.com",
       "cellnum": "1234567890"
     }
+  },
+  {
+    "id": 772261838,
+    "address": "piazza dieci 12",
+    "pastExperience": [
+      {
+        "period": "SPRING",
+        "year": 2022,
+        "companyName": "Pinco panco srl",
+        "task": "ho fatto il bagnino",
+        "area": "VERONA",
+        "grossDailySalary": 12.0,
+        "job": "LIFEGUARD"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1996,
+        "month": 2,
+        "day": 3
+      },
+      "nationality": "italia",
+      "birthplace": "verona"
+    },
+    "languages": [
+      "ITALIAN"
+    ],
+    "license": [
+      "B"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VERONA"
+    ],
+    "period": [
+      "WINTER"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "alessio",
+        "surname": "zattoni",
+        "email": "6788787898",
+        "cellnum": "alessio@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Giulia",
+      "surname": "Adami",
+      "email": "giulia.ada96@gmail.com",
+      "cellnum": "1223567890"
+    }
   }
 ]
