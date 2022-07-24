@@ -64,7 +64,7 @@ public class HomeController {
                 "maintainer", "lifeguard", "sailing\ninstructor")));
 
         NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("database occurency");
+        yAxis.setLabel("job's occurrences");
 
         //Creating the Bar chart
         BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);

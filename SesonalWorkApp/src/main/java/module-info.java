@@ -10,7 +10,4 @@ module main {
     opens Controller;
     opens Model;
     opens Launcher;
-    exports Controller to javafx.controls, javafx.graphics, javafx.fxml;
-    exports Model to javafx.controls, javafx.graphics, javafx.fxml;
-    exports Launcher to javafx.controls, javafx.graphics, javafx.fxml;
 }
