@@ -1,0 +1,43 @@
+[
+	{
+		"id" : 123,
+		"name" : "Alessio",
+		"surname" : "Zattoni",
+		"email" : "alessio-zattoni@gmail.com",
+		"cell" : "3467564333",
+		"birthDate" : "24/05/1993",
+		"nationality" : "italian",
+		"birthPlace" : "Verona",
+		"username" : "Alessio",
+		"password" : "seasonalworkappalessio"
+	},
+	{
+		"id" : 234,
+		"name" : "Davide",
+		"surname" : "Bragantini",
+		"email" : "davide.braga@gmail.com",
+		"cell" : "3445264333",
+		"birthDate" : "12/04/1990",
+		"nationality" : "italian",
+		"birthPlace" : "Verona",
+		"username" : "Davide",
+		"password" : "seasonalworkappdavide"
+	},
+	{
+		"id" : 654,
+		"name" : "Michele",
+		"surname" : "Franchini",
+		"email" : "michele.franchini@gmail.com",
+		"cell" : "3998564333",
+		"birthDate" : "10/03/2000",
+		"nationality" : "italian",
+		"birthPlace" : "Verona",
+		"username" : "Michele",
+		"password" : "seasonalworkappmichele"
+	},
+	{
+		"username" : "",
+		"password" : ""
+	}
+]
+

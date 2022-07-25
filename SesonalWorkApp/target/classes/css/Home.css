@@ -1,0 +1,11 @@
+
+.title{
+    -fx-font-family: "Asap";
+    -fx-font-size: 33px;
+    -fx-text-fill: SteelBlue;
+}
+
+.sideMenu{
+    -fx-background-color: acquamarine;
+    -fx-text-fill: white;
+}
