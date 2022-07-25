@@ -1,15 +1,9 @@
 package Model;
 
 public enum Jobs{
-    FARMER,
-    CHEF,
-    CONSTRUCTIONWORKER,
-    WAITER,
-    BUSDRIVER,
-    ELETRICIAN,
-    MAINTAINER,
+    WINEGROWER,
+    BARMAN,
+    FLOWERGROWER,
     LIFEGUARD,
-    OFFICEWORKER,
-    PIZZAMAKER,
     SAILINGINSTRUCTOR
 }

@@ -48,6 +48,7 @@ public class LoginController {
     }
 
     public void resetHandler(ActionEvent actionEvent) {
+        Utility.unSetError(errorField, errorField);
         username.setText("");
         password.setText("");
     }

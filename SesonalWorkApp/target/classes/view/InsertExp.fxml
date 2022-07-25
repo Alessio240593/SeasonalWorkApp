@@ -211,16 +211,10 @@
                         <ChoiceBox fx:id="job" prefHeight="24.0" prefWidth="209.0" translateX="75.0">
                          <items>
                              <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="FARMER" />
-                                 <String fx:value="CHEF" />
-                                 <String fx:value="CONSTRUCTIONWORKER" />
-                                 <String fx:value="WAITER" />
-                                 <String fx:value="BUSDRIVER" />
-                                 <String fx:value="ELETRICIAN" />
-                                 <String fx:value="MAINTAINTER" />
+                                 <String fx:value="WINEGROWER" />
+                                 <String fx:value="BARMAN" />
+                                 <String fx:value="FLOWERGROWER" />
                                  <String fx:value="LIFEGUARD" />
-                                 <String fx:value="OFFICEWORKER" />
-                                 <String fx:value="PIZZAMAKER" />
                                  <String fx:value="SAILINGINSTRUCTOR" />
                              </FXCollections>
                          </items>

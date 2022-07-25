@@ -60,8 +60,8 @@ public class HomeController {
         CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Jobs");
         xAxis.setCategories(FXCollections.<String>
-                observableArrayList(Arrays.asList("chef", "farmer", "waiter", "busdriver",
-                "maintainer", "lifeguard", "sailing\ninstructor")));
+                observableArrayList(Arrays.asList("sailinginstructor", "winegrower", "lifeguard", "barman",
+                "flowergrower")));
 
         NumberAxis yAxis = new NumberAxis();
         yAxis.setLabel("job's occurrences");
@@ -73,14 +73,11 @@ public class HomeController {
 
         //Prepare XYChart.Series objects by setting data
         XYChart.Series<String, Number> series1 = new XYChart.Series<>();
-        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.CHEF).toLowerCase(), map.containsKey(Jobs.CHEF) ? map.get(Jobs.CHEF) : 0));
-        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.FARMER).toLowerCase(), map.containsKey(Jobs.FARMER ) ? map.get(Jobs.FARMER) : 0));
-        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.WAITER).toLowerCase(), map.containsKey(Jobs.WAITER) ? map.get(Jobs.WAITER): 0));
-        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.BUSDRIVER).toLowerCase(), map.containsKey(Jobs.BUSDRIVER) ? map.get(Jobs.BUSDRIVER): 0));
-        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.MAINTAINER).toLowerCase(), map.containsKey(Jobs.MAINTAINER) ? map.get(Jobs.MAINTAINER): 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.SAILINGINSTRUCTOR).toLowerCase(), map.containsKey(Jobs.SAILINGINSTRUCTOR) ? map.get(Jobs.SAILINGINSTRUCTOR) : 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.WINEGROWER).toLowerCase(), map.containsKey(Jobs.WINEGROWER ) ? map.get(Jobs.WINEGROWER) : 0));
         series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.LIFEGUARD).toLowerCase(), map.containsKey(Jobs.LIFEGUARD) ? map.get(Jobs.LIFEGUARD): 0));
-        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.SAILINGINSTRUCTOR).toLowerCase(),  map.containsKey(Jobs.SAILINGINSTRUCTOR) ? map.get(Jobs.SAILINGINSTRUCTOR): 0));
-
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.BARMAN).toLowerCase(), map.containsKey(Jobs.BARMAN) ? map.get(Jobs.BARMAN): 0));
+        series1.getData().add(new XYChart.Data<>(String.valueOf(Jobs.FLOWERGROWER).toLowerCase(), map.containsKey(Jobs.FLOWERGROWER) ? map.get(Jobs.FLOWERGROWER): 0));
 
         //Setting the data to bar chart
         barChart.getData().addAll(series1);

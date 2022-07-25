@@ -10,7 +10,7 @@
         "task": "ssss",
         "area": "VERONA",
         "grossDailySalary": 1.0,
-        "job": "CHEF"
+        "job": "FLOWERGROWER"
       },
       {
         "period": "WINTER",
@@ -19,7 +19,7 @@
         "task": "",
         "area": "VERONA",
         "grossDailySalary": 1.0,
-        "job": "FARMER"
+        "job": "WINEGROWER"
       },
       {
         "period": "WINTER",
@@ -28,7 +28,7 @@
         "task": "",
         "area": "VERONA",
         "grossDailySalary": 1.0,
-        "job": "FARMER"
+        "job": "BARMAN"
       },
       {
         "period": "WINTER",
@@ -37,7 +37,7 @@
         "task": "merda",
         "area": "VENEZIA",
         "grossDailySalary": 2000.0,
-        "job": "PIZZAMAKER"
+        "job": "LIFEGUARD"
       },
       {
         "period": "SUMMER",
@@ -46,7 +46,7 @@
         "task": "Univr ciao",
         "area": "VERONA",
         "grossDailySalary": 200000.0,
-        "job": "WAITER"
+        "job": "FLOWERGROWER"
       }
     ],
     "brithInfo": {
@@ -92,31 +92,13 @@
     "address": "ssss",
     "pastExperience": [
       {
-        "period": "FALL",
-        "year": 2022,
-        "companyName": "a",
-        "task": "ssss",
-        "area": "VERONA",
-        "grossDailySalary": 1.0,
-        "job": "CHEF"
-      },
-      {
-        "period": "WINTER",
-        "year": 2022,
-        "companyName": "a",
-        "task": "",
-        "area": "VERONA",
-        "grossDailySalary": 1.0,
-        "job": "FARMER"
-      },
-      {
         "period": "WINTER",
         "year": 2022,
         "companyName": "azz",
         "task": "",
         "area": "VERONA",
         "grossDailySalary": 1.0,
-        "job": "FARMER"
+        "job": "FLOWERGROWER"
       },
       {
         "period": "WINTER",
@@ -125,7 +107,7 @@
         "task": "ciao",
         "area": "VENEZIA",
         "grossDailySalary": 12.0,
-        "job": "WAITER"
+        "job": "SAILINGINSTRUCTOR"
       },
       {
         "period": "SPRING",
@@ -134,7 +116,7 @@
         "task": "",
         "area": "VENEZIA",
         "grossDailySalary": 22.0,
-        "job": "BUSDRIVER"
+        "job": "BARMAN"
       },
       {
         "period": "WINTER",
@@ -143,7 +125,7 @@
         "task": "",
         "area": "VENEZIA",
         "grossDailySalary": 12.0,
-        "job": "WAITER"
+        "job": "WINEGROWER"
       }
     ],
     "brithInfo": {
@@ -192,7 +174,7 @@
         "task": "",
         "area": "VICENZA",
         "grossDailySalary": 898.0,
-        "job": "CHEF"
+        "job": "WINEGROWER"
       }
     ],
     "brithInfo": {
@@ -235,7 +217,17 @@
   {
     "id": 813785934,
     "address": "via dosdegà 5",
-    "pastExperience": [],
+    "pastExperience": [
+      {
+        "period": "SPRING",
+        "year": 2022,
+        "companyName": "prova s.r.l.",
+        "task": "",
+        "area": "VICENZA",
+        "grossDailySalary": 34.0,
+        "job": "SAILINGINSTRUCTOR"
+      }
+    ],
     "brithInfo": {
       "birthDate": {
         "year": 2001,
@@ -323,6 +315,57 @@
       "surname": "Adami",
       "email": "giulia.ada96@gmail.com",
       "cellnum": "1223567890"
+    }
+  },
+  {
+    "id": 711994932,
+    "address": "via Pierino, 7",
+    "pastExperience": [
+      {
+        "period": "WINTER",
+        "year": 2020,
+        "companyName": "Marlon",
+        "task": "",
+        "area": "VERONA",
+        "grossDailySalary": 35.0,
+        "job": "BARMAN"
+      }
+    ],
+    "brithInfo": {
+      "birthDate": {
+        "year": 1997,
+        "month": 7,
+        "day": 25
+      },
+      "nationality": "Italy",
+      "birthplace": "Milano"
+    },
+    "languages": [
+      "GERMAN"
+    ],
+    "license": [
+      "B"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "ROVIGO"
+    ],
+    "period": [
+      "FALL"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Paolo",
+        "surname": "Rossi",
+        "email": "3478987654",
+        "cellnum": "paolorossi@gmail.com"
+      }
+    },
+    "record": {
+      "name": "Mattia",
+      "surname": "Zanoni",
+      "email": "mattiaza@gmail.com",
+      "cellnum": "3467897654"
     }
   }
 ]

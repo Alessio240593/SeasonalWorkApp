@@ -568,7 +568,6 @@ public class SearchController {
                 for (Language lang : w.getLanguages()) {
                     if(lang.equals(Language.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
-                        break;
                     }
                 }
             }
@@ -576,7 +575,6 @@ public class SearchController {
                 for (License lic : w.getLicense()) {
                     if (lic.equals(License.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
-                        break;
                     }
                 }
             }
@@ -584,7 +582,6 @@ public class SearchController {
                 for (Season season : w.getPeriod()) {
                     if(season.equals(Season.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
-                        break;
                     }
                 }
             }
@@ -592,7 +589,6 @@ public class SearchController {
                 for (Job j : w.getPastExperience()) {
                     if(j.getJob().equals(Jobs.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
-                        break;
                     }
                 }
             }
@@ -600,14 +596,12 @@ public class SearchController {
                 for (City city : w.getActivityArea()) {
                     if(city.equals(City.valueOf(filter.toString().toUpperCase())) && !res.contains(w)) {
                         res.add(w);
-                        break;
                     }
                 }
             }
             else if(checkType(fil).equals("VehicleDisp") && !res.contains(w)) {
                 if(w.isWithVehicle().equals(VehicleDisp.converter(filter.toString().toUpperCase())) && !res.contains(w)) {
                     res.add(w);
-                    break;
                 }
             }
             else if(checkType(fil).equals("nome") && !res.contains(w)) {
@@ -666,7 +660,7 @@ public class SearchController {
             }
             else if(checkType(fil).equals("Jobs")) {
                 for (Job j : w.getPastExperience()) {
-                    if(j.equals(Jobs.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
+                    if(j.getJob().equals(Jobs.valueOf(filter.toString().toUpperCase())) /*&& !res.contains(w)*/) {
                         found = true;
                         break;
                     }
