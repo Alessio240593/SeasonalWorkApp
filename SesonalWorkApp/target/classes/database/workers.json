@@ -126,6 +126,15 @@
         "area": "VENEZIA",
         "grossDailySalary": 12.0,
         "job": "WINEGROWER"
+      },
+      {
+        "period": "SPRING",
+        "year": 2022,
+        "companyName": "prova s.r.l.",
+        "task": "",
+        "area": "VERONA",
+        "grossDailySalary": 12.0,
+        "job": "FLOWERGROWER"
       }
     ],
     "brithInfo": {
@@ -145,7 +154,8 @@
     ],
     "withVehicle": true,
     "activityArea": [
-      "VENEZIA"
+      "VENEZIA",
+      "VERONA"
     ],
     "period": [],
     "emergencyContact": {
@@ -366,6 +376,49 @@
       "surname": "Zanoni",
       "email": "mattiaza@gmail.com",
       "cellnum": "3467897654"
+    }
+  },
+  {
+    "id": 192761849,
+    "address": "via dosdegà, 8",
+    "pastExperience": [],
+    "brithInfo": {
+      "birthDate": {
+        "year": 2003,
+        "month": 7,
+        "day": 11
+      },
+      "nationality": "Italy",
+      "birthplace": "Verona"
+    },
+    "languages": [
+      "ITALIAN",
+      "GERMAN"
+    ],
+    "license": [
+      "B"
+    ],
+    "withVehicle": true,
+    "activityArea": [
+      "VENEZIA",
+      "VERONA"
+    ],
+    "period": [
+      "WINTER"
+    ],
+    "emergencyContact": {
+      "record": {
+        "name": "Mamma",
+        "surname": "Mia",
+        "email": "6754367482",
+        "cellnum": "cia@gmai.com"
+      }
+    },
+    "record": {
+      "name": "Davide",
+      "surname": "Braganti",
+      "email": "mammamia@gmai.com",
+      "cellnum": "3452678983"
     }
   }
 ]
